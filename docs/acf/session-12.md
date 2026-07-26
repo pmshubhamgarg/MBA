@@ -1,481 +1,698 @@
 ---
 sidebar_position: 13
-title: "Session 12: Option Pricing and the Option Lens on Corporate Finance"
+title: "Session 12: Option Pricing and the Hidden Options in Every Balance Sheet"
 ---
 
-# Session 12: Option Pricing and the Option Lens on Corporate Finance
+# Session 12: Option Pricing and the Hidden Options in Every Balance Sheet
 
-*Pricing options from first principles, then using that lens to see the entire balance sheet differently*
-
----
-
-## The Big Picture: Why Options Need Pricing
-
-In the last session, we introduced options -- calls, puts, payoff diagrams, and the intuition behind them. But knowing what an option does is different from knowing what it is **worth**. Today we answer: how do you price an option so that neither the buyer nor the writer can make free money?
-
-We build three models -- from the simplest (binomial) to the most powerful (Black-Scholes) -- and then flip the entire framework on its head to see corporate finance through the option lens.
+*From binomial trees to Black-Scholes, and why your company's balance sheet is secretly a portfolio of options*
 
 ---
 
-## Part 1: Binomial Option Pricing -- The Replicating Portfolio Method
+## The Story So Far
 
-### The Setup
+Last session, you learned what options are, how their payoffs work, and the elegant equilibrium of put-call parity. You saw that if parity breaks, arbitrage brings it back. But a student asked a sharp question: "How is the call price itself determined?"
 
-A stock is currently worth **25 USD**. Over the next year, it can either:
+That newspaper quotation showed you a call premium and a put premium. But where did those numbers come from? Today, the professor answers that question with two pricing models, then flips the entire balance sheet on its head using option theory. And as a bonus, we get our first taste of swaps -- the last derivative instrument of the course.
 
-- Go **up 15%** to **28.75**, or
-- Go **down 15%** to **21.25**
+> **Professor's opening:** "Today is our 12th session and we have to finish discussing options and then the last instrument which is swap. Good news is there is no quiz today."
 
-The **risk-free rate** is **5%**. You hold an **at-the-money call option** with exercise price = **25** (same as the current stock price).
+---
 
-**Why would you pay a premium for an at-the-money option?** Because of **time value**. The stock can go up in the future. That possibility has value.
+## Part 1: Option Pricing -- How Do You Calculate the Premium?
 
-### Step 1: Call Value at Expiry
+When we say "pricing" an option, we mean estimating the **premium** -- the price you pay to buy a call or the price you receive if you sell one. There are two main approaches:
 
-At expiry, two things can happen:
+1. **Binomial Option Pricing Model** (also called the risk-neutral probability model)
+2. **Black-Scholes Model** (the famous closed-form formula)
 
-| Scenario | Stock Price | Call Value (C1) | Logic |
-|----------|------------|-----------------|-------|
-| **Up** | 28.75 | 3.75 | Exercise: 28.75 - 25 = 3.75 (in the money) |
-| **Down** | 21.25 | 0 | Walk out: would lose money exercising (out of the money) |
+Both give you the same answer. They just take different routes to get there.
 
-### Step 2: Build the Replicating Portfolio
+---
 
-The idea is clever: can we create a **levered portfolio** (stock + loan) that gives the exact same payoffs as the call option?
+## The Binomial Model: Building Intuition with a Simple Tree
 
-**The portfolio:** Buy the stock, borrow money.
+### Setting Up the Problem
 
-How much to borrow? The rule is: borrow such that you **never default**, even in the worst case. In the worst case (year 1), the stock is worth 21.25, and you need to repay the loan. So the loan repayment at year 1 must not exceed 21.25.
+Imagine a stock worth **25 today**. In one year, it will either:
+- Go **up by 15%** to **28.75**, or
+- Go **down by 15%** to **21.25**
+
+(The professor noted the change need not be symmetric -- it could be +10% / -15% or any combination. This example just uses equal percentages for simplicity.)
+
+The risk-free rate is **5%**. The question: what is the premium for an **at-the-money call option** on this stock?
+
+Since the option is at the money, the **exercise price (strike price) is 25** -- equal to the current stock price.
+
+A student asked the natural question: "If the market price is 25 and you are also asking me to pay 25 to buy the share, why should I pay any premium at all? It could be zero."
+
+> **Professor's response:** "There is no intrinsic value but there is time value because you can exercise it one period ahead. If the actual price goes up -- because it can go up -- then it becomes in the money. That's why there is a value."
+
+### The Payoffs at Expiry
+
+At the end of Year 1, there is no time value left. All value is intrinsic:
+
+| Scenario | Stock Price | Call Payoff (max of S - E, or 0) |
+|----------|-------------|----------------------------------|
+| **Up** | 28.75 | 28.75 - 25 = **3.75** |
+| **Down** | 21.25 | Walk away = **0** |
+
+> **Professor:** "On the downside I will not exercise because in the market it is available at 21.25. Why should I pay 25? I will just walk out. Option gives me right but no obligation to buy."
+
+We know the call value at Year 1 (C1). But we need the call value **today** (C0). That is the premium a buyer must pay right now.
+
+---
+
+### Method 1: The Replicating Portfolio
+
+Instead of buying the call option, you create a **levered portfolio** -- borrow money and buy the stock directly. This is called a **replicating portfolio** because its payoffs mirror the option's payoffs.
+
+**The key constraint:** Borrow only as much as you can repay even in the worst case, so you never default.
+
+**Step 1: How much to borrow?**
+
+In the worst case, the stock drops to 21.25. You need to sell the stock and repay the loan. So the loan amount plus interest must not exceed 21.25.
+
+A student initially suggested borrowing 25 (the full stock price). The professor walked through why that fails:
+
+> **"If you borrow 25 at 5% interest, at the end of the year your borrowed amount will be 25 x 1.05 = 26.25. Now suppose the stock price goes down to 21.25 -- will you be able to repay the loan? You'll get 21.25 but have to pay 26 something. You'll default."**
+
+Another student (Abhishek) got it right:
 
 > **Loan amount today = 21.25 / 1.05 = 20.24**
 
-### Step 3: Compare Payoffs at Year 1
+This ensures that at the end of Year 1, your loan obligation (20.24 x 1.05 = 21.25) exactly equals the worst-case stock price. No default.
 
-| Scenario | Stock Value | Loan Repayment | Portfolio Payoff | Call Payoff |
-|----------|------------|----------------|------------------|-------------|
-| **Up** | 28.75 | 21.25 | 7.50 | 3.75 |
-| **Down** | 21.25 | 21.25 | 0 | 0 |
+A student (Jagat) then asked: "If the stock costs 25 and you are borrowing only 20.24, where does the remaining come from?"
 
-Look at that. The replicating portfolio payoff is **exactly 2x** the call option payoff in both scenarios. The portfolio and the call are **proportional twins**.
+> **Professor:** "That money you are putting from your pocket. You borrow 20.24 and you have some cash in your pocket. Both put together, you buy the stock."
 
-### Step 4: Price the Call
+**Step 2: Portfolio payoffs at Year 1**
 
-If the replicating portfolio is 2x the call, then the call is worth **half** the portfolio value today.
+| Scenario | Stock Value | Loan Repayment | Net Payoff |
+|----------|-------------|----------------|------------|
+| **Up** | 28.75 | 21.25 | **7.50** |
+| **Down** | 21.25 | 21.25 | **0** |
 
-> **Portfolio value today = Stock (25) - Loan (20.24) = 4.76**
+**Step 3: Compare portfolio to call option**
 
-> **C0 = 4.76 / 2 = 2.38**
+| | Replicating Portfolio | Call Option |
+|---|---|---|
+| Up payoff | 7.50 | 3.75 |
+| Down payoff | 0 | 0 |
 
-The call premium is **2.38 USD**. This is the price that makes the market **arbitrage-free** -- neither the buyer nor the writer can make riskless profit.
+The replicating portfolio is **twice** the value of the call option (7.50 is double 3.75). So the call is worth **half** the portfolio.
 
-> **Professor's insight:** "If the call premium is zero, I make money immediately... the writer of the call will not allow me to get that because he's taking the risk."
+A student (Monica) asked: "Why did we divide by two?"
+
+> **Professor:** "Look at the box. What is the value of my replicating portfolio? 7.5 or 0 max. But what is the value of my call? 3.75 or 0 max. Which is half of the replicating portfolio. 3.75 is half of 7.5."
+
+Monica followed up: "Will it always be half?"
+
+> **Professor:** "No, not always half. You have to see the value of the portfolio and value of call at the end of the expiry and then find out the present value."
+
+**Step 4: Calculate C0 today**
+
+> **Portfolio value today = Stock price - PV of loan = 25 - 20.24 = 4.76**
+
+> **Call value today = Half of portfolio value = 4.76 / 2 = 2.38**
+
+So the at-the-money call premium is **2.38**.
+
+Jagat immediately connected the dots: "That should be the premium!"
+
+> **Professor confirmed:** "That is the premium. To make it risk neutral, meaning arbitrage-free. So instead of buying a call, if I create a similar portfolio, I make no money. This is the same."
 
 ---
 
-## Part 2: Risk-Neutral Probability Method
+### Method 2: Risk-Neutral Probability
 
-### Same Answer, Different Route
+Instead of constructing a replicating portfolio, you directly calculate the probability of the stock going up or down and use it to price the call.
 
-Instead of building a replicating portfolio, we find a **probability Q** that makes the expected return on the stock equal to the risk-free rate. This is called the **risk-neutral probability**.
+**Define Q** as the risk-neutral probability of an up-move. The formula (derived by rearranging the spot price equation):
 
-> **Q = (S0 x (1 + Rf) - SD) / (SU - SD)**
+> **Q = (1 + Rf - D) / (U - D)**
 
-Where S0 = current stock price, SU = up price, SD = down price.
+Where:
+- **Rf** = risk-free rate (0.05)
+- **U** = up factor (28.75 / 25 = 1.15)
+- **D** = down factor (21.25 / 25 = 0.85)
 
-Plugging in:
+> **Q = (1.05 - 0.85) / (1.15 - 0.85) = 0.20 / 0.30 = 2/3 (about 67%)**
 
-> **Q = (25 x 1.05 - 21.25) / (28.75 - 21.25) = 5.00 / 7.50 = 2/3 (67%)**
+So there is a **67% risk-neutral probability** the stock goes up and a **33% probability** it goes down.
 
-> **1 - Q = 1/3 (33%)**
+**Now price the call using the risk-neutral valuation formula:**
 
-Now price the call as the expected value of payoffs, discounted at the risk-free rate:
-
-> **C0 = (Q x CU + (1 - Q) x CD) / (1 + Rf)**
+> **C0 = (Q x Payoff_up + (1-Q) x Payoff_down) / (1 + Rf)**
 
 > **C0 = (2/3 x 3.75 + 1/3 x 0) / 1.05 = 2.50 / 1.05 = 2.38**
 
-**Same answer: 2.38 USD.** Both methods converge because they are mathematically equivalent.
+Same answer: **2.38**. Two methods, one result. The risk-neutral method is more direct -- no need to build a replicating portfolio.
 
 ### Where Does Q Come From in Real Life?
 
-Three sources:
+The professor explained two sources:
 
-1. **Market consensus** -- institutional traders and hedge funds collectively set the Q through their trading activity
-2. **Back it out from traded option prices** -- but be careful, the traded price may include noise or arbitrage opportunities
-3. **The risk-neutral Q is the arbitrage-free probability** -- the traded price in the market might differ from the theoretical price
+1. **Market consensus** -- Institutional traders, hedge funds, and big players form views on whether stock prices will rise or fall. From their collective behavior, you can extract a consensus Q.
+
+2. **Back it out from traded prices** -- You know the call premium from the market. You know the stock price, exercise price, and risk-free rate. The only unknown is Q. Solve for it.
+
+> **Professor's caution:** "Only problem in backing out is you are assuming the traded price to be the risk-neutral price, which may not be the case. The traded price may have noise -- it may be a price to make arbitrage gains. The risk-neutral price is noise-free."
+
+If the risk-neutral price (arbitrage-free) and the traded price of the option differ, that gap is an arbitrage opportunity. Traders will exploit it, and in the long run the traded price converges to the equilibrium level.
 
 ---
 
-## Part 3: Black-Scholes Option Pricing Model
+## The Black-Scholes Model: The Most Famous Formula in Finance
 
-### The Elegant Closed-Form Solution
+The binomial model works for simple one-period problems. For continuous price movements, there is the **Black-Scholes model** -- a closed-form solution and the most widely used option pricing formula in the stock market.
 
-The Black-Scholes model is the most widely used option pricing formula. It gives you a single equation -- no trees, no steps, just plug in and calculate.
+> **Professor:** "This is the most popular one and most widely used one in the stock market."
 
-> **C0 = S0 x N(D1) - E x e^(-rT) x N(D2)**
+The professor made clear: "We are not deriving the formula. It is given. You can use the expression."
 
-This is a **European option** formula (exercise only at expiry, not before).
+### The Formula (European Options Only)
+
+> **C0 = S x N(D1) - E x e^(-rT) x N(D2)**
+
+This is for a **European option** -- one that can only be exercised at expiry, not anytime in between.
 
 Where:
+
+| Symbol | Meaning |
+|--------|---------|
+| **C0** | Call option value today |
+| **S** | Current stock price (spot price) |
+| **E** | Exercise (strike) price |
+| **r** | Risk-free rate (continuously compounded) |
+| **T** | Time to expiry (in years; 6 months = 0.5) |
+| **sigma** | Volatility (standard deviation of returns) |
+| **N(D1), N(D2)** | Cumulative normal distribution values |
 
 > **D1 = [ln(S/E) + (r + sigma^2 / 2) x T] / (sigma x sqrt(T))**
 
 > **D2 = D1 - sigma x sqrt(T)**
 
-- **S0** = current stock price
-- **E** = exercise (strike) price
-- **r** = risk-free rate (continuously compounded)
-- **T** = time to expiry (in years)
-- **sigma** = volatility (standard deviation of returns)
-- **N(D1), N(D2)** = cumulative normal distribution values (look up from z-table)
-- **e^(-rT)** = continuous discounting factor
-- **ln** = natural logarithm
+### Breaking Down the Intuition
 
-### What the Formula Actually Means
+Do not memorize the formula blindly. Understand what each piece does.
 
-Think of it in two parts:
+**S/E -- The Intrinsic Value Indicator**
 
-| Component | Meaning |
-|-----------|---------|
-| **S0 x N(D1)** | Expected benefit of buying the stock |
-| **E x e^(-rT) x N(D2)** | Cost of paying the strike price (present value) |
-| **C0** | Benefit minus cost = option value |
+The professor asked: "What does S by E indicate?" After some back and forth, a student (Anish) answered: "If S/E is greater than 1, it is in the money." The professor confirmed: "This is the intrinsic value."
 
-**N(D1)** has a special name: the **option delta** (also called the **hedge ratio**). It tells you how much the option price changes for a 1-unit change in the stock price.
+- Higher S (given fixed E) --> higher D1 --> higher C0
+- Higher E (given fixed S) --> lower D1 --> lower C0 (costlier to exercise, less attractive)
 
-### How Each Variable Affects Option Value
+**The Drift Parameter -- The Heart of D1**
 
-| Variable | Relationship with C0 | Intuition |
-|----------|---------------------|-----------|
-| **S0 (stock price)** | Higher S -> Higher C0 | More in the money |
-| **E (exercise price)** | Higher E -> Lower C0 | Costlier to exercise |
-| **T (time)** | Higher T -> Higher C0 | More time = more chance to go up |
-| **r (risk-free rate)** | Higher r -> Higher C0 | PV of strike price falls |
-| **sigma (volatility)** | Higher sigma -> Higher C0 | See below -- this is the interesting one |
+The term **(r + sigma^2/2) x T** in the numerator is called the **drift**. It captures how much the stock price can deviate over time.
 
-### Why Volatility Has a Positive Relationship with Option Value
+Sigma appears **twice** in D1, and this confused a student who asked why they seem to have opposite effects:
 
-This is counterintuitive. Usually, more risk = bad. But for options:
+> **Professor's explanation:** "These two terms are different. The denominator sigma represents general uncertainty. The numerator sigma-squared represents drift. Drift can be upside or downside."
 
-- **Downside is capped at zero** (you walk out, lose only the premium)
-- **Upside is unlimited** (you exercise and keep everything above the strike)
+Here is the key insight about why drift has a **positive** relationship with call value:
 
-So a 20% volatility (drift) means: the stock could go up 20% (you benefit) or down 20% (you walk out, zero loss beyond the premium). The upside matters, the downside does not. Therefore, **more volatility = more option value**.
+> **"Consider a situation where the price can drift by 20%. It can go up by 20% also go down by 20%. Now if it is 20% plus -- that is good news for call because I can buy the same asset at a lower price. But if it is 20% minus, I just walk out. So the negative part of the drift does not affect me. But the positive part of drift gives me benefit. That is why the drift has a positive relationship over time."**
 
-Sigma appears in two places in D1:
-- **In the denominator** (sigma x sqrt(T)): general uncertainty, inverse relationship
-- **In the numerator** (sigma^2 / 2, the drift parameter): positive relationship
+In plain language: volatility is symmetric (equal chance of up or down), but the option payoff is asymmetric (you capture the upside, you ignore the downside). That asymmetry makes volatility your friend when you hold a call.
 
-The net effect is **positive** -- higher volatility increases the call premium.
+**Time (T)** -- longer time to expiry means more time for favorable price movements. Higher T means higher C0.
 
-### Numerical Example: Microsoft Call Option
+**N(D1) -- The Option Delta (Hedge Ratio)**
 
-**Setup:** 6-month call (T = 0.5), strike price E = 150 USD, current stock S0 = 160 USD (in the money by 10).
+N(D1) is the cumulative normal distribution of D1. Physically, it measures how much the option price changes for a 1-unit change in the stock price. The professor compared it to **duration** in bonds -- it is the sensitivity measure for options.
 
-| Parameter | Scenario 1 | Scenario 2 |
-|-----------|-----------|-----------|
-| Volatility (sigma) | 30% | 40% |
-| D1 | 0.53 | -- |
-| D2 | 0.32 | -- |
-| N(D1) | 0.70 | -- |
-| N(D2) | 0.62 | -- |
-| **C0** | **~21 USD** | **~24.92 USD** |
+> **"For every one rupee or one dollar change in the share price, how much will be the change in the option premium? It is the sensitivity of option price for a change in the underlying."**
 
-Two things to notice:
+**E x e^(-rT) -- Present Value of the Exercise Price**
 
-1. **Premium (21) is greater than intrinsic value (10)** -- the extra 11 is **time value**. With 6 months left, the stock can climb higher.
+Since this is a European option (exercise only at expiry), you will pay E only at maturity. So you discount it back to today using continuous compounding.
 
-2. **Higher volatility (40%) gives higher premium (24.92 vs 21)** -- confirms our earlier logic. More volatility = more upside potential = pricier option.
+**The Overall Physical Meaning**
 
-**Why can the premium never be less than 10 (the intrinsic value)?** If it were, say 8, then everyone would buy the call at 8 and immediately exercise to pocket 10 -- making 2 in riskless profit. That buying pressure pushes the premium up until arbitrage disappears.
+> **Professor's summary:** "C-not is the expected benefit from buying the stock minus the cost of paying the strike price. The difference is the profit today -- that is the maximum amount of call premium that the seller can charge from me."
+
+Think of the call premium as the **cost of insurance** -- the price of protecting yourself from missing out on the upside.
 
 ---
 
-## Part 4: Implied Volatility and VIX
+### Black-Scholes Numerical Example: Microsoft Call Option
 
-### The Missing Input
+**Given:**
+- Current Microsoft share price (S) = **160**
+- Exercise price (E) = **150**
+- Time to expiry (T) = **6 months = 0.5 years**
+- Risk-free rate (r) = **5%**
 
-Look at the Black-Scholes formula. Every input is observable in the market -- stock price, strike price, time to expiry, risk-free rate. Every input **except one**: **sigma (volatility)**.
+The option is **in the money** today (160 > 150), so intrinsic value alone is 10.
 
-### Two Ways to Get Sigma
+**Pop quiz from the professor:** "Will the premium be more than 10, less than 10, or equal to 10?"
 
-| Method | How | Limitation |
-|--------|-----|-----------|
-| **Historical Volatility** | Calculate standard deviation from past stock returns (simple SD, GARCH model, etc.) | Past may not predict future |
-| **Implied Volatility** | Observe the traded call premium, plug everything else into Black-Scholes, solve backwards for sigma | Depends on traded price being "correct" |
+Shivangi said "less than 10." Another student said "more than 10." The professor settled it:
 
-**Key constraint:** You cannot estimate **both** sigma and the call premium simultaneously. You must know one to find the other.
+> **"It should always be more than 10 because 10 is only the intrinsic value difference. What about the time value? I told you call option premium is composed of two items -- intrinsic value and time value. In the money itself is 10. So if the premium writer sells me at 10, I will gain because I am only paying intrinsic value difference. I am not paying for protection for the next 6 months. So the call premium has to be more than 10."**
 
-### VIX: The Fear Index
+And if the call were available at 8? "A lot of people will go and buy the call because by paying 8, you are getting a protection of more than 10 -- an assured return. So everybody will go and buy the call. The demand for call will increase. As demand increases, the price will go up." Arbitrage pushes the price to its equilibrium.
 
-The **VIX** (Volatility Index) is the **implied volatility of the market** as a whole, calculated from at-the-money options on the index (Nifty in India, S&P 500 in the US).
+**Scenario 1: Volatility = 30%**
 
-- **High VIX** = market expects large swings = fear and uncertainty
-- **Low VIX** = market expects calm waters = complacency
+| Input | Value |
+|-------|-------|
+| Risk-free rate | 5% |
+| Time | 0.5 years |
+| S | 160 |
+| E | 150 |
+| Sigma | 30% |
+| **D1** | **0.53** |
+| **D2** | **0.32** |
+| **N(D1)** | **0.70** |
+| **N(D2)** | **0.62** |
+| **Call Premium** | **~21** |
 
-That is why VIX is called the **"fear index."**
+The premium is **21, not 10**. The extra 11 is time value. Why so much? Because with 30% volatility over 6 months, the stock could rise by roughly 48 more (30% of 160). The downside does not matter -- you walk away. But the upside potential is enormous.
 
-### Does Black-Scholes Capture News?
+> **Professor:** "So 160 price can go up by 30% which means 48 additional. It can also go down. But going down is not a problem. I will walk out. But going up has a benefit."
 
-A student asked whether the model considers current news events.
+**Scenario 2: Volatility = 40%**
 
-> **Professor's response:** "Price already captures news if market is efficient. If market is inefficient, you add news. Either way, you ESTIMATE volatility -- there will be error."
+Keeping everything else the same but increasing volatility to 40%:
 
-The model is only as good as the sigma you feed it. And sigma is always an estimate, never a certainty.
+| | 30% Volatility | 40% Volatility |
+|---|---|---|
+| **Call Premium** | ~21 | **~24.92** |
 
----
+Higher uncertainty means higher premium. Yes, the downside risk is higher too (40% fall is possible), but you are **protected** -- your maximum loss is the premium you already paid. The upside, however, is now even larger.
 
-## Part 5: The Balance Sheet Through the Option Lens
+### The Three Drivers of Call Premium
 
-This is where the session takes a sharp turn. Everything we learned about options now gets applied to **corporate finance**.
+| Driver | Effect on Premium | Why |
+|--------|-------------------|-----|
+| **Intrinsic Value** (S - E) | Higher = Higher premium | More in-the-money means more guaranteed value |
+| **Volatility (sigma)** | Higher = Higher premium | More upside potential, downside capped at zero |
+| **Time (T)** | Longer = Higher premium | More time for favorable price movement |
 
-### Equity = Call Option on the Firm's Assets
-
-Think about it:
-
-- The **underlying asset** is the firm's total asset value (V)
-- The **exercise price** is the face value of debt (F)
-- Equity holders must **first pay off debt** before they can access the assets
-
-| Scenario | Asset Value (V) | Debt (F) | Equity Value | Logic |
-|----------|----------------|----------|-------------|-------|
-| **Good times** | 100 | 80 | max(100 - 80, 0) = **20** | Exercise the call, pay off debt, keep the rest |
-| **Bad times** | 100 | 130 | max(100 - 130, 0) = **0** | Walk out! Assets cannot cover debt. Equity = zero |
-
-> **Professor's analogy:** "To gain access to the asset, the call option holder has to first clear the gate. The lender is standing at the gate."
-
-The exercise price is the value of debt (F) because you must pay off the lender first before you can claim anything. Just like a call option holder must pay the strike price before owning the stock.
-
-### Debt = Written Put Option on the Firm's Assets
-
-Now look at it from the lender's side:
-
-- Debt holders receive **min(V, F)** -- they get the lesser of asset value or face value
-- If V &gt; F: they get F (full repayment, but no upside beyond F)
-- If V &lt; F: they get V (whatever is left, taking a loss of F - V)
-
-This is the payoff of a **written (sold) put option**. The debt holder has:
-- **Limited upside** (maximum = F, the face value)
-- **Full downside** (can lose everything if assets go to zero)
-
-| Stakeholder | Payoff Structure | Upside | Downside |
-|-------------|-----------------|--------|----------|
-| **Equity holders** | Call option on assets | Unlimited | Zero (walk out) |
-| **Debt holders** | Written put on assets | Capped at F | Full (can lose principal) |
+> **Critical reminder:** These Black-Scholes values are the **risk-free, arbitrage-free** values -- not necessarily the traded prices. If the market price differs, there is an arbitrage opportunity. "In the long run, the call price will go down to the equilibrium level. In the short run, you may have money to make."
 
 ---
 
-## Part 6: Financial Distress -- Why Shareholders Love Risky Bets
+## Historical vs. Implied Volatility
 
-This is one of the most important insights in corporate finance. It explains why companies in trouble often make things worse.
+A student (Sundep) asked a sharp question: "This Black-Scholes model does not consider current positive or negative news for the stock. The binomial model considers expected future values which perhaps factor in market news. Is Black-Scholes really useful?"
 
-### Original Scenario (Moderate Risk)
+The professor turned the question into a teaching moment by asking a counter-question: **"Is volatility observable?"**
 
-A company has:
-- **Assets today:** 100M
-- **Zero-coupon debt (F):** 80M, due in 1 year
-- **Risk-free rate:** 5%
+The answer: **No.** In the market, you observe **prices**. From prices, you can calculate **returns**. But volatility? You never directly observe it. You must **estimate** it, and any estimation has bias.
 
-At year 1:
-- **Up market:** Assets = 130M
-- **Down market:** Assets = 70M
+### Two Approaches to Volatility
 
-| Scenario | Assets | Equity Payoff | Debt Gets |
-|----------|--------|--------------|-----------|
-| **Up** (P = 0.5833) | 130M | max(130 - 80, 0) = **50M** | 80M (full) |
-| **Down** (1 - P = 0.4167) | 70M | max(70 - 80, 0) = **0** | 70M (default, loses 10M) |
+| Approach | How It Works | What You Get |
+|----------|-------------|-------------|
+| **Historical volatility** | Use past price data -- simple standard deviation, GARCH models, moving averages | An estimate of sigma to plug into Black-Scholes to find the call premium |
+| **Implied volatility** | Take the market's traded call premium, plug in everything else you know (S, E, r, T), solve backwards for sigma | What the market "thinks" volatility will be |
 
-> **Equity value today = (0.5833 x 50) / 1.05 = 27.78M**
+> **Professor's key distinction:** "If your question is to find out call premium, you have to use historical SD. But if your question is -- given the call premium, what is the market thinking about volatility of the stock -- that is implied volatility. You cannot estimate both together in the formula. Only one missing value you can solve for."
 
-> **Debt value today = 100 - 27.78 = 72.22M**
+On whether news matters: "If market is efficient, price already captures the news. If you say market is inefficient, it takes time to incorporate news in the price -- then you add news to get the volatility. Either way, it is an estimate. It has error."
 
-If a bond investor buys this debt at 72.22M, the potential return is 80 / 72.22 - 1 = **10.8%** -- but only if the company does not default.
+The professor also mentioned that more sophisticated approaches exist beyond simple standard deviation -- like the **GARCH model** (Generalized Auto-Regressive Conditional Heteroskedasticity), a robust statistical model for estimating volatility. But all of them are fundamentally historical and therefore estimates.
 
-### The Risky Bet Scenario (High Volatility)
+### What Is VIX?
 
-Now suppose the same company takes on **risky projects**. Same expected value, but much wider range:
+A student (Raab) asked about the VIX index he had read about in the news.
 
-- **Up market:** Assets = 160M
-- **Down market:** Assets = 40M
-
-| Scenario | Assets | Equity Payoff | Debt Gets |
-|----------|--------|--------------|-----------|
-| **Up** (P = 0.5417) | 160M | max(160 - 80, 0) = **80M** | 80M (full) |
-| **Down** (1 - P = 0.4583) | 40M | max(40 - 80, 0) = **0** | 40M (default, loses 40M) |
-
-> **Equity value today = (0.5417 x 80) / 1.05 = 41.27M**
-
-### The Zero-Sum Revelation
-
-| Metric | Original | Risky Bet | Change |
-|--------|----------|-----------|--------|
-| Equity value | 27.78M | 41.27M | **+13.49M** |
-| Debt value | 72.22M | 58.73M | **-13.49M** |
-| Total firm value | 100M | 100M | **0** |
-
-Equity **gained** exactly what debt **lost**. The balance sheet is a **zero-sum game**.
-
-> **Professor's exact words:** "Balance sheet is a zero sum game. If equity gains, debt loses."
-
-### Why This Happens
-
-Shareholders hold a **call option**. Higher volatility increases option value. So shareholders **benefit** from riskier bets:
-- Upside goes up (160 vs 130), and they capture all of it
-- Downside goes down (40 vs 70), but they don't care -- they walk out at zero either way
-
-Debt holders are on the other side. They hold a **written put**. Higher volatility increases their losses:
-- They still get capped at 80M in the good scenario
-- But they lose much more (40M vs 70M) in the bad scenario
-
-> **Professor's insight:** "Shareholders take risky bets because they hold a call option -- upside unlimited, downside zero."
-
-### Why Lenders Use Covenants
-
-This is exactly why lenders put **covenants** (restrictive clauses) in term sheets:
-- "Without my consent, no major investment"
-- "Maintain minimum asset coverage ratio"
-- "No additional borrowing beyond a threshold"
-
-Covenants exist because lenders know that once the money is lent, shareholders have every incentive to gamble with it. Covenants are the lender's defense against the option-holder's natural instinct.
-
-> **Professor's words:** "That's why lenders put covenants in term sheets -- 'without my consent, no major investment.'"
+> **Professor:** "VIX is the implied volatility of the market as a whole, not of a single stock. It is a volatility index -- also called a fear index. If the value goes up, it means the market in general is more volatile. It is found using nifty at-the-money options."
 
 ---
 
-## Part 7: M&A as a Real Option (Pharma/Biotech Example)
+## Part 2: The Balance Sheet as a Portfolio of Options
+
+This is where option theory transforms from a trading concept into a **corporate finance lens**. The professor asked the class to see the balance sheet in a completely new way.
+
+> **"Now you have a different way of looking at the balance sheet. Earlier you saw balance sheet is a statement of asset and liability and equity. Now you are saying balance sheet is a statement of options."**
+
+### The Big Idea
+
+> **Equity is a call option on firm assets. Debt is a put option.**
+
+Every shareholder is secretly holding a call. Every lender is secretly writing a put. The exercise price in both cases is the value of debt.
+
+### Understanding Through Two Scenarios
+
+Write this down on pen and paper, as the professor instructed:
+
+**Scenario 1:** Asset value (V) = 100, Debt (F) = 80
+
+- Equity = V - F = 100 - 80 = **20** (positive -- shareholders exercise)
+
+**Scenario 2:** Asset value (V) = 100, Debt (F) = 130
+
+- Equity = V - F = 100 - 130 = **-30** ... but shareholders just walk away
+- Equity value = **0** (not -30)
+
+A student got this instantly: "20 and zero." The professor responded: "Very good. Rather spot on."
+
+> **Value of Equity = max(V - F, 0)**
+
+This is exactly the payoff of a **call option** where V is the underlying asset price and F is the exercise price.
+
+### Why the Exercise Price Is the Value of Debt
+
+A student struggled with this. The professor used a vivid gate metaphor:
+
+> **"To gain access to the asset, the call option holder has to first clear the gate. What is the gate? The lender is standing there. The lender says: first clear my loan. In situation one, what is the loan amount? 80. It is only after you pay 80 that you can get the remaining 20. So the exercise price is the value of debt."**
+
+In Scenario 2: "Value of the asset is 100. At the gate, the lender is standing with 130 due. Should I exercise? I pay 130 to get a 100 asset. No. What do I do? I just walk out. I leave the asset with the lender."
+
+### What Happens to the Lender?
+
+Now look at the other side:
+
+**Scenario 1:** Lender gets their full 80 back. But do they get any upside? **No.** Their maximum is 80.
+
+**Scenario 2:** Asset is only worth 100, but they are owed 130. They get **100** (the asset value), not 130. They take a loss of 30.
+
+> **Lender's payoff = min(V, F)**
+
+The lender gets the **lower** of asset value or loan amount. They have the downside risk but no upside. This is the profile of someone who has **written a put option** on the firm's assets with an exercise price of F.
+
+The professor asked: "What does writing a put mean?"
+
+A student answered correctly: **"Obligation to buy."**
+
+> **Professor elaborated:** "If shareholders exercise their call -- meaning the value of the asset is higher than F -- they will exercise. The lender has to sell the asset at F. They cannot charge 100 because they took the premium. I have to oblige."
+
+### The Balance Sheet Identity -- Option Version
+
+| Traditional View | Option View |
+|-----------------|-------------|
+| Assets = Debt + Equity | Assets = Written Put + Long Call |
+| Equity is the residual claim | Equity = Call option on assets (strike = F) |
+| Debt is the fixed claim | Debt = Risk-free bond minus written put on assets (strike = F) |
+
+---
+
+## Application 1: Valuing Equity and Debt with Option Theory
+
+### The Vertex Retail Example
+
+**Setup:**
+- Vertex Retail has assets worth **100 million** today
+- Zero-coupon debt of **80 million** due in one year (no interest during the year, to keep it simple)
+- The firm is **near distress** -- 80% of asset value is debt
+- After one year, asset value goes to either **130 million** (good state) or **70 million** (bad state)
+- Risk-free rate: **5%**
+
+**The professor asked:** "At what price will this bond be sold today -- at 80, above 80, or below 80?"
+
+After some back and forth (one student said "at 80," another said "above 80"), the professor walked them through it:
+
+> **"Suppose you are investing in this bond which will pay you 80 after one year. Will you pay 80 or above 80 today to buy the bond? It is zero coupon -- during this one year period you will not receive any interest."**
+
+The answer: **Below 80**. You need a discount to earn a return.
+
+**Step 1: Find the risk-neutral probability**
+
+Using the formula P = (1 + Rf - D) / (U - D):
+
+Where U = 130/100 = 1.30, D = 70/100 = 0.70:
+
+> **P = (1.05 - 0.70) / (1.30 - 0.70) = 0.35 / 0.60 = 0.5833 (about 58%)**
+
+There is a **58% chance** assets go up and a **42% chance** they go down.
+
+**Step 2: Value the equity (call option)**
+
+| Scenario | Equity Payoff |
+|----------|---------------|
+| Up (assets = 130) | 130 - 80 = **50 million** |
+| Down (assets = 70) | Walk away = **0** |
+
+> **Equity value today = (0.5833 x 50 + 0.4167 x 0) / 1.05 = 29.17 / 1.05 = 27.78 million**
+
+**Step 3: Value the debt**
+
+> **Debt value today = Total asset value - Equity value = 100 - 27.78 = 72.22 million**
+
+### The Redrawn Balance Sheet
+
+| | Traditional | Option-Based |
+|---|---|---|
+| Assets | 100M | 100M |
+| Equity | 20M (book value) | 27.78M |
+| Debt | 80M (face value) | 72.22M |
+
+> **Professor:** "Your balance sheet is not 100 = 80 + 20. Your balance sheet is 100 = 27.78 equity + 72.22 debt."
+
+**What does this mean for the bond investor?**
+
+They pay **72.22 today** to receive **80 after one year** -- but only if the company survives.
+
+If the company does well (58% chance): Return = (80 - 72.22) / 72.22 = **10.8%**, which is 580 basis points above the risk-free rate.
+
+> **Professor:** "This 10.8% return is an optimistic return provided it goes up. But there is a big if."
+
+If the company fails (42% chance): The lender gets only 70 million back on a 72.22 investment -- a **loss of 2.22 million**. Forget about 5% return -- it is negative.
+
+The risk premium (580 bps above risk-free) compensates for the very real chance of default.
+
+---
+
+## Application 2: Why Distressed Shareholders Love Risky Bets
+
+This is one of the most powerful insights from option theory applied to corporate finance.
 
 ### The Setup
 
-A pharmaceutical company wants to acquire a biotech startup. The biotech company has a drug in **Phase 3 clinical trials** (the final stage before FDA approval).
+Same Vertex Retail company. Assets = 100 million. Debt = 80 million due in one year.
 
-| Outcome | Probability | Biotech Value |
-|---------|------------|---------------|
-| **Trial succeeds** | 40% | 200M |
-| **Trial fails** | 60% | 40M |
+Management can choose between two strategies:
 
-**Expected value today = 0.40 x 200 + 0.60 x 40 = 100M**
+| | Safe Strategy | Risky Strategy |
+|---|---|---|
+| Good outcome | Assets = 130M | Assets = **160M** |
+| Bad outcome | Assets = 70M | Assets = **40M** |
 
-### Strategy 1: Buy Today at 100M
+### The Class Debate
 
-If you buy at 100M (the expected value), your NPV = 0. You are paying fair value. No value created.
+The professor asked: "Will distressed shareholders take safer projects or riskier projects?"
 
-### Strategy 2: Buy the Option Instead
+This triggered a lively class discussion. Some students said "safer" (to avoid making things worse). Others said "riskier" (to try to escape the hole). The professor pushed back on both sides:
 
-Instead of buying the entire company today, pay **20M now** for an **exclusivity clause** (a "no-talk" agreement -- the biotech cannot negotiate with anyone else while you hold the option).
+> **Student:** "They will take more risk because anyway if it is going down, they do not have to pay -- the lender has to bear it. And if they gain, they will gain some portion after reducing the debt."
 
-- If the trial **succeeds**: exercise the option, pay 100M, get a company worth 200M
-- If the trial **fails**: walk away, lose only the 20M premium
+> **Professor:** "They will gain upside -- complete unlimited upside. Because I told you equity shareholders hold a call option on the assets. If it goes up, they gain. If it goes down, they do not lose -- they have lost already. So they just walk out."
 
-**Exercise price = 100M** (the acquisition price if you proceed).
+### The Numbers Prove It
 
-**Option valuation:**
+**Risky strategy calculations:**
 
-Risk-neutral probability of success (P) = 0.4063.
+P (up) = (1.05 - 0.40) / (1.60 - 0.40) = 0.65 / 1.20 = 0.5417 (54%)
 
-> **Option value = (0.4063 x 100) / 1.05 = 38.69M**
+| Scenario | Equity Payoff |
+|----------|---------------|
+| Up (assets = 160) | 160 - 80 = **80 million** |
+| Down (assets = 40) | Walk away = **0** |
 
-> **Net value = 38.69 - 20 (premium paid) = 18.69M positive NPV**
+> **Equity value today = (0.5417 x 80) / 1.05 = 43.33 / 1.05 = 41.27 million**
 
-That 18.69M is the **value of flexibility** -- the value of being able to wait and see before committing the full 100M.
+**Comparing the two strategies:**
 
-### What Makes This a "Real" Option?
+| | Safe Strategy | Risky Strategy | Change |
+|---|---|---|---|
+| Equity value today | 27.78M | 41.27M | **+13.49M** |
+| Debt value today | 72.22M | 58.73M | **-13.49M** |
+| Total asset value | 100M | 100M | **0** |
 
-In financial options, the underlying asset is a stock or bond. In **real options**, the underlying is a **real asset** -- an R&D lab, a factory, a company, a mining lease. The math is the same; the asset is different.
+The balance sheet is a **zero-sum game**. Equity gained exactly 13.49 million. Debt lost exactly 13.49 million.
 
-| Feature | Financial Option | Real Option (M&A) |
-|---------|-----------------|-------------------|
-| Underlying | Stock price | Biotech company value |
-| Strike price | Exercise price | Acquisition price (100M) |
-| Premium | Option premium | Exclusivity fee (20M) |
-| Expiry | Contract expiry | Trial results date |
-| Decision | Exercise or walk out | Acquire or walk away |
+> **Professor:** "Balance sheet is a zero-sum game. If the equity gains, somebody has to lose. Who is losing? The bond holder is losing."
 
----
+### Why This Is Rational (Not Reckless)
 
-## Part 8: Credit Support / Bank Guarantee as a Put Option
+It might **appear** irrational -- why gamble when you are already in trouble? But option theory shows it is perfectly rational:
 
-### The Guarantee Changes Everything
+- Shareholders hold a **call option**. Higher volatility **increases** option value.
+- If the risky bet pays off: equity payoff goes from 50M to **80M** in the up state. Massive gain.
+- If the risky bet fails: equity is **0** in both cases (safe: assets at 70, risky: assets at 40). The shareholder's loss is the same -- zero.
 
-Go back to our distressed company: assets 100M, debt 80M, bond value 72.22M (return 10.8%).
+Heads I win big, tails I lose nothing extra.
 
-Now suppose the **government guarantees** the 80M debt. If the company defaults, the government pays the shortfall.
+> **Professor:** "It might appear irrational but actually is not irrational. They understand the option theory. They behave that way to maximize the value of the option."
 
-**Without guarantee:**
-- Bond value = 72.22M
-- Required return = 10.8% (includes default risk premium)
+### Why Lenders Put Covenants in Loan Agreements
 
-**With guarantee:**
-- Bond value = 80 / 1.05 = **76.19M**
-- Required return = ~5% (near risk-free, because guarantee removes default risk)
+This is precisely why loan agreements contain **covenants** -- restrictive clauses on what borrowers can do:
 
-### The Guarantee is a Written Put
+> **Professor:** "That is why lenders, on their term sheet when they lend money, they sign terms and conditions. In that they mention: without my consent, if my loan is not yet repaid, if you want to make any major investment, my consent is required. Because I know that if you take a risky bet, I will lose -- you will get at my cost."
 
-The guarantor (government or bank) is essentially writing a **put option** on the firm's assets:
-
-> **Guarantee payoff = max(F - V, 0)**
-
-- If V >= F: guarantee is not triggered, payoff = 0
-- If V &lt; F: guarantor pays the shortfall (F - V)
-
-This is exactly the payoff of a put option with strike price = F. The guarantee "puts" the default risk onto the guarantor, allowing the bond to trade at near risk-free rates.
-
-The value of the guarantee = 76.19 - 72.22 = **3.97M** -- this is the "put premium" that the guarantor is implicitly bearing.
+Covenants exist because lenders understand that once the money is lent, shareholders have every incentive to gamble with it.
 
 ---
 
-## Part 9: Introduction to Interest Rate Swaps
+## Application 3: M&A as a Real Option (The Pharma Example)
 
-### What is an Interest Rate Swap?
+### The Setup
 
-An **Interest Rate Swap (IRS)** is a contract where two parties agree to **exchange interest payments** on a specified principal amount. The principal itself is **never exchanged** -- it is called the **notional principal** and exists only to calculate the interest amounts.
+A pharmaceutical company wants to acquire a biotech company whose value depends on a **Phase 3 clinical trial**:
+- If the trial **succeeds**: company value = **200 million**
+- If the trial **fails**: company value = **40 million**
+- Current asking price: **100 million**
 
-> **Professor's clarification:** "Swap is not for protection. Swap is converting one type of interest to another type."
+**Option A: Buy now at 100 million**
 
-### Two Basic Structures
+NPV = 100 million (asset value) - 100 million (price) = **Zero NPV**. Not exciting.
 
-| Structure | Party A Pays | Party A Receives |
-|-----------|-------------|-----------------|
-| **Pay Fixed, Receive Floating** | Fixed rate (e.g., 6%) | Floating rate (e.g., SOFR + spread) |
-| **Pay Floating, Receive Fixed** | Floating rate | Fixed rate |
+**Option B: Stage the acquisition**
 
-### Purpose 1: Converting Interest Rate Type
+The pharma company pays **20 million now** for an exclusivity clause -- a **no-talk agreement** (the biotech cannot negotiate with anyone else). If the trial succeeds, the pharma pays an additional **100 million** to complete the acquisition.
 
-A bank's balance sheet often has a **mismatch**:
-- **Assets** (loans) earn a **fixed rate** (e.g., home loans at 8.5%)
-- **Liabilities** (deposits) pay a **floating rate** (linked to repo rate)
+> **Professor:** "I will wait but I will pay you a token amount so that you do not talk to anybody else. This is for exclusive. This is also called a no-talk clause."
 
-If rates rise, deposit costs go up but loan income stays flat -- the bank gets squeezed. An IRS can **align** the two sides:
-- Enter a swap: pay fixed, receive floating
-- Now the floating receipts from the swap offset the floating costs on deposits
-- The bank's net position is fixed-on-fixed -- matched
+This is a **call option** on the biotech company:
+- **Premium paid today:** 20 million (the exclusivity fee)
+- **Exercise price:** 100 million (the additional payment if the trial succeeds)
+- **Underlying asset:** The biotech company's post-trial value
 
-### Purpose 2: Reducing Borrowing Cost
+### Valuing the Option
 
-Sometimes two companies have different **comparative advantages** in fixed vs floating markets. By swapping, both can end up paying less than they would independently. (This will be explored in detail in the next session.)
+Using risk-neutral pricing:
+
+P (up) = 0.4063 (about 40% chance of trial success)
+
+If the trial succeeds, the payoff = 200 - 100 = **100 million** (you pay 100 to access a 200-value company).
+If it fails, the payoff = **0** (walk away, losing only the 20 million already paid).
+
+> **Option value today = (0.4063 x 100) / 1.05 = 40.63 / 1.05 = 38.69 million**
+
+> **Net value = Option value - Premium paid = 38.69 - 20 = 18.69 million**
+
+### The Value of Flexibility
+
+| Approach | Total Paid | NPV |
+|----------|-----------|-----|
+| Buy today at 100M | 100M | **0** (zero NPV) |
+| Stage: 20M now + 100M later | 120M total | **+18.69 million** |
+
+Notice something remarkable: you actually pay **more in total** (120 vs. 100), yet the NPV is **positive at 18.69 million**. How? Because you have the **option to walk away** if the trial fails. That flexibility has value.
+
+> **Professor:** "This 18.69 is called the value of flexibility. The flexibility that I can wait for one year -- that has a value. If you wait, your investment becomes a positive NPV project. If you do not wait, zero NPV."
+
+### What Are Real Options?
+
+When the underlying asset is a **real asset** (a company, a drug pipeline, a coal mine, an R&D lab) rather than a financial asset (a stock), the options are called **real options**.
+
+> **Professor:** "Real option meaning the underlying is a real asset. It may be a coal mine. It may be an R&D lab of a pharma company. It may be an actual operating company I am buying. You can apply the same option theory but then it is called a real option, not a financial option. But conceptually they are the same."
+
+---
+
+## Application 4: Government Guarantee as a Put Option
+
+### The Setup
+
+Same Vertex Retail. Assets = 100 million. Debt = 80 million due in one year.
+
+Now suppose a **government or parent company** guarantees the debt: "If Vertex cannot repay the full 80 million, we will cover the shortfall."
+
+- Good state (assets = 130): Vertex repays 80 in full. Guarantor pays **nothing**.
+- Bad state (assets = 70): Vertex can only pay 70. Guarantor pays the **10 million shortfall**.
+
+> **Guarantor's payoff = max(F - V, 0) = max(80 - 70, 0) = 10 million**
+
+This is exactly the payoff of a **put option** on the firm's assets with an exercise price of 80 million. The guarantor has **written** this put.
+
+### Impact on Bond Pricing
+
+| | Without Guarantee | With Guarantee |
+|---|---|---|
+| Bond price today | 72.22M | **76.19M** |
+| Return if good state | 10.8% | ~5% (near risk-free) |
+
+With the guarantee, the bond becomes nearly risk-free. An investor pays **76.19 today** to receive **80 after one year** -- a return close to the 5% risk-free rate.
+
+The professor confirmed this with the class: "I put 76.19 and I get 80 after one year, what is your return?"
+
+A student calculated: "About 5%."
+
+> **Professor:** "Which means you are still getting the risk-free rate -- slightly above risk-free rate. Although not 10% -- because you are paying more premium, 76, to buy the bond which will mature at 80."
+
+The guarantee has eliminated almost all of the credit risk premium. The difference between the two bond prices (76.19 - 72.22 = **3.97 million**) represents the value of the guarantee -- the implicit "put premium."
+
+---
+
+## Part 3: Introduction to Interest Rate Swaps
+
+With options complete, the professor introduced the **last derivative instrument** of the course: the interest rate swap (IRS).
+
+### What Is a Swap?
+
+The English word "swap" means exchange. In an interest rate swap, **two parties exchange interest payments** -- one pays fixed, the other pays floating. The **principal amount is never exchanged**; it is only used to calculate the interest amounts.
+
+> **Professor:** "The principal is called notional principal. The principal is never exchanged. It is used to calculate the interest amount that is exchanged."
+
+### Why Would You Swap?
+
+Imagine you have a floating rate loan, but you want certainty. Your bank says: "You signed up for floating -- deal with it."
+
+What do you do? You go to the **swap market** (an OTC market) and find a counterparty:
+
+- **You pay fixed** to the counterparty
+- **You receive floating** from the counterparty
+- **You pay floating** to your original lender (this cancels with the floating you received)
+
+**Net effect:** Floating in, floating out -- cancelled. You are now paying a **fixed rate**. You have synthetically converted a floating loan into a fixed loan.
+
+### The Bank Asset-Liability Mismatch
+
+The most common real-world motivation for swaps:
+
+| | Asset Side (Loans Given) | Liability Side (Deposits Taken) |
+|---|---|---|
+| Interest type | **Fixed** (borrowers pay fixed rate) | **Floating** (deposits reprice every 3-6 months) |
+| Problem | If rates rise, deposit costs rise, but loan income stays flat | Margin gets squeezed |
+
+> **Professor:** "For a bank there is a problem that on the asset side, the asset is giving them fixed rate of return. The liabilities are going for floating rate of cost."
+
+The bank cannot go to its existing borrowers and say "from tomorrow, pay floating." Instead, it enters a swap with a **third-party counterparty** to synthetically convert one side. Either convert liabilities to fixed (fixed and fixed) or convert assets to floating (floating and floating).
+
+### How Swap Differs from FRA
+
+A student asked how swaps differ from Forward Rate Agreements (FRAs). The professor drew a clear line:
+
+> **"FRA is: I have to borrow money 3 months from now for 6 months, and I want to fix the rate today for that future period. Swap is different -- it is converting one type of interest to another type, fixed to floating or floating to fixed, starting today."**
+
+Another student pushed: "But sir, in a way it is protection, right?"
+
+> **Professor:** "Swap is not for protection. Swap is converting. I am not protecting a particular interest rate. I am hedging against my other leg of interest."
+
+### Three Objectives of Interest Rate Swaps
+
+| Objective | Explanation |
+|-----------|-------------|
+| **Asset-liability management** | Match the interest type on both sides of the balance sheet (fixed-fixed or floating-floating) |
+| **Lower borrowing cost** | Two parties with different comparative advantages swap to reduce costs for both (covered in next session) |
+| **Alter portfolio duration** | Change the interest rate sensitivity of a bond portfolio |
 
 ### How Swap Quotes Work
 
-A market maker (bank) quotes two rates:
+In the OTC swap market, **market makers** quote two fixed rates against a floating benchmark (LIBOR internationally, MIBOR in India):
 
-| Quote | Rate | Meaning |
-|-------|------|---------|
-| **Bid** | 6.02% | Rate the market maker **pays** (fixed) |
-| **Offer** | 6.08% | Rate the market maker **receives** (fixed) |
-| **Swap Rate** (midpoint) | 6.05% | Reference rate for the market |
-| **Spread** | 6 basis points | Market maker's profit margin |
+| | Rate | What It Means |
+|---|---|---|
+| **Bid rate** | 6.02% | Market maker **pays** you 6.02% fixed and **receives** floating from you |
+| **Offer rate** | 6.08% | Market maker **receives** 6.08% fixed from you and **pays** floating to you |
+| **Spread** | 0.06% (6 bps) | Market maker's profit margin |
+| **Swap rate** | 6.05% | Midpoint of bid and offer |
 
-The 6 basis point spread (0.06%) is how the market maker earns revenue -- buying fixed at 6.02% and selling fixed at 6.08%.
+The floating rate (LIBOR/MIBOR) cancels out between the two legs. The market maker earns **6 basis points** on the notional principal as their margin.
 
-### How Swaps Differ from FRAs
+### Swap vs. Loan Buyout
 
-> **Professor's distinction:** "FRA is for fixing a future borrowing rate. Swap is for converting existing floating to fixed."
+A student asked: "If someone calls me and offers to take over my mortgage loan at a lower interest rate, is that a swap?"
 
-| Feature | FRA (Forward Rate Agreement) | Interest Rate Swap |
-|---------|-------|---------------------|
-| Purpose | Lock in a **future** borrowing rate | Convert **existing** interest type |
-| Duration | Single period | Multiple periods (ongoing) |
-| Settlement | One-time payment at start | Periodic net settlements |
-| Principal | Notional (never exchanged) | Notional (never exchanged) |
+> **Professor:** "No, that is a buy and sell of the loan. In that case you are exchanging the principal. Here principal is notional -- there is no exchange of principal. Only the interest is exchanged. And what happens is a net settlement -- it is not that I pay 100 and you pay me 99. The difference is settled."
 
 ---
 
@@ -483,26 +700,27 @@ The 6 basis point spread (0.06%) is how the market maker earns revenue -- buying
 
 | Formula | Expression |
 |---------|-----------|
-| **Replicating Portfolio (Call)** | C0 = (Portfolio Value Today) / Replication Ratio |
-| **Risk-Neutral Probability** | Q = (S0 x (1 + Rf) - SD) / (SU - SD) |
-| **Call Price (Risk-Neutral)** | C0 = (Q x CU + (1 - Q) x CD) / (1 + Rf) |
-| **Black-Scholes Call** | C0 = S0 x N(D1) - E x e^(-rT) x N(D2) |
-| **D1** | [ln(S/E) + (r + sigma^2 / 2) x T] / (sigma x sqrt(T)) |
+| **Replicating Portfolio Call Price** | C0 = (Portfolio Value Today) x (Call/Portfolio ratio at expiry) |
+| **Risk-Neutral Probability (Q)** | (1 + Rf - D) / (U - D) |
+| **Binomial Call Price** | (Q x Payoff_up + (1-Q) x Payoff_down) / (1 + Rf) |
+| **Black-Scholes Call** | S x N(D1) - E x e^(-rT) x N(D2) |
+| **D1** | [ln(S/E) + (r + sigma^2/2) x T] / (sigma x sqrt(T)) |
 | **D2** | D1 - sigma x sqrt(T) |
-| **Equity as Call** | Equity = max(V - F, 0) |
-| **Debt Payoff** | Debt gets = min(V, F) |
-| **Guarantee Payoff** | Guarantor pays = max(F - V, 0) |
+| **Equity (Option View)** | max(V - F, 0) -- a call option on firm assets |
+| **Debt Payoff** | min(V, F) -- written put on firm assets |
+| **Guarantee Payoff** | max(F - V, 0) -- a put option |
+| **Swap Rate** | (Bid rate + Offer rate) / 2 |
 
 ---
 
 ## The Recipe Chain
 
-**Binomial Model** (replicating portfolio, risk-neutral Q) -> **Black-Scholes** (closed-form, sigma as key input) -> **Implied Volatility / VIX** (back out sigma from market prices) -> **Option Lens on Balance Sheet** (equity = call, debt = written put) -> **Financial Distress** (shareholders love volatility, zero-sum game) -> **Real Options** (M&A as option, value of flexibility) -> **Guarantees as Put** (credit support = written put) -> **Interest Rate Swaps** (converting interest types, not hedging)
+**Futures Hedging** (duration-based contracts to offset portfolio risk) --> **FRA** (fixing future borrowing rates) --> **Options Basics** (asymmetric payoff, premium = IV + TV, put-call parity) --> **Option Pricing** (Binomial tree with replicating portfolio, risk-neutral probability Q, Black-Scholes with sigma and drift) --> **Implied Volatility** (back out sigma from market prices, VIX as fear index) --> **Options in Corporate Finance** (equity = call on assets, debt = written put, exercise price = face value of debt) --> **Financial Distress** (shareholders love volatility because call value rises, zero-sum with bondholders, lender covenants as defense) --> **Real Options** (M&A staging as call option, value of flexibility = premium for waiting) --> **Guarantees** (credit support = written put, removes risk premium from bonds) --> **Interest Rate Swaps** (converting fixed to floating or vice versa, notional principal, bid-offer-swap rate)
 
 ---
 
 ## What's Next
 
-- **Next session:** Deep dive into Interest Rate Swaps -- comparative advantage, swap structuring, and numerical examples of how two companies reduce borrowing costs through swapping
-- **Key connection:** Swaps complete the risk management toolkit (forwards, futures, options, swaps) -- each tool manages a different type of financial risk
-- **Remember:** The option lens is not just theory -- it explains why distressed firms gamble, why covenants exist, and why M&A deals are structured as staged payments rather than upfront purchases
+- **Swap valuation** -- how do you calculate the value of a swap? How does converting fixed to floating actually reduce borrowing costs? The professor promised to complete this in the first 30 minutes of the next session.
+- **Quiz on Saturday** -- covering options (the pre-read uploaded to LMS). The professor was explicit: "The quiz will be on the pre-read of options. Swaps -- no quiz. Swap is kept reserved for the end-term." Quiz starts at 5:15 PM.
+- **After swaps:** The course pivots to its final major topic -- **International Financial Management** (managing finance across borders, currencies, and exchange rate regimes).

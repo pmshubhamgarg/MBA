@@ -5,473 +5,524 @@ title: "Session 13: Interest Rate Swaps and Introduction to International Financ
 
 # Session 13: Interest Rate Swaps and Introduction to International Finance
 
-*From converting cash flows to crossing borders -- completing the derivatives toolkit and stepping into currency risk*
+*Converting the uncontrollable into the predictable — and stepping into the world of cross-border exposure*
 
 ---
 
-## Recap: What Is an Interest Rate Swap?
+## The Big Picture: Why Swaps Exist
 
-Before diving deeper, let's anchor the key ideas from last session.
+Imagine you run a textile company. You went to a bank and took a working capital loan at a floating rate because that is what was available. Everything was fine until you heard that the RBI monetary policy committee is about to sit down and hike the repo rate. Suddenly, your comfortable loan becomes a ticking time bomb — every rate hike means you pay more interest, and you have zero control over it.
 
-An **Interest Rate Swap (IRS)** is an OTC contract where two parties exchange interest payments on a notional principal. One pays fixed, the other pays floating. The principal itself never changes hands -- only the net interest difference is settled each period.
+You go back to your bank and say, "Can you convert my floating rate loan into a fixed rate?" The bank says no. Now what?
+
+You go to the **swap market** and **synthetically** convert your floating obligation into a fixed one. That is the entire reason interest rate swaps exist — not to save money on interest, but to give you **certainty over your cash flows**.
+
+> **Professor's key point:** "Please remember, interest rate swap is not to reduce interest rate. It is to convert floating to fixed because of fear of fluctuation in the interest rate."
+
+---
+
+## Quick Recap: How IRS Works (From Session 12)
+
+An **Interest Rate Swap (IRS)** is an OTC contract where two parties exchange interest payments on a notional principal. One pays fixed, the other pays floating. The principal itself never changes hands — only the net interest difference is settled each period.
 
 Two core objectives of IRS:
 
 1. **Convert one type of rate to another** (floating to fixed, or vice versa)
 2. **Reduce borrowing cost** through comparative advantage
 
-### How Swap Quotes Work
+| Feature | Detail |
+|---------|--------|
+| **Market type** | OTC (not exchange-traded) |
+| **Contract type** | Bipartite (two parties — you and the counterparty) |
+| **Settlement** | Net (only the difference is exchanged) |
+| **Frequency** | Typically semi-annual |
+| **Principal** | Notional only — never exchanged |
 
-A swap dealer (market maker) provides two-way quotes:
+---
+
+## The Market Maker's Quote: Bid, Ask, and Swap Rate
+
+When you approach a bank (market maker) for a swap contract, they give you **two rates** — a bid and an offer:
 
 | Quote | Rate | Meaning |
 |-------|------|---------|
 | **Bid** | 6.02% | Rate at which the dealer pays fixed |
-| **Offer** | 6.08% | Rate at which the dealer receives fixed |
-| **Swap Rate** (midpoint) | 6.05% | The "fair" swap rate |
+| **Offer/Ask** | 6.08% | Rate at which the dealer receives fixed |
+| **Swap Rate** (midpoint) | 6.05% | The "best" price for you to enter |
+| **Bid-Ask Spread** | 6 basis points | Where the bank makes money |
 
-The dealer earns the **spread** (6.08% - 6.02% = 6 basis points). This is their compensation for standing in the middle. The tighter the spread, the cheaper it is for companies to enter swaps.
+> **Professor:** "6.05 is the true or the best swap rate whether you receive it or you pay it. But when you actually go to market, you don't get 6.05."
 
----
-
-## Fixed vs Floating: Why Pay More?
-
-This is a question students keep asking -- and the professor addressed it head-on.
-
-When you enter a fixed rate contract, **on that day, the fixed rate IS higher than the floating rate**. So why would anyone choose fixed?
-
-> **Professor's answer:** "When you enter into a fixed rate contract, on that day fixed rate IS higher than floating rate. But you enter fixed because over the 10-year period, floating will change -- it may go above your fixed rate."
-
-The purpose of choosing fixed is **not** to pay less. It is to **fix** the payment. You are buying certainty. You know exactly how much goes out every period -- no surprises, no sleepless nights when the RBI announces a rate hike.
-
-Think of it like a fixed EMI on your home loan. You might pay slightly more than the teaser floating rate today, but you sleep well for 20 years knowing the payment won't jump.
+If you are **paying fixed**, you pay at 6.08% (the offer rate). If you are **receiving fixed**, you get 6.02% (the bid rate). The bank always wins the spread.
 
 ---
 
-## Converting Floating to Fixed Using IRS
+## Fixed vs. Floating: What Is Your Real Fear?
 
-### The Problem
+A student asked whether fixed rate is always lower than floating. The professor corrected this important misconception:
 
-You have a floating rate loan from your bank. Your fear? Interest rates go **up**. Every time rates rise, your interest payment increases. Your cash flow becomes unpredictable.
+> **Professor:** "When you enter into a fixed rate contract, on that day fixed rate is higher than the floating rate. But still you enter into fixed because as the time passes, floating rate will change. It may go up above your fixed rate."
 
-### The Solution
+And the critical follow-up:
 
-Enter a **pay-fixed-receive-floating** IRS.
+> "It is not that if you enter into a fixed contract your objective is to pay less. No. Your objective is to fix the payment."
 
-Here is how the cash flows work:
-
-1. You **pay fixed** to the swap counterparty
-2. You **receive floating** from the swap counterparty
-3. You **pay floating** to your actual bank (your original loan)
-
-The floating you receive from the swap and the floating you pay to your bank **cancel each other out**. What remains? Just the fixed payment to the swap counterparty.
-
-> **Floating Rate Debt + IRS (pay fixed, receive floating) = Fixed Rate Debt (synthetically)**
-
-You have not refinanced your loan. You have not gone back to your bank. You have simply layered a swap on top and converted your floating exposure to fixed -- synthetically.
+Think of it like a fixed EMI on your home loan. You might pay slightly more than the teaser floating rate today, but you sleep well for 20 years knowing the payment will not jump.
 
 ---
 
-## The Risk Depends on Which Side You Are On
+## Which Side Are You On? Liability vs. Asset
 
-This is subtle but important. The risk from interest rate changes is **different** depending on whether you hold an asset or a liability, and whether the rate is fixed or floating.
+The professor walked through a careful exchange with a student named Mukund to establish this:
 
-### Liability Side (You Owe Money)
+**If you have a floating rate loan (liability side):**
 
-| Type | Your Fear | Why |
-|------|-----------|-----|
-| **Floating rate liability** | Interest rates go **UP** | You pay more each period |
-| **Fixed rate liability** | No direct cash flow risk | Payment is locked (but opportunity cost if rates fall) |
+> **Professor:** "You have a floating rate loan. What is your fear?"
 
-### Asset Side (You Are Owed Money)
+The fear is **rising interest rates** — you have to pay more. So you hedge by entering an IRS where you pay fixed and receive floating. The floating legs cancel, and you are left paying a fixed amount.
 
-| Type | Your Fear | Why |
-|------|-----------|-----|
-| **Floating rate asset** | Interest rates go **DOWN** | You receive less income |
-| **Fixed rate asset** | Interest rates go **UP** | Present value of the asset drops (mark-to-market loss hits P&L) |
+**If you have a floating rate asset (asset side, e.g., a bank that gave a floating rate loan):**
 
-A bank that has given a floating rate loan fears falling interest rates -- its income shrinks. A bank holding a fixed rate bond fears rising interest rates -- the bond's market value drops.
+> **Professor:** "If I have a floating interest rate asset, my fear is if the interest goes down."
 
-The direction of risk is **opposite** for assets and liabilities. This matters when you decide which side of the swap to take.
+If rates fall, the bank receives less income on its floating-rate loan portfolio.
+
+**If you have a fixed rate asset:**
+
+When interest rates rise, the **present value** (mark-to-market value) of a fixed rate bond falls. This hits the P&L adversely. But this is a **value risk**, not a cash flow risk — and IRS cannot help here.
+
+| Your Position | Your Fear | Hedge Action |
+|---------------|-----------|-------------|
+| Floating rate **liability** | Rates go **up** | Pay fixed IRS, receive floating |
+| Floating rate **asset** | Rates go **down** | Pay floating IRS, receive fixed |
+| Fixed rate **asset** | Rates go **up** (value drops) | Use futures/options (IRS cannot help) |
+
+> **Professor's summary:** "On the liability side, my risk is if interest rate goes up. On the asset side, if the asset is in floating interest rate, my risk is if the interest goes down."
+
+A student asked for an example of a floating rate asset. The professor used the student's own home loan:
+
+> "Have you ever taken a bank loan for buying a flat? At floating rate? Then you already have an example. For the bank, that loan is a floating rate asset."
 
 ---
 
-## Detailed IRS Example: Company A and Bank B
+## Converting Floating to Fixed: The Mechanics
 
-Let's walk through a complete numerical example.
+**Step 1:** You have a floating rate loan with your bank. You cannot change it.
+
+**Step 2:** You enter an IRS where you **pay fixed** to the swap counterparty and **receive floating** from them.
+
+**Step 3:** The floating you receive from the swap counterparty, you use to pay your actual bank.
+
+**Step 4:** The floating legs cancel out. Net effect — you are paying fixed.
+
+> **The equation:** Floating Rate Debt + IRS (pay fixed, receive floating) = Fixed Rate Debt (synthetically)
+
+Of course, there is a cost — instead of getting the swap rate at 6.05%, you might pay 6.08% (the offer rate). But you know exactly what you are paying.
+
+---
+
+## Numerical Example 1: Company A and Bank B (LIBOR Swap)
+
+**Setup:**
+- Company A enters IRS with Bank B on **1st April 2005**
+- **A pays:** 5% fixed, semi-annually
+- **B pays:** 6-month LIBOR (floating)
+- **Notional principal:** 100 million (never exchanged)
+- **Duration:** 2.5 years (5 semi-annual payments)
+
+### Critical Rule: Rate Set in Advance, Paid in Arrears
+
+> **Professor:** "First time when they are paying after 6 months of entering into contract, they are paying at a rate which was prevalent on 1st April. They are not paying at a LIBOR rate which is on the day of payment."
+
+The floating rate is **locked** at the start of each 6-month period and **applied** at the end.
+
+### Period 1 (1st October 2005) — LIBOR on April 1 was 4.8%:
+
+| Item | Amount (millions) |
+|------|-------------------|
+| A pays B (fixed): 5% / 2 on 100M | 2.5 |
+| B pays A (floating): 4.8% / 2 on 100M | 2.4 |
+| **Net settlement:** A pays B | 0.1 |
+| A also pays its physical bank (floating loan) | 2.4 |
+| **Total A pays:** 2.4 + 0.1 | **2.5** |
+
+### A Later Period (1st October 2006) — LIBOR on April 2006 was 5.2%:
+
+| Item | Amount (millions) |
+|------|-------------------|
+| A pays B (fixed) | 2.5 |
+| B pays A (floating): 5.2% / 2 on 100M | 2.6 |
+| **Net settlement:** A receives from B | 0.1 |
+| A pays its physical bank (floating loan) | 2.6 |
+| **Total A pays:** 2.6 - 0.1 | **2.5** |
+
+> **Professor:** "If you look at the net settlement column, add them — you are always paying 2.5 overall. And that is what Company A wanted — to convert a floating loan into a fixed loan."
+
+Whether LIBOR is 4.8% or 5.2% or anything else — Company A always pays **2.5 million**. The swap has perfectly converted the floating obligation into a fixed one.
+
+---
+
+## Using IRS to Lower Borrowing Cost: The Comparative Advantage Story
+
+This is the second major use of swaps — not just to convert rates, but to actually **reduce** your borrowing cost through comparative advantage.
 
 ### The Setup
 
-- **Company A** pays Bank B **5% fixed** (semiannual) for **2.5 years**
-- **Bank B** pays Company A **6-month LIBOR** (floating)
-- **Notional principal:** 100 million USD
-- Contract signed on **1st April 2005**, LIBOR on that day = **4.8%**
+| Company | Credit Rating | Fixed Rate Available | Floating Rate Available | What They Want |
+|---------|--------------|---------------------|------------------------|----------------|
+| **A** | AAA | 8.0% | LIBOR + 0.50% | Floating |
+| **B** | Single A | 9.5% | LIBOR + 1.20% | Fixed |
 
-### Critical Rule About Floating Rates
+Now here is where the entire class got confused. Student after student said A should borrow floating (since that is what A wants). The professor pushed back firmly:
 
-The floating rate for any period is set at the **beginning** of that period, not at the end. So the LIBOR observed on the contract signing date determines the first floating payment.
+> **Professor:** "So the answer is they will borrow fixed. Why fixed? Because of comparative advantage."
 
-### Period 1: April 2005 to October 2005
+### The Comparative Advantage Logic
 
-LIBOR at start of period (1st April 2005) = 4.8%
+Company A is AAA-rated, so it borrows cheaper than B in **both** markets. But **how much** cheaper?
 
-| Payment | Calculation | Amount |
-|---------|-------------|--------|
-| Fixed (A pays) | 100M x 5% / 2 | 2.5M |
-| Floating (A receives) | 100M x 4.8% / 2 | 2.4M |
-| **Net** | A pays the difference | **0.1M** |
+| Market | A's Rate | B's Rate | A's Advantage |
+|--------|----------|----------|---------------|
+| **Fixed** | 8.0% | 9.5% | **150 basis points** |
+| **Floating** | L + 0.50% | L + 1.20% | **70 basis points** |
 
-Company A's total interest cost:
-- Pays 2.4M to its physical bank (floating rate on actual loan)
-- Pays 0.1M net to swap counterparty
-- **Total = 2.5M**
+A has a **bigger advantage in fixed** (150 bps vs. 70 bps). So A should borrow where its advantage is greatest — **fixed** — even though A actually wants floating. Similarly, B should borrow **floating** (where its disadvantage is smallest), even though B wants fixed.
 
-### Period 3: April 2006 to October 2006
+**Result:** Both borrow at the "wrong" type from the physical market, then use a swap to convert to what they actually want.
 
-Now LIBOR has risen to 5.2% (set on 1st April 2006).
+### How the Swap Works (With a Financial Intermediary)
 
-| Payment | Calculation | Amount |
-|---------|-------------|--------|
-| Fixed (A pays) | 100M x 5% / 2 | 2.5M |
-| Floating (A receives) | 100M x 5.2% / 2 | 2.6M |
-| **Net** | A receives the difference | **0.1M** |
-
-Company A's total interest cost:
-- Pays 2.6M to its physical bank (floating rate has increased)
-- Receives 0.1M from swap counterparty
-- **Total = 2.6M - 0.1M = 2.5M**
-
-### The Key Insight
-
-In **every single period**, regardless of where LIBOR goes, Company A always pays a total of **2.5M**. The swap has perfectly converted a floating rate liability into a fixed rate liability.
-
-When rates are low, the swap costs A a little extra. When rates are high, the swap saves A money. But the total is always the same -- and that predictability is exactly the point.
-
----
-
-## Using IRS to Lower Borrowing Cost: Comparative Advantage
-
-This is the second powerful use of swaps -- and it relies on the same logic as international trade (Ricardo's comparative advantage).
-
-### The Setup
-
-Two companies want to borrow:
-
-| Company | Credit Rating | Fixed Rate Available | Floating Rate Available | Wants |
-|---------|--------------|---------------------|------------------------|-------|
-| **A** | AAA | 8.0% | LIBOR + 0.5% | Floating |
-| **B** | A | 9.5% | LIBOR + 1.2% | Fixed |
-
-Company A is better in **both** markets (it has absolute advantage everywhere). But look at the **gap** between them:
-
-- Fixed market gap: 9.5% - 8.0% = **150 basis points**
-- Floating market gap: (L+1.2%) - (L+0.5%) = **70 basis points**
-
-A's advantage is **much larger** in the fixed market (150 bps vs 70 bps). So A has **comparative advantage** in fixed rate borrowing, and B has comparative advantage in floating rate borrowing.
-
-### The Strategy: Borrow Where You Have Comparative Advantage, Then Swap
-
-- **A wants floating** but borrows **fixed at 8%** (where its advantage is greatest)
-- **B wants fixed** but borrows **floating at LIBOR + 1.2%** (where its disadvantage is smallest)
-- Both approach a **financial institution (FI)** to arrange a swap
-
-### The Swap Flows
+Both approach a financial institution (FI). A and B **do not know each other**. The FI handles both sides independently.
 
 **Company A's flows:**
-- Pays 8% to its physical lender (fixed loan)
-- Pays LIBOR to the FI (swap: A pays floating)
-- Receives 7.8% from the FI (swap: A receives fixed)
-- **Net cost = LIBOR + 8% - 7.8% = LIBOR + 0.2%**
-- Direct floating would have cost LIBOR + 0.5%
-- **A saves 30 basis points**
+- Borrowed at **8% fixed** from the physical market
+- Swap: Pays **LIBOR** to FI, receives **7.8%** from FI
+- Pays its lender: 8%. Receives from swap: 7.8%. Gap: 0.2%
+- **Net cost = LIBOR + 0.2%**
+- Had A borrowed floating directly: LIBOR + 0.50%
+- **Saving for A: 30 basis points**
 
 **Company B's flows:**
-- Pays LIBOR + 1.2% to its physical lender (floating loan)
-- Pays 8% to the FI (swap: B pays fixed)
-- Receives LIBOR from the FI (swap: B receives floating)
-- **Net cost = 8% + 1.2% = 9.2% fixed**
-- Direct fixed would have cost 9.5%
-- **B saves 30 basis points**
+- Borrowed at **LIBOR + 1.20%** from the physical market
+- Swap: Pays **8% fixed** to FI, receives **LIBOR** from FI
+- L received from FI cancels L paid to lender. Extra: 1.20%
+- **Net cost = 8% + 1.20% = 9.20% fixed**
+- Had B borrowed fixed directly: 9.50%
+- **Saving for B: 30 basis points**
 
-**Financial Institution's flows:**
-- Receives 8% from B, pays 7.8% to A = **earns 20 basis points**
-- Receives LIBOR from A, pays LIBOR to B = net zero on floating
+**The Financial Institution earns:**
+- Receives 8% from B, pays 7.8% to A = **20 basis points**
+- On the floating side, LIBOR in = LIBOR out = net zero
 
-### Why the FI Loves This Business
+> **Professor:** "For the financial institution which is an intermediary, there is a huge return because without any investment they are making 20 bips."
 
-> **Professor's exact words:** "For the financial institution which is a intermediary there is a huge return because without any investment they are making 20 bips."
+### Total Gains Check
 
-The FI has no loan on its books. It has not lent money to anyone. It simply sits in the middle, passing payments through, and earns 20 basis points on the notional principal. On a notional of 100 crore, that is **20 lakh every 6 months** -- for essentially zero capital deployed.
-
-The only risk? **Credit risk** -- if one party defaults on their swap payments. But that is a fraction of the risk of actually lending 100 crore.
-
-### Total Gains
-
-The total savings = 150 bps - 70 bps = **80 basis points**. These are split:
-- A gets 30 bps
-- B gets 30 bps
-- FI gets 20 bps
+Total gain available = difference in comparative advantages = 150 - 70 = **80 basis points**, split:
+- A: 30 bps
+- B: 30 bps
+- FI: 20 bps
 - Total: 80 bps (the entire comparative advantage differential is captured)
 
----
+The FI's risk? If one party defaults, the FI must still honor its contract with the other.
 
-## IRS Spread: A Window into the Economy
+> **Professor:** "On a notional amount of 100 crore, 20 basis points is not bad — 20 lakh rupees every 6 months you are getting, to take care of your overhead plus any credit risk."
 
-The spread between bid and offer on swap quotes is not just a transaction cost -- it is an **economic indicator**.
+### Key Clarifications from Class Q&A
 
-| Spread | What It Means | When It Happens |
-|--------|--------------|-----------------|
-| **Tight** (e.g., 6 bps) | Swap market is cheap; low default risk | Good economic conditions, stable ratings |
-| **Wide** (e.g., 10+ bps) | Swap market is expensive; high default risk | Economy deteriorating, company ratings falling |
+**Q: Is this a tripartite agreement?**
+> **Professor:** "Bipartite. You don't know who is on the other side. These are customized contracts that the institution signs with one guy and separately with another guy. They don't match, and they don't need to know each other."
 
-When the economy weakens, more companies face potential default. The intermediary charges a wider spread to compensate for the higher credit risk. So if you are watching swap spreads and they start widening, it signals that the market expects **short-term economic trouble**.
+**Q: Is the financial institution the same bank that gave the original loan?**
+> **Professor:** "No. Think about this example. A has borrowed not from a bank. It has issued a bond. Now A, after raising money from the bond market, goes to a bank for swap."
 
-Best time to enter a swap? When the spread is **tight** -- you pay the least to the intermediary.
+**Q: Are both A and B borrowing the same notional amount?**
+> **Professor:** "Yeah, swap is done on the same notional value."
 
----
-
-## Fair Value Hedge vs Cash Flow Hedge
-
-This distinction matters for understanding what IRS can and cannot do.
-
-| Hedge Type | Protects Against | Instrument |
-|------------|-----------------|------------|
-| **Fair Value Hedge** | Decline in the **value** (market price) of an asset | Futures, forwards, options |
-| **Cash Flow Hedge** | Uncertainty in future **cash flows** | Interest Rate Swaps |
-
-> **Professor's key clarification:** "IRS helps you only in managing cash flows or cash flow risk. For the value risk, you have to go to futures contracts or forward contracts."
-
-If you hold a mutual fund and fear its NAV will drop -- that is a **fair value risk**. Use futures or options.
-
-If you have a floating rate loan and fear your payments will spike -- that is a **cash flow risk**. Use an IRS.
-
-> **Professor:** "IRS is to take care of my cash flow risk. It's a cash flow hedge contract, not a value hedge contract."
-
-This is why IRS is classified differently from the other three derivatives (futures, forwards, options) -- it addresses a fundamentally different type of risk.
+**Q: Do the bid-ask rates change based on counterparty credit rating?**
+> **Professor:** "Of course. If there's a higher credit risk, they will offer a lower rate. So that means they will charge more commission. But these are individual two different contracts."
 
 ---
 
-## MIBOR OIS vs LIBOR: India's Floating Rate
+## What Does the IRS Spread Tell You About the Economy?
 
-India does not use LIBOR. It uses **MIBOR** -- the Mumbai Interbank Offered Rate.
+The bid-ask spread in the swap market is not just a transaction cost — it is an **economic indicator**.
 
-| Feature | LIBOR | MIBOR OIS |
-|---------|-------|-----------|
-| **Frequency** | Polled every 6 months | Daily rate (overnight) |
-| **Fixed for** | Next 6 months | Compounded daily for the period |
-| **Flexibility** | Only 6-month or 12-month periods | Any period (3-month, 4-month, etc.) |
-| **Published by** | ICE (international) | FBIL (arm of RBI) |
-| **Type** | Polled (survey-based) | Realized (actual transactions) |
+When the professor asked what a widening spread implies, a student named Anish nailed it:
 
-The "OIS" in MIBOR OIS stands for **Overnight Index Swap**. The floating rate is the overnight rate, compounded over the contract period. This makes it more **flexible** -- you can structure swaps for any tenor, not just 6-month multiples.
+> **Anish:** "That could be when the volatility or the uncertainty is high in the market."
 
-India is also moving toward **SOFR** (Secured Overnight Financing Rate) for international benchmarks, which like MIBOR is based on actual realized rates rather than polls.
+> **Professor:** "Very good. If you see company ratings are falling... you'll find swap rate going up because ultimately the default risk is with the intermediary. Widening the spread meaning liquidity is lowered — swap contracts are not available."
+
+| Spread | What It Means | Implication |
+|--------|--------------|-------------|
+| **Tight** (e.g., 2 bps) | Low risk, healthy economy | Best time to enter swaps — cheapest |
+| **Wide** (e.g., 10 bps) | High risk, economic stress | Expensive — decide whether to wait |
+
+> **Professor:** "IRS spread also talks about short-term expected economic growth rate or conditions."
 
 ---
 
-## Indian IRS Example: Print Fabrics
+## Fair Value Hedge vs. Cash Flow Hedge
+
+This distinction came up multiple times and the professor stressed it heavily:
+
+| Hedge Type | What You Protect | Example | Instruments Used |
+|------------|-----------------|---------|-----------------|
+| **Fair Value Hedge** | The **value** (present value) of your asset on the balance sheet | Mutual fund NAV dropping because share prices fell | Futures, options, forwards |
+| **Cash Flow Hedge** | The **predictability** of future cash flows | Floating rate loan payments changing unpredictably | **IRS (swaps)** |
+
+> **Professor:** "IRS helps you only in managing cash flows or cash flow risk. For the value risk, you have to go to futures contracts or forward contracts."
+
+**Critical implication:** If you already have a fixed rate loan from the market, you have **no cash flow risk** (payments are known). But you may still have **fair value risk** if interest rates change (the present value of your fixed-rate obligation changes). For that, IRS cannot help you.
+
+> **Professor:** "IRS is to take care of my cash flow risk. It is a cash flow hedge contract, not a value hedge contract."
+
+---
+
+## The Indian Context: MIBOR OIS
+
+In India, swaps do not use LIBOR. They use **MIBOR OIS** (Mumbai Interbank Offered Rate — Overnight Index Swap):
+
+| Feature | LIBOR (London) | MIBOR OIS (India) |
+|---------|---------------|-------------------|
+| **Rate setting** | Polled every 6 months from bankers | Daily overnight rates compounded |
+| **Flexibility** | Fixed 6-month periods | Can compound for any period (3 months, 4 months, etc.) |
+| **Basis** | Survey-based (expected rates) | **Actual realized rates** |
+| **Published by** | ICE (formerly BBA) | FBIL (arm of RBI) |
+
+> **Professor:** "In MIBOR OIS, every day the swap rate is compounded. If you want to enter into a swap contract for 3 months, you compound for 3 months. You want to do it for 4 months, you compound for 4 months because you have the rates on a daily basis."
+
+India is also moving toward **SOFR** (Secured Overnight Financing Rate), which uses actual realized rates instead of polling bankers — more transparent and harder to manipulate.
+
+---
+
+## Numerical Example 2: Print Fabrics (Indian IRS with MIBOR OIS)
 
 ### The Setup
 
-Print Fabrics is an Indian company with a **working capital loan at a floating rate**. The company fears the RBI will hike interest rates. To protect itself, it enters a **1-year MIBOR OIS** as a **fixed rate payer** at **6.5%**.
+**Print Fabrics** has a working capital loan (short-term) at a floating rate. They fear RBI will hike the interest rate. So they enter a **1-year MIBOR OIS** as a **fixed payer at 6.5%**.
 
-- **Notional principal:** 100 crore (matched to the actual loan)
-- **Contract period:** 1 year, split into two semiannual periods
-- **Day count convention:** Actual/365 (not 30/360 as used internationally)
-  - First period: **182 days**
-  - Second period: **183 days**
+| Parameter | Value |
+|-----------|-------|
+| Notional amount | 100 crore (matched to the actual loan) |
+| Fixed leg | 6.5% per annum |
+| Floating leg | Daily compounded overnight MIBOR |
+| Day count convention | Actual / 365 |
+| Period 1 | 182 days |
+| Period 2 | 183 days (one extra day, but total = 365) |
+| Floating rate Period 1 | 6.1% |
+| Floating rate Period 2 | 6.9% (RBI hiked!) |
 
-### Period 1: Floating Rate = 6.1% (RBI Has Not Hiked Yet)
+> **Professor on day count:** "For short-term loans, the convention is actual by 365. If your first month is February, you count 28 days. If it is a leap year, you count 29 days. You don't consider 30 days a month."
 
-| Item | Calculation | Amount |
-|------|-------------|--------|
-| Fixed payment (Print Fabrics pays) | 100 cr x 6.5% x 182/365 | 3.241 crore |
-| Floating receipt (Print Fabrics receives) | 100 cr x 6.1% x 182/365 | 3.042 crore |
-| **Net** | Print Fabrics pays | **19.9 lakhs** |
+### Period 1 (Floating = 6.1%, BELOW the 6.5% fixed):
 
-Total interest cost:
-- Pays 3.042 crore to its physical bank (floating rate on actual loan)
-- Pays 19.9 lakhs net to swap market
-- **Total = 3.042 + 0.199 = 3.241 crore**
-- **All-in rate: 6.5% per annum** -- exactly the fixed swap rate
+| Item | Calculation | Amount (Crore) |
+|------|-------------|----------------|
+| Fixed leg payment | 100 x 6.5% x (182/365) | 3.241 |
+| Floating leg receipt | 100 x 6.1% x (182/365) | 3.042 |
+| **Net IRS settlement** | Print Fabrics **pays** | **0.199 (19.9 lakhs)** |
+| Payment to actual bank (floating loan) | | 3.042 |
+| **Total cash outflow** | 3.042 + 0.199 | **3.241** |
+| **All-in rate** | | **6.5% per annum** |
 
-### Period 2: Floating Rate Rises to 6.9% (RBI Hiked!)
+Print Fabrics paid **more** than the floating rate (6.5% vs 6.1%). But certainty was the objective, not savings.
 
-| Item | Calculation | Amount |
-|------|-------------|--------|
-| Fixed payment (Print Fabrics pays) | 100 cr x 6.5% x 183/365 | 3.259 crore |
-| Floating receipt (Print Fabrics receives) | 100 cr x 6.9% x 183/365 | 3.459 crore |
-| **Net** | Print Fabrics receives | **20.1 lakhs** |
+### Period 2 (Floating = 6.9%, ABOVE the 6.5% fixed — the feared hike happened!):
 
-Total interest cost:
-- Pays 3.459 crore to its physical bank (floating rate is now higher)
-- Receives 20.1 lakhs from swap market
-- **Total = 3.459 - 0.201 = 3.259 crore**
-- **All-in rate: 6.5% per annum** -- still exactly the fixed swap rate
+| Item | Calculation | Amount (Crore) |
+|------|-------------|----------------|
+| Fixed leg payment | 100 x 6.5% x (183/365) | 3.259 |
+| Floating leg receipt | 100 x 6.9% x (183/365) | 3.459 |
+| **Net IRS settlement** | Print Fabrics **receives** | **0.201 (20.1 lakhs)** |
+| Payment to actual bank (floating loan) | | 3.459 |
+| **Total cash outflow** | 3.459 - 0.201 | **3.259** |
+| **All-in rate** | | **6.5% per annum** |
 
-### But What If RBI Does Not Hike?
+Even though the floating rate jumped to 6.9%, Print Fabrics still paid only the equivalent of 6.5%.
 
-A student named Koshik asked this exact question. The professor's response was immediate:
+> **Professor:** "Whatever happens to the interest rate, if your loan is in floating rate, you are not bothered because you have swept it at a fixed rate."
 
-> **Professor:** "Purpose is to fix cash flow, not to save money. Come what may, I pay 6.5%."
+### A Sharp Student Question
 
-If rates fall to 5%, Print Fabrics still pays 6.5%. They "lose" relative to not having the swap. But that is the entire point -- you are **buying certainty**, not making a bet. It is insurance. You do not complain about paying your car insurance premium in a year when you had no accidents.
+A student named Koshik asked: what if RBI does **not** raise rates? Then Print Fabrics overpays in both periods. Would it be better to do shorter contracts?
 
-The professor also offered a practical tip: instead of a 1-year contract, it is often **better to do 3-month contracts and roll over**. This gives you more flexibility to adjust as conditions change.
+> **Professor:** "Very good question. That's why I said swap contracts are short-term. A better idea for Print Fabrics would be instead of entering into a one-year contract, they can enter into 3-month contract and roll over."
+
+But the professor added a crucial nuance:
+
+> "What is the intention of Print Fabrics? That matters. Not what is the interest going to go up and down. Intention is to convert floating into fixed. If that is the intention, then it does not matter... You are saying come what may, I want to pay at 6.5%."
+
+> "IRS is to take care of my cash flow risk. If the purpose is saving money, then I'll not enter into IRS."
 
 ---
 
-## Valuation of Interest Rate Swaps
+## Valuing a Swap Contract: The Bank's Perspective
 
-Once a swap is in place, its market value changes over time as interest rates move. To value a swap, treat it as the difference between two bonds.
+So far we looked at swaps from the company's viewpoint. But the **bank (intermediary)** needs to value its swap book for its balance sheet — they have exposure on both sides (contracts where they pay fixed, and contracts where they receive fixed).
+
+> **Professor:** "After this class, if you have time, look at the balance sheet of any bank, open the annual report, type IRS — you will see they have exposure of hundreds of crores of rupees."
 
 ### The Framework
 
-For a **pay-fixed, receive-floating** swap:
+> **Value of Swap (for a pay-fixed party) = BFL (value of floating leg) - BFX (value of fixed leg)**
 
-> **Value of Swap = BFL (value of floating leg) - BFX (value of fixed leg)**
+Where "B" represents the notional bond value.
 
-If this is positive, the swap is an **asset** for the fixed payer. If negative, it is a **liability**.
+### Valuing the Fixed Leg (BFX) — Full Lifetime
 
-### Valuing the Fixed Leg (BFX)
+This is standard bond valuation — present value of all future cash flows:
 
-The fixed leg is like a **fixed coupon bond**. You know all future cash flows (they are fixed). To value it:
+> **BFX = PV(Coupon 1) + PV(Coupon 2) + ... + PV(Final Coupon + Principal)**
 
-1. List all remaining fixed payments (coupons)
-2. Add the notional principal to the last payment
-3. Discount each cash flow at the appropriate **zero rate** (spot rate for that maturity)
+Each cash flow is discounted at the appropriate **zero rate** (spot rate for that maturity).
 
-**Important:** You must discount at the zero rate, not the coupon rate. If you discounted at the coupon rate, the bond would always be worth par (face value), which defeats the purpose of valuation.
+**Important warning from the professor:** Do NOT discount a 6% coupon bond at 6%.
 
-### Valuing the Floating Leg (BFL)
+> "If you discount 6% coupon with a 6% rate, your value always will be 100 — always you'll get face value. That's not the bond value. If the interest rate changes, bond value will change in the opposite direction."
 
-The floating leg is trickier because you only know the rate for the **next** payment period. Beyond that, rates are unknown.
+### Valuing the Floating Leg (BFL) — The Clever Trick
 
-The insight: a floating rate bond always resets to **par (face value) on each payment date**. So:
+For a floating rate bond, you only know the interest rate for the **next period**. After that, rates are unknown. So how do you value it?
 
-- **On a payment date:** BFL = Face Value (e.g., 100)
-- **Between payment dates:** BFL = (Face Value + Next Period's Floating Coupon) discounted for the remaining time to the next payment
+> **Professor:** "You assume the bond is going to die or expire on the first payment date."
 
-> **BFL = (Face Value + K*) / (1 + r1)^t**
+Just take the face value plus the next known interest payment, and discount it for just one period. That is your BFL.
 
-Where **K*** is the next floating coupon (already known) and **r1** is the zero rate for the period until the next payment.
+**Special case — on the exact date of coupon payment:** BFL = Face Value (e.g., 100). Why? Because there is zero accrued interest. A floating rate bond always returns to **par** on payment dates.
+
+> **Professor:** "A bond, a floating rate bond, is always fair valued on the date of payment of interest because there's no accrued interest."
+
+Between payment dates, BFL will differ from face value because of the "dirty price" (clean price + accrued interest).
 
 ### Numerical Example
 
-A financial institution **pays 6% fixed semiannual** and **receives floating** on a notional of **100M USD**. We are partway through the contract.
+A financial institution **pays 6% fixed** (semi-annual) and **receives floating** on a notional of **100 million**. Remaining payment dates are **3 months, 9 months, and 15 months** from today.
 
 **Given:**
-- Remaining payment dates: **3 months, 9 months, 15 months** from now
-- Fixed coupon per period: K = 100M x 6% / 2 = **3M**
-- Next floating coupon: K* = 100M x 5.2% / 2 = **2.6M** (rate was set at the last payment date)
-- Zero rates: **6%** (3 months), **6.5%** (9 months), **7%** (15 months)
+- Fixed coupon (K): 3 million per period (6% / 2 x 100M)
+- Floating coupon (K*): 2.6 million (LIBOR was 5.2% at the last reset, so 5.2% / 2 = 2.6%)
+- Notional (L): 100 million
+- Zero rates: 6% (3-month), 6.5% (9-month), 7% (15-month)
 
-**BFX (Fixed Leg):**
+**Key observation:** The next payment is 3 months away, not 6 months. We are in the **middle** of a payment cycle — 3 months have already elapsed since the last reset date.
 
-> **BFX = 3 / (1.06)^0.25 + 3 / (1.065)^0.75 + 103 / (1.07)^1.25 = 100.16M**
+**BFX (Fixed Leg) — lifetime PV of all payments:**
 
-Why is BFX above 100? Because we are between payment dates -- a buyer would need to pay accrued interest, pushing the "dirty price" above par.
+| Cash Flow | Timing |
+|-----------|--------|
+| 3 million coupon | 3 months (0.25 years) |
+| 3 million coupon | 9 months (0.75 years) |
+| 103 million (coupon + principal) | 15 months (1.25 years) |
+| **Total BFX** | **100.16 million** |
 
-**BFL (Floating Leg):**
+Why is BFX more than 100 million? Because a buyer today gets the **full** 6-month coupon (3 million) in just 3 months, even though they held the bond for only 3 months. The seller charges for the 3 months of accrued interest.
 
-> **BFL = (100 + 2.6) / (1.06)^0.25 = 101.07M**
+> **Professor:** "I am holding it for 3 months, I'm getting benefit for 6 months. So the guy who will sell me today will charge that interest for the first 3 months."
 
-Only the next period matters -- after that payment, the floating bond resets to par.
+**BFL (Floating Leg) — just one period:**
 
-**Value of Swap:**
+| Cash Flow | Timing |
+|-----------|--------|
+| 102.6 million (100 + 2.6) | 3 months (0.25 years) |
+| **Total BFL** | **101.07 million** |
 
-> **Swap Value = BFL - BFX = 101.07 - 100.16 = 0.91M**
+**Swap Value = BFL - BFX = 101.07 - 100.16 = 0.91 million (positive)**
 
-This swap is worth **0.91 million USD** and is an **asset** for the financial institution (because BFL &gt; BFX: the floating payments they receive are worth more than the fixed payments they make).
+This means the bank has a **net asset of 0.91 million** on its balance sheet from this swap. The floating leg it receives is worth more than the fixed leg it pays.
 
----
+### What Kind of Risk Is This for the Bank?
 
-## Market Makers in Swaps
+A student guessed "cash flow risk." The professor corrected:
 
-Market makers in the swap market function similarly to **limit order placers** in the Indian stock market. India does not have formal designated market makers in equities -- but the people who place limit orders provide liquidity by offering two-way prices.
-
-In swaps, banks act as market makers by:
-- Quoting a bid (rate they will pay fixed at) and an offer (rate they will receive fixed at)
-- Earning the spread between bid and offer
-- **Not holding the underlying loans** -- they simply intermediate the swap flows
-
-The bank's exposure is **credit risk** (counterparty default), not **market risk** (interest rate movements). This is a high-return-on-capital business because no loan principal is at risk.
-
----
-
-## Summary of All Four Derivatives
-
-With IRS complete, we have now covered the full derivatives toolkit:
-
-| Instrument | Market | Settlement | Hedge Type | Underlying Risk |
-|------------|--------|------------|------------|-----------------|
-| **Futures** | Exchange traded | Daily mark-to-market | Fair Value Hedge | Price/value risk |
-| **Forwards** | OTC (customized) | At maturity | Fair Value Hedge | Price/value risk |
-| **Options** | Exchange traded | At/before expiry | Fair Value Hedge | Price/value risk |
-| **Swaps** | OTC (customized) | Periodic net settlement | Cash Flow Hedge | Cash flow risk |
-
-Key observations:
-
-- **Futures and Options** trade on exchanges (standardized, liquid, regulated)
-- **Forwards and Swaps** trade OTC (customized, flexible, counterparty risk)
-- **Three instruments** (futures, forwards, options) handle **fair value risk**
-- **Only swaps** handle **cash flow risk**
-- All four manage **market risk** -- none of them address credit risk or operational risk
-
-Two types of hedges exist in the financial world: **fair value hedges** (protecting asset/liability values) and **cash flow hedges** (protecting future cash flow certainty). A complete risk management strategy may use both.
+> "No, it is a fair value risk. You have valued these bonds. Difference is a fair value risk. If it is a fair value risk, they cannot hedge it using IRS. They have to do it through options contracts, futures contracts."
 
 ---
 
-## Introduction to International Finance
+## The Four Derivative Instruments: Complete Summary
 
-With derivatives covered, the course now shifts to a new domain: **international finance**. When companies operate across borders, currency fluctuations create entirely new risks.
+With IRS covered, all four types of derivative contracts are now complete:
 
-There are three types of exposure a company faces from international operations:
+| Instrument | Market | Primary Hedge Type |
+|------------|--------|--------------------|
+| **Futures** | Exchange-traded | Fair Value Hedge |
+| **Forwards** | OTC (customized) | Fair Value Hedge |
+| **Options** | Exchange-traded | Fair Value Hedge |
+| **Swaps (IRS)** | OTC (customized) | **Cash Flow Hedge** |
 
-### 1. Transaction Exposure
+> **Professor:** "These instruments are used to manage essentially market risk. Credit risk is managed organically. Operational risk you cannot manage — you have to provide for it."
 
-This is the most direct and intuitive form.
+The two fundamental types of market risk hedges:
+1. **Fair value hedge** — protect the balance sheet value (NAV, bond value, etc.)
+2. **Cash flow hedge** — protect the predictability of future cash flows
 
-**What it is:** Risk from actual transactions denominated in a foreign currency.
+---
 
-**Example:** An Indian company buys a machine from a US supplier and agrees to pay in installments in USD. Between the date the deal is signed and the date each payment is made, the USD/INR exchange rate can move. If the rupee weakens (say from 83 to 87 per USD), each installment costs more in rupee terms.
+## Introduction to International Financial Management
 
-This is a **real cash flow impact** -- the company physically pays more or less depending on currency movements.
+With derivatives wrapped up, the course shifts to its final major topic. The professor opened with a thought experiment:
 
-### 2. Translation Exposure
+**Can a purely domestic company — buying local raw materials, selling to local customers — have any forex risk?**
 
-This is more subtle and often confuses people.
+No direct forex risk. But even a "domestic" company may have:
+- **Imported machinery** funded through external borrowing or supplier credit
+- **Overseas subsidiaries** operating in foreign currencies
+- **Exposure to macroeconomic policies** (tariffs, sanctions) affecting its competitive position
 
-**What it is:** Risk from consolidating the financial statements of overseas subsidiaries.
+### Three Types of Forex Exposure
 
-**Example:** An Indian parent company has a subsidiary in the US. The subsidiary does all its business in USD -- no direct transaction between the Indian HQ and the subsidiary. But at year-end, the parent must prepare **consolidated financial statements**. Every USD number on the subsidiary's balance sheet must be translated to INR.
+#### 1. Transaction Exposure — The Direct Hit
 
-Last year, the investment was translated at 200 crore. This year, due to currency movement, the same investment translates to 150 crore. That is a **translational loss of 50 crore** on the balance sheet -- even though no money actually changed hands.
+**What:** You have an actual transaction denominated in foreign currency — a payable or receivable.
 
-Translation exposure affects the **balance sheet and reported earnings** but does not involve actual cash flows.
+**Example:** An Indian company buys a machine from a US supplier and agrees to pay in USD installments over 2 years. Between the deal date and each payment date, the INR/USD rate can move. If the rupee weakens, each installment costs more in rupee terms.
 
-### 3. Economic Exposure
+This is straightforward — real cash flow is at risk.
 
-This is the broadest and most difficult to manage.
+#### 2. Translation Exposure — The Accounting Surprise
 
-**What it is:** Risk from macroeconomic policy changes that affect a company's competitive position internationally.
+This one stumped several students in class. The professor built it through Socratic questioning.
 
-**Examples:**
-- A government imposes tariffs on imports from a specific country
-- Sanctions are placed on trading with certain nations
-- Trade policies shift, making exports more or less competitive
+**Setup:** An Indian company has a subsidiary in the US. The subsidiary buys in dollars, sells in dollars, collects in dollars. The Indian HQ does **no transaction** in foreign currency. No money is repatriated.
 
-> **Professor's insight:** "Economic exposure can only be managed organically by diversifying. You reduce exposure in US because of Trump and try to go to European market or African market."
+So where is the risk? Students guessed "country risk," "currency risk when repatriating," and "company value risk." The professor kept saying no.
 
-You **cannot** hedge economic exposure with derivatives. No futures contract or swap can protect you from a tariff announcement. The only response is **strategic diversification** -- spreading your business across multiple markets so that a policy change in one market does not cripple the entire company.
+Finally, a student got it:
 
-### What Gets Covered Going Forward
+> **Student:** "Their profit and loss or their fluctuation in international currencies will be reflected in my balance sheet."
 
-| Exposure Type | Can Be Hedged with Derivatives? | Covered in Detail? |
-|--------------|-------------------------------|-------------------|
-| **Transaction** | Yes (forwards, futures, options) | Yes -- upcoming sessions |
-| **Translation** | Partially (complex accounting rules) | Yes -- upcoming sessions |
-| **Economic** | No (only organic/strategic response) | No -- beyond scope |
+> **Professor:** "At the end of every year, I — meaning the Indian arm — has to prepare a consolidated balance sheet where they have to show in INR the performance of the subsidiary."
+
+Every asset, liability, revenue, and expense of the US subsidiary must be **translated** from USD to INR for consolidated reporting. If the exchange rate moves between two reporting dates:
+
+- Last year, the subsidiary investment was worth INR 200 crore
+- This year, because the rupee depreciated, the same investment translates to INR 150 crore
+- **Translation loss: 50 crore** — not because the subsidiary performed badly, but because the exchange rate moved
+
+> **Professor:** "Not because you have recovered your 50 crore of investment, but because rupee has depreciated. So you have a translational loss of 50 crore."
+
+#### 3. Economic Exposure — The Unhedgeable One
+
+This is the broadest and most dangerous type:
+
+> **Professor:** "Economic exposure is much wider than specific to a company. Someone puts tariff and I have customer or supplier from US — I get affected not because of action of the supplier but because of macroeconomic policy."
+
+You **cannot** hedge economic exposure with derivatives. No futures contract or swap can protect you from a tariff announcement or a trade war.
+
+> **Professor:** "Economic exposure can only be managed organically by diversifying. So you could say, okay, I'll reduce my exposure in US because of Trump and try to go to European market or African market or Middle East market."
+
+### Summary of the Three Exposures
+
+| Exposure Type | What It Is | Hedgeable with Derivatives? | Covered in Course? |
+|---------------|-----------|----------------------------|-------------------|
+| **Transaction** | Actual foreign currency payable/receivable | Yes (forwards, futures, options) | Yes |
+| **Translation** | Consolidating foreign subsidiary financials into home currency | Partially | Yes |
+| **Economic** | Macro policy changes (tariffs, sanctions, trade wars) | No — only organic diversification | No |
+
+A student named Koshik asked why translation is a risk when you know the exchange rate on any given date. The professor clarified:
+
+> "Converting is not difficult. But translation risk is you are translating their revenue, expenses into Indian currency — each item, asset, liability — everything. Between two balance sheet dates, what is the net exposure? Your investment. Last year it was INR 200 crore, this year 150 crore. Not because you recovered 50 crore, but because rupee has depreciated."
 
 ---
 
@@ -479,27 +530,27 @@ You **cannot** hedge economic exposure with derivatives. No futures contract or 
 
 | Formula | Expression |
 |---------|-----------|
-| **Floating to Fixed Conversion** | Floating Rate Debt + IRS (pay fixed, receive floating) = Fixed Rate Debt |
-| **Comparative Advantage Total Gain** | Fixed rate gap - Floating rate gap |
-| **IRS Value (pay-fixed party)** | BFL - BFX |
-| **BFX (Fixed Leg)** | Sum of PV of all fixed coupons + PV of notional, discounted at zero rates |
-| **BFL (Floating Leg, between dates)** | (Face Value + Next Floating Coupon) / (1 + r1)^t |
-| **BFL (on payment date)** | Face Value (par) |
-| **Net Swap Payment** | Fixed Amount - Floating Amount (settled as net) |
-| **Day Count (Indian convention)** | Notional x Rate x (Actual Days / 365) |
-| **Swap Spread** | Offer Rate - Bid Rate |
+| **Synthetic Fixed Rate** | Floating Rate Debt + Pay-Fixed IRS = Fixed Rate Debt |
+| **Synthetic Floating Rate** | Fixed Rate Debt + Pay-Floating IRS = Floating Rate Debt |
+| **Total Gain from Comparative Advantage Swap** | Fixed rate gap - Floating rate gap |
+| **Day Count (Indian convention: Actual/365)** | Interest = Principal x Rate x (Actual Days / 365) |
+| **Swap Value (pay-fixed party)** | V = BFL - BFX |
+| **BFX (Fixed Leg Value)** | PV of all future coupons + PV of principal, each discounted at zero rates |
+| **BFL (Floating Leg Value, between dates)** | (Face Value + Next Floating Coupon) / (1 + r1) raised to time fraction |
+| **BFL (on coupon payment date)** | = Face Value (par value) |
+| **Net Swap Payment** | Fixed Amount - Floating Amount (settled net each period) |
 
 ---
 
 ## The Recipe Chain
 
-**Floating Rate Risk** (uncertain cash flows from variable rates) --> **IRS Mechanics** (pay fixed, receive floating to synthetically fix payments) --> **Comparative Advantage** (borrow where your advantage is greatest, then swap to get what you want) --> **Financial Intermediary** (earns the spread with zero capital, only credit risk) --> **MIBOR OIS** (India's daily compounded floating benchmark) --> **Swap Valuation** (BFL - BFX using zero rates) --> **Fair Value vs Cash Flow Hedge** (futures/options for value risk, swaps for cash flow risk) --> **Four Derivatives Complete** (futures, forwards, options, swaps) --> **International Finance** (transaction, translation, economic exposure -- new risks beyond interest rates)
+**Sessions 1-4** (EVA, NOPAT adjustments, capital structure) --> **Sessions 5-9** (Distribution decisions, risk management foundations, futures, forwards) --> **Sessions 11-12** (Options pricing with binomial trees and Black-Scholes, the option lens on corporate finance) --> **Session 13** (Interest Rate Swaps — converting rates via pay-fixed/receive-floating mechanics, reducing borrowing cost via comparative advantage, swap valuation with BFL - BFX, fair value vs. cash flow hedge distinction; introduction to three types of international exposure: transaction, translation, economic) --> **Next:** International Financial Management — deep dive into transaction and translation exposure
 
 ---
 
 ## What's Next
 
-- **Transaction exposure management** -- how to use forwards, futures, and options to hedge currency risk on specific foreign currency payables and receivables
-- **Translation exposure** -- the accounting mechanics of consolidating foreign subsidiaries and the hedging strategies available
-- **Currency forwards and cross-currency swaps** -- extending the derivatives toolkit to the foreign exchange domain
-- **Keep in mind:** The four derivatives instruments you have learned (futures, forwards, options, swaps) will now be applied in an international context. The instruments are the same -- the underlying risk just shifts from interest rates and stock prices to exchange rates
+- **Next session:** International Financial Management in detail — measuring and managing **transaction exposure** and **translation exposure**
+- **Key connection:** The derivative instruments covered so far (futures, forwards, options, swaps) will now be applied to **currency risk** management
+- **Remember:** Swap questions are part of the **end-term exam** — make sure you can work through the comparative advantage example and the BFX/BFL valuation
+- **Quiz note:** Best of 5 quizzes (out of 7-8 total), each worth 10 marks, for a total of 50 marks
