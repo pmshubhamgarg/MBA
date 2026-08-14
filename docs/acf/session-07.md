@@ -324,3 +324,22 @@ And the meta-lesson: **when two strategies send conflicting signals (cut for fle
 - **New topic:** Risk Management -- will span 3-4 sessions and is described as "a little heavy" by the professor
 - **Project announcement:** Class will be divided into 8 groups for a group project (10% of grade). Each group gets a topic (e.g., analyze corporate payout of 5 companies). Template and topic assignments coming soon. Submission between sessions 19 and 20.
 - **Quiz note:** Difficulty is increasing. "More you read the background, the better you will do."
+
+---
+
+## The Real-World Takeaway
+
+Picture a manager who has given the team a free lunch every Friday for years. It is not in anyone's contract. It is just "how things are done here." Then budgets tighten. The manager quietly knows the lunches have to go -- but everyone on the team has come to read "Friday lunch" as a signal that things are fine. Cancel it, and people do not just lose a sandwich, they start updating their beliefs about whether the company is in trouble. That is exactly FPL's problem, just swapped from dividends to lunch. A payment that has become a promise is no longer just a cost -- it is information. And the moment you touch it, people read meaning into the change whether you intended one or not.
+
+The part of this case that will actually save you someday is not the dividend math -- it is the discovery that FPL announced two moves on the same day that undercut each other. They cut the payout to "preserve flexibility," then immediately spent the saved cash buying back shares, leaving zero flexibility. Nobody in that boardroom set out to send a mixed signal. It happened because two well-intentioned teams (the one managing the payout, the one managing the buyback) each made sense internally, and nobody stress-tested how the two would look side by side to an outside observer. That is a completely ordinary failure mode in any company, and it is why the market punished FPL harder than the dividend cut alone deserved.
+
+There is also a quieter lesson buried in the agency-theory discussion: watch what happens to the compensation plan whenever a hard call is being justified as "for the shareholders" or "for the customer." When FPL's management bonus formula was rewritten to reward the same net income the dividend cut would boost, it did not automatically mean anyone was lying -- but it is exactly the kind of detail a sharp analyst, or a skeptical employee, should notice before accepting the official story at face value.
+
+Where this shows up outside a finance job:
+
+- **Cutting a long-standing perk or benefit** (free snacks, remote-work flexibility, an annual bonus structure) -- assume people will read the cut as a signal about the company's health, not just a cost-saving move, and plan your communication accordingly.
+- **Making an unpopular but necessary call** (discontinuing a legacy product, pulling support from a client, reorganizing a team) -- check whether your other simultaneous actions contradict the reason you are giving for the hard call.
+- **Announcing a "one-time reset"** (resetting a budget, a headcount target, a pricing tier) -- be ready to explain not just the new number, but the target level that produced it, the way FPL's 32% cut only made sense once you saw the 60-65% payout target behind it.
+- **Reviewing any leadership decision that conveniently benefits leadership** (a restructuring, a policy change, a compensation tweak) -- look at whether incentives were quietly realigned before or alongside the decision, before assuming the stated rationale is the whole story.
+
+**The one-liner for the interview room:** People do not believe what you announce, they believe what you do next -- so before you make a hard call, make sure your very next move is not quietly contradicting it.

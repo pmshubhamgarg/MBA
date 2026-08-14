@@ -305,3 +305,22 @@ This is why EVA is the **single integrated metric** for Advanced Corporate Finan
 - **Reading:** EVA adjustments to NOPAT (already on LMS — read *after* this session)
 - **Next session:** Individual topics from the course outline begin; professor will spend ~10 minutes on NOPAT adjustments
 - **Remember:** Come prepared with pre-reads — quizzes start from Session 2!
+
+---
+
+## The Real-World Takeaway
+
+Here's the thing about EVA that actually matters years from now, long after you've forgotten the formula: **growth is not the same as value, and profit is not the same as value.** Remember the pizzeria owner? Their P&L said "profit," but they'd have been better off doing nothing and parking the money in a mutual fund. That gap between "looks good on paper" and "actually worth it" shows up everywhere, not just in finance.
+
+Think about any manager reviewing a new initiative, a new hire, or a new business line. The instinctive question is "did it grow?" or "did it make money?" EVA teaches you to ask a sharper question instead: "did it make more than what we could have earned by doing something else with that same time, money, or people?" A team that grew revenue 20% but consumed capital, headcount, or management attention that could have generated a better return elsewhere isn't a success story — it's a Company A from the pizzeria example, dressed up in good news.
+
+The other lesson worth keeping is about incentives and psychology, from the cement division story. Nobody changed the process — same phone calls, same spreadsheet. What changed was that people started feeling the cost of delay in their own pocket. That's a management trick you can use even without ever calculating a formal EVA number: make the invisible cost of capital (time, money, opportunity) visible and personal to the person making the decision, and behavior shifts on its own.
+
+Here's how this shows up on the job, regardless of what your title is:
+
+- **Evaluating a project proposal:** Before approving a budget increase, ask "what extra return will this generate?" instead of just negotiating the amount down — shift the conversation from "how much do you need" to "what will you deliver with it."
+- **Reviewing team or business unit performance:** Don't just look at revenue or profit growth — ask whether that growth outpaced what the resources tied up (people, capital, time) could have earned elsewhere.
+- **Designing bonuses or performance reviews for your team:** Reward improvement over last year's baseline, not just hitting a static target — it keeps people pushing rather than coasting once they've "made the number."
+- **Deciding whether to keep funding a slow-growing pet project:** A project can be "profitable" and still be a bad use of scarce resources if a better opportunity is sitting right next to it, starved of attention.
+
+If you remember only one line from this entire session, make it this: **making money isn't the same as making it worth it — always ask what you gave up to get there.**

@@ -637,3 +637,21 @@ This is precisely why M&M's perfect-world irrelevance does not hold — in the r
 **-->** **Sessions 4-5:** Long-Term Financing (market timing, hybrid instruments, InvITs, asset monetization)
 **-->** **Session 6 (Today):** Corporate Payout Policy - Dividends (what to do with the surplus — seven theories from M&M irrelevance to life cycle)
 **-->** **Next Session:** Share Buyback + FPL Corporation Case (the other half of the distribution decision)
+
+---
+
+## The Real-World Takeaway
+
+Think about two friends who both promise to help you move apartments every year. One says "I'll always show up, rain or shine, every single year, guaranteed" and has kept that promise for two decades. The other says "I'm swamped right now building something big, but someday when it pays off, I'll help you move into a mansion." Both can be trustworthy. But they are sending very different signals about where they are in life and how much certainty they can offer you today. That is basically what Reliance and ITC are doing with their dividends — one is heads-down reinvesting and asking for patience, the other has run out of big new bets and is handing cash back every year like clockwork.
+
+The part worth carrying forward isn't the payout ratio formula — it's the idea that a consistent, repeated commitment (paying the same or growing dividend every year) tells people something a one-off gesture never can. A single bonus or a single big buyback announcement can be pure optics. But a promise you keep for ten or twenty years straight, through good times and bad, is a costly signal — it's expensive to keep and embarrassing to break, so people believe it. That is exactly why Lintner's theory says never grow your commitment faster than you can sustain it: reversing a promise hurts far more than never having made it. Any manager who has ever promised a team a steady quarterly bonus, a fixed sprint cadence, or a "we will always ship on the 1st" release schedule has felt this same tension — commit to something you can keep, or don't commit at all.
+
+There's also a quieter lesson in the ITC story about the Jensen theory: giving people (or teams, or managers) a big pile of unaccountable resources tends to invite empire-building, not better decisions. ITC's own insider admitted the hotel business happened because there was cash sitting around and nowhere obviously better to put it. The fix wasn't a lecture about discipline — it was simply forcing the cash back out through dividends, so someone else (the market) had to decide where it went next.
+
+Use this thinking when:
+- You're deciding whether to promise your team a recurring benefit (a monthly recognition budget, a fixed training stipend) versus a one-time bonus — recurring promises build trust but are painful to walk back, so size them conservatively.
+- You're reading a company's, vendor's, or competitor's signals — a firm that keeps a modest but unbroken commitment (on-time delivery, consistent pricing, steady headcount) is telling you something more reliable than a splashy one-time announcement.
+- You're managing a budget surplus in your own team or project — ask whether you're hoarding slack resources "just in case" (empire-building) instead of returning them to be redeployed where they create more value.
+- You're evaluating whether to trust a "big vision, no near-term payoff" pitch (the Reliance/AI story) versus a "boring but reliable" track record (the ITC story) — both can be right, but they demand different kinds of patience from the people trusting you.
+
+The one-liner to keep: **consistency is the message — anyone can make a promise once, but only the ones who can afford to keep it, keep it.**
