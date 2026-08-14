@@ -54,11 +54,6 @@ const config = {
             position: 'left',
             label: 'Subjects',
           },
-          {
-            href: 'https://github.com/pmshubhamgarg/MBA',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
