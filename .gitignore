@@ -1,3 +1,6 @@
+# Institute transcripts - kept local only, never committed
+/resources
+
 # Dependencies
 /node_modules
 
