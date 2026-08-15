@@ -16,6 +16,8 @@ Building on the foundations of Intro to Corporate Finance — integrating invest
 
 **Before the exam, read the story:** [The Complete Story — One Career, Twenty Lessons](the-aanya-story) ties every concept from all 20 sessions into one continuous, memorable narrative. Read the sessions first, then read this to make it all stick.
 
+**Short on time? Read the Quick Recall pages** (in the sidebar under "Quick Recall (15-Min Sessions)") — one page per session, each a simple story, the core concept, why it matters on the job, and a one-line takeaway. No jargon, no formulas, just what to actually remember.
+
 ## Sessions
 
 - [Session 1: Economic Value Added (EVA)](session-01)
