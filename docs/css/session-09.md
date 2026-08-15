@@ -342,3 +342,19 @@ Session 10 (Preview): Internationalization Begins
 | **Ronald Coase (1937)** | Originated the foundational idea behind transaction cost economics |
 | **Oliver Williamson** | Formalized bounded rationality and opportunism into the modern transaction cost framework; won the Nobel Prize for this work |
 | **Belongingness (Relationship Management)** | Non-economic, social/cultural steps (shared incentives, shared IT assets) needed to make long-term outsourcing relationships actually work in practice |
+
+---
+
+## The Real-World Takeaway
+
+Priya had renewed the same contract with Devendra four times in three years. He was not on the payroll -- he was "the design vendor," invoiced quarterly through his one-man studio, a line item that quietly renewed itself every ninety days like a subscription nobody remembers signing up for. He worked out of a shared office two floors below Priya's team, close enough that he showed up for the Monday stand-up anyway, brought his own laptop stickers, and had strong opinions about the onboarding flow that he was, technically, not paid to have.
+
+The trouble started small. Devendra wanted to prototype a redesign of the entire signup funnel -- a six-week exploration with no guaranteed payoff. Priya's finance partner balked: the contract covered "design deliverables per sprint," not open-ended bets. Devendra pushed back in the stand-up, half-joking, half not: "I can't keep pitching big ideas through a vendor invoice. Every time I want to take a real swing at something, somebody asks me to scope it into a change order first." Priya heard the frustration under the joke. He wasn't asking for a raise. He was asking to stop being treated like a subcontractor for a company he'd already, in every way that mattered, joined.
+
+She tried to fix it the easy way first -- a longer contract, eighteen months instead of three, a fatter retainer, a clause letting him greenlight small experiments without sign-off. Devendra read it over coffee and slid it back across the table. "This just means I'm expensive to fire, not that I'm actually on the team. I still can't be in the roadmap planning room. I still can't own an OKR. You're describing trust with the vocabulary of a vendor agreement." He wasn't wrong, and Priya knew it the moment he said it -- no clause she wrote was going to manufacture the thing that was actually missing, which was the standing to make calls before they needed a signature.
+
+So she stopped drafting contract language and walked into her VP's office instead with a different pitch: bring Devendra in-house, as design lead, full package. Not because the invoices were getting expensive -- they weren't -- but because every quarter she kept re-negotiating the one thing you can't actually put a price on: whether he got to act like he belonged there before someone approved it in writing. The VP's first question was the obvious one -- "won't this just mean more process for him, not less?" -- and Priya's answer was the whole point of the move: "No. I don't want to fold his little studio into our design system and make him just another cog. I want him running his own corner the way he already does, with his own scrappy way of working -- just with a badge that says he doesn't need my sign-off to defend it."
+
+Six months later, Devendra still sat two floors down, still had his ridiculous laptop stickers, still ran his corner of design his own scrappy way -- Priya made a point of not touching any of it. The only thing that had actually changed was that when he pitched the signup funnel redesign, it was in the roadmap meeting, as an owner, not a request routed through a vendor invoice. Nothing about the day-to-day looked different. Everything about who got to decide had changed.
+
+**Some relationships aren't broken by money -- they're broken by never getting to stop asking permission to belong.**

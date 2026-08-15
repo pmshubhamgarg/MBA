@@ -504,3 +504,23 @@ real customer                 division, not as             Is the model
 | **Flexible manufacturing** | Production system that maintains bare minimum inventories while ensuring fulfillment | Newell deliberately runs higher inventory during 3-6 month transition, then drives it down |
 | **Three-tier customer relationship** | Top level (sell the company), division head level (resolve escalations), sales team level (day-to-day operations) | Explains why sales stays divisional while relationship stays corporate |
 | **Capital turnover** | How quickly invested capital generates revenue; improved by strict credit terms (30-45 days) | Where Newell uses its bargaining power — not for price, but for payment speed |
+
+---
+
+## The Real-World Takeaway
+
+Priya had two options sitting on her desk, both labeled "opportunity," and only enough bandwidth to chase one.
+
+The first was the Checkout team. Six people, a cart-and-payments flow nobody wanted to own, a backlog full of half-fixed bugs, and a manager who'd just quit. Conversion had been flat for two years. On paper it looked like a mess nobody in their right mind would raise a hand for.
+
+The second was the flashy one: a new AI-recommendations pilot, backed by a VP who loved demoing it in town halls, built on a stack none of her engineers had ever touched, with a roadmap that changed every sprint depending on which executive had seen a competitor's feature last.
+
+Her director, Marcus, expected her to pick the recommendations team. "That's where the visibility is," he said. "That's where careers get made."
+
+Priya took Checkout instead. When Marcus asked why, she didn't talk about passion or mission. She said, "I already know how to fix this kind of team. I've done it twice before — same playbook. Stabilize the on-call rotation first, so nobody's firefighting at 2 a.m. Then clean up the deploy pipeline so shipping isn't scary. Then go after the actual bugs, in order of how much revenue they're bleeding. I don't need to invent anything. I need six weeks."
+
+Six weeks later, checkout conversion was up four points, and the same VP who'd never mentioned Checkout in a town hall was asking to feature it in the quarterly review. The recommendations pilot, meanwhile, had quietly missed its second deadline — the stack was still unfamiliar, the requirements still shifting, and nobody on that team had ever run a project quite like it before.
+
+Priya hadn't chosen the team that looked exciting. She'd chosen the one that fit a playbook she already knew how to run — struggling, undervalued, fixable with a repeatable process — and left the shiny, incompatible one for someone who actually had the specialized muscle to match it.
+
+**Don't chase the target that looks impressive — chase the one your playbook already knows how to fix.**

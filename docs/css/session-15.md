@@ -453,3 +453,19 @@ Session 16 (Preview): Finishing the Corning Case
 | **Alliance Management as Core Capability** | Corning's practice of sending its best people into JVs, tying manager KPIs to JV alignment, and using alliance-management track record as a promotion criterion |
 | **White Labeling** | Selling excess production capacity under someone else's brand name rather than your own; trades brand equity for scale utilization (contrasted with Theobroma's brand-preserving franchisee model) |
 | **External vs Internal Evaluation Framework** | A decision checklist: external = opportunity attractiveness (economic + strategic benefits); internal = feasibility (fit with strategy, required investment, ROI/timeline, opportunity cost) |
+
+---
+
+## The Real-World Takeaway
+
+Priya had been staring at the same Slack thread for twenty minutes when Farid finally sent the message she'd been dreading: "So are we doing this or not?"
+
+Farid ran a three-person team out of a co-working space near Koramangala. Eight months earlier, his tiny outfit had built a scrappy internal tool for expense reconciliation that Priya's finance ops team had quietly adopted, then couldn't live without. What started as "hey can you fix this bug for us" had become the backbone of how forty people closed their books every month. Priya's VP had noticed. "Bring them in-house," he'd said. "Offer them jobs, fold the tool into our stack, done." Simple, on paper.
+
+But Priya knew Farid, and she knew the tool. Farid's team didn't want to become three more badges in a building of six hundred people, reporting up through a manager who'd never touched their codebase. And the tool wasn't really finished -- it needed constant reinvention as finance rules changed, and Farid's people were the only ones who understood its guts well enough to keep rebuilding it fast. If she swallowed them whole, she suspected she'd get compliant employees and a slower, blander product. She'd seen it happen before, on another team, with another "strategic hire."
+
+So over coffee, she asked Farid a different question: "What if neither of us owns this thing outright? What if we spin it out -- you keep building it your way, we fund half of it and commit to using it exclusively, and we both sit on whatever passes for its board?" Farid went quiet for a second, then laughed, half in relief. "You mean you'd actually let us keep saying no to you?" "Sometimes," Priya said. "But you'd also be on the hook if it breaks. Real skin, both sides."
+
+They didn't shake on it that day -- there were still hard conversations ahead about who got the bigger vote if things went sideways, and Priya made a private note that a clean fifty-fifty split sounds noble right up until the first real disagreement, when nobody technically has the final word. But walking back to her desk, she realized the instinct to "just acquire them" had been about control, not about what actually made the tool good. The thing she needed wasn't Farid's team on her org chart. It was Farid's team staying exactly as hungry and independent as they'd been the day they built the thing worth wanting.
+
+**When you need someone's magic more than you need their obedience, don't buy them -- partner with them, and put your own skin in the game too.**

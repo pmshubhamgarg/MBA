@@ -533,3 +533,19 @@ Session 15 (Preview): Closing Cadbury-Adams, Then Strategic Alliances
 | **FOMO in Digital M&A** | Fear of missing out drives acquirers to overpay for digital/tech targets based on overly optimistic growth assumptions that don't survive post-acquisition reality |
 | **Window Dressing Risk** | A seller who knows it must sell may cosmetically improve a business before sale ("perfume on the goat"); outside buyers can't always detect this, unlike an acquirer with genuine insider relationships |
 | **Management Ego / Agency Problem** | Acquisitions are sometimes driven by empire-building or ego rather than sound strategic logic -- referenced via the book "Barbarians at the Gate" as an informal fourth force behind M&A decisions |
+
+---
+
+## The Real-World Takeaway
+
+Priya found out about the merger on a Tuesday, from a Slack message that just said "big news incoming, all-hands at 4." Her team, Growth Analytics, had spent two years building a scrappy little attribution model that actually worked -- nobody outside the company had ever heard of it. The company being merged in, a design-tools startup called Loomframe, had forty designers who could make anything look beautiful, and basically no idea how to measure whether any of it moved a single metric.
+
+The first week was easy, almost boring. Someone in finance built a spreadsheet showing that both teams paid separately for the same project-management tool, the same cloud storage tier, the same Slack plan. Cancel one subscription, keep the other, save eleven thousand dollars a month. Both teams had a person whose entire job was "internal newsletter" -- now there'd be one. Priya sat in that meeting nodding along. It felt good, like tidying a garage. Nobody was scared of this part. It was just arithmetic: two of the same thing becoming one of the same thing, cheaper.
+
+The second week was the one that mattered. Priya's manager, Deshawn, pulled her into a room with Loomframe's design lead, a guy named Ozzy who talked fast and drew on whiteboards without being asked. "Show me your worst-performing onboarding flow," Ozzy said. Priya pulled it up -- ugly, functional, a 34 percent drop-off on screen three. Ozzy stared at it for maybe ten seconds and said, "Nobody's leaving because of the offer. They're leaving because it looks like a tax form." He sketched a redesign right there, three screens instead of five, and Priya's model said if his instinct was even half right, drop-off would fall enough to add real signups every single month, not once, but every month, compounding.
+
+That was the moment it clicked for her: canceling the duplicate Slack plan was money you'd never miss, a one-time tidy-up. But Priya's measurement engine paired with Ozzy's design instinct was something neither team could have built alone -- her data had never had good enough screens to prove its worth, his screens had never had sharp enough data to know where to aim. Nobody was cutting anything. They were making something new.
+
+The tension came Thursday, when a rival company, VectorLoop, announced they'd started their own "growth design" pod. Deshawn walked into the room looking rattled. "If they ship something like this before we do, the whole complementary-strengths story stops mattering -- we needed to be first, not just better." Priya and Ozzy pulled two engineers and skipped the rest of the reorg meetings for a week, shipping the three-screen flow as a scrappy A/B test instead of waiting for the "official" launch. It won by 19 points. Deshawn forwarded the results to the exec team with one line: "This is the whole reason we did this deal."
+
+**Cutting the duplicate tools saved money you'd have gotten anyway with enough spreadsheets -- but pairing what each side does uniquely well is the only reason the merger creates anything that didn't already exist, and it only counts if you get there before someone else does.**

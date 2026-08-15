@@ -9,6 +9,8 @@ Corporate-level strategy: moving from competitive advantage (one business vs. it
 
 **Pedagogy:** Case-based. Core cases: Newell, Danaher, Disney-Pixar, Philips vs. Matsushita, Procter & Gamble, Cadbury Schweppes/Adams, Corning, Kraft-Mondelez.
 
+**Before the exam, read the story:** [The Complete Story — One Career, Seventeen Lessons](the-devika-story) ties every concept from Sessions 1-17 into one continuous, memorable narrative. Read the sessions first, then read this to make it all stick.
+
 ## Sessions
 
 - [Session 1: From Competitive to Corporate Advantage — The Newell Company](session-01)

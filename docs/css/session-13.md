@@ -432,3 +432,19 @@ Session 14 (Preview): Finishing the Cadbury-Adams Case
 | **Hershey's Nonprofit Trust Structure** | The reason Hershey stayed independent -- a local regulatory authority overseeing its controlling nonprofit trust blocked a sale over feared local job-loss backlash |
 | **Nestle as the Real Rival Bidder** | With Hershey unavailable and Wrigley facing antitrust risk, Nestle was the most realistic competing bidder for Adams |
 | **Cadbury Schweppes's Preemptive Bid Strategy** | A fast, clean bid with a roughly one-month acceptance deadline, designed to exploit Nestle's slower Europe-approval-dependent bidding process and win Adams before a bidding war could start |
+
+---
+
+## The Real-World Takeaway
+
+Priya Menon had been staring at the same Slack message for two minutes when her VP, Arjun, leaned over the partition. "Did you see it? Meridian wants us to build their entire loyalty program. Not just the app, the whole thing -- points engine, partner network, everything. They basically said we're their first choice."
+
+Priya felt the little jolt of pride that comes from being somebody's first choice. For a second she was already picturing the case study slide, her name on the kickoff deck, the LinkedIn post. Then she caught herself, because she'd been burned before by exactly this feeling -- the time her team said yes to a "quick" client dashboard that ate eight months and delivered nothing anyone used.
+
+So instead of answering Arjun with "let's do it," she pulled up a blank doc and wrote three questions at the top, the way her old strategy professor used to insist on before anyone got excited about a deal. Question one: is this actually a good business to be in, or does it just feel good that they picked us? She dug into loyalty-program work generally -- and it turned out the market was crowded with specialists who'd been doing nothing but points engines for a decade, margins were thin, and clients churned vendors every eighteen months chasing the next shiny platform. Attractive for Meridian, maybe. Not obviously attractive for a company whose actual strength was fraud-detection software.
+
+Question two: what would it cost just to get in the door -- not to win, just to compete credibly? Priya sketched it out with her engineering lead: a new partnerships team, a rewards-fulfillment integration nobody at the company had ever built, six months before they could even demo something real. That price tag alone made the "they chose us" thrill look a lot less like a gift and a lot more like a bill.
+
+Question three was the one that actually decided it. Would they be better off building this than doing literally anything else with that same team and that same budget? Priya looked at the fraud-detection roadmap sitting half-funded in the backlog -- the thing clients already loved, already paid extra for, already gave them five-star renewal calls about. Pouring the same six months into deepening that moat clearly beat chasing a shiny adjacent business they'd have to learn from scratch. She walked back to Arjun's desk and said, "Let's tell Meridian we'll partner on loyalty through a specialist, and put our own six months into the fraud engine instead." Arjun looked disappointed for about three seconds, then nodded slowly -- because put that way, it wasn't really a hard call anymore.
+
+**Before you say yes to the exciting new thing, ask if it's actually attractive, what it truly costs to get in, and whether you'd genuinely be better off than just doubling down on what you already do well -- that's Porter's three tests, and they work just as well on a Tuesday product meeting as they do on a billion-euro acquisition.**

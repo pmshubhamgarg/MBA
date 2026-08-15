@@ -559,3 +559,19 @@ Session 5 (Preview): Finishing Danaher + Diversification Theory
 | **ROIC** | Return on Invested Capital -- Danaher targets 10-11% ROIC within 3-5 years of an acquisition |
 | **Top-Down Process** | Danaher's approach: choose the sector first, then find the target company within it (opposite of bottom-up target hunting) |
 | **Non-cyclical Revenue** | Revenue streams that remain stable regardless of economic cycles -- a key criterion for both Newell and Danaher |
+
+---
+
+## The Real-World Takeaway
+
+Priya Nair had run the Friday Review at Vertex Freight for six years, and everyone in the building knew the drill. Every Friday at four o'clock, three completely different teams -- enterprise sales, the warehouse floor, and the product engineers building the routing app -- sat through the same thirty-minute ritual. Same slide format. Same five questions. Same whiteboard with a fishbone drawn on it in blue marker. Sales had nothing in common with warehouse ops, and warehouse ops had nothing in common with a bunch of engineers arguing about API latency. But all three teams hit their numbers quarter after quarter, and Priya privately credited exactly one thing: the ritual itself, not the people running it.
+
+Then Vertex acquired RoadRunner, a scrappy nine-truck last-mile delivery outfit that had never been reviewed by anyone. Its founder, Deepak Malhotra, had built the company on instinct and long nights, and he showed up to his first Friday Review already braced for a firing squad. RoadRunner had missed its on-time delivery target by eleven points that month, and in Deepak's old world, that meant an ugly call from an investor and a sleepless weekend.
+
+Instead, Priya put up the same slide she used for sales and engineering. "Why did we miss on-time delivery?" she asked. Deepak mumbled something about traffic and driver shortages. Priya just asked why again. Why were drivers short. Why hadn't the schedule accounted for it. Why hadn't dispatch flagged the gap two weeks earlier when the pattern first showed up. Five whys in, the room landed somewhere nobody expected: RoadRunner had no shared calendar between dispatch and the drivers' scheduling app, so shortages were invisible until the day they hit.
+
+Nobody raised their voice. Nobody mentioned bonuses. Priya just wrote "fix the calendar sync" on the whiteboard and moved to the next question, the same way she would have for a warehouse jam or a buggy release. Deepak sat there half-stunned, waiting for the part where someone got blamed, and it never came.
+
+Three months later, RoadRunner was hitting its delivery targets, not because Deepak had learned to manage trucks better, but because he had learned to run the same Friday ritual his new sister-teams had been running for years -- ask the same five honest questions, write down the real cause, fix it once, never yell. The trucks, the warehouse, and the routing software still had nothing to do with each other. What they shared was the drill.
+
+**A shared operating system beats a shared org chart every time -- teams that have nothing in common can still win the same way, if they run the same discipline.**

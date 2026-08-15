@@ -415,3 +415,19 @@ Session 12 (Preview): P&G's Structure Evolves
 | **Shared Services** | Functions genuinely shared across all divisions, such as basic research, corporate tax, legal, and HR |
 | **Land-Grab Strategy** | P&G's 1955 objective: maximize growth and market share while cost efficiency is secondary, appropriate in a fast-expanding, low-competition, homogeneous market |
 | **Restructuring as Power Play** | The change-management pattern where new CEOs restructure to destabilize entrenched power, signal change, and create room to deflect future blame |
+
+---
+
+## The Real-World Takeaway
+
+Devika Rao had been regional marketing manager for Solara Coffee's East India cluster for exactly eleven months when the jaggery latte died in a conference call.
+
+She had spent three weeks building the case: a warm, jaggery-sweetened milk drink, tested in four Kolkata stores, outselling the seasonal pumpkin drink two to one. The numbers were sitting right there on slide six. But the voice from Solara's global headquarters, thin over the video line, was already moving past it. "We can't run a menu item that only exists in one city," the brand director said. "Every Solara store, every country, pours the same seventeen drinks off the same syrup pumps. That consistency is the whole business model. If Kolkata gets a jaggery latte, Jakarta wants one too, then Jakarta wants something else, and in two years nobody can tell you what a Solara actually is." The call ended. The jaggery latte stayed a four-store curiosity nobody outside Kolkata would ever taste.
+
+Devika complained about it that Friday to her old business-school roommate, Arjun, over phone, half expecting sympathy. Instead Arjun laughed so hard he had to put the phone down. He ran regional ops for Milk and Bean, Solara's scrappier rival, where every city franchise designed its own menu, hired its own baristas, picked its own decor. "You think you have it bad," he said. "Last month I found out our Pune franchise and our Nagpur franchise, ninety minutes apart, both launched something called a 'Monsoon Cooler' — completely different drinks, different prices, one iced and one hot. A customer transferred from the Pune office to Nagpur, ordered his usual, and got handed a hot drink in July. He posted about it. Now corporate wants to know why the brand means something different every hundred kilometers, and I don't have an answer, because we built it that way on purpose."
+
+Devika sat with that for a while after they hung up. Solara's headquarters controlled everything and got a spotless, identical cup of coffee in every city on earth — but had just killed the one idea that Kolkata actually wanted. Milk and Bean let every city do whatever worked locally — and had ended up with a brand that didn't feel like one brand at all, confusing the very customers loyalty programs were supposed to keep. Neither company was doing it wrong, exactly. Each had simply built its entire machine around solving for one problem, and had quietly given up on the other.
+
+The next quarter, when Solara's India team got a rare pilot slot to test three "local flavor" drinks in a tightly controlled batch of twelve stores — same core menu everywhere, a small locally-tuned sleeve bolted onto the side of it — Devika realized this was the actual answer nobody had said out loud on that call. Not "centralize everything" and not "let every city loose." The real skill was deciding, drink by drink, market by market, which parts of the business needed to be identical everywhere and which parts needed to bend — and being honest enough to admit the answer would never be the same twice.
+
+**There's no one right way to run a company across cities — only the right mix of what stays the same everywhere and what's allowed to change, chosen fresh for every situation.**
