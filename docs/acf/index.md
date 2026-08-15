@@ -14,6 +14,8 @@ Building on the foundations of Intro to Corporate Finance — integrating invest
 - Class Participation (20%) — quality over quantity, includes responses and good questions
 - End-term Exam (30%)
 
+**Before the exam, read the story:** [The Complete Story — One Career, Twenty Lessons](the-aanya-story) ties every concept from all 20 sessions into one continuous, memorable narrative. Read the sessions first, then read this to make it all stick.
+
 ## Sessions
 
 - [Session 1: Economic Value Added (EVA)](session-01)
