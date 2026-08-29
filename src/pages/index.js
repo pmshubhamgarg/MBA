@@ -17,6 +17,7 @@ const quarters = [
     label: 'Quarter 6',
     subjects: [
       {name: 'Marketing in Digital World', path: '/docs/q6/mdw/', desc: 'Digital-era marketing strategy, segmentation, personas, and the unscaled economy'},
+      {name: 'Product Management', path: '/docs/q6/pdm/', desc: 'Product lifecycle, customer value, positioning, and go-to-market strategy'},
     ],
   },
 ];

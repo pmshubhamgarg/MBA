@@ -31,3 +31,4 @@ Browse subjects from the sidebar or use the search bar to find specific topics.
 | Subject | Description |
 |---------|-------------|
 | [Marketing in Digital World](q6/mdw/) | Digital-era marketing strategy, segmentation, personas, and the unscaled economy |
+| [Product Management](q6/pdm/) | Product lifecycle, customer value, positioning, and go-to-market strategy |
