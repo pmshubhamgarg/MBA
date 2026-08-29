@@ -3,11 +3,22 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-const subjects = [
-  {name: 'Advanced Corporate Finance', path: '/docs/acf/', desc: 'EVA, capital structure, payout policy, derivatives, and risk management'},
-  {name: 'Cross Cultural Management', path: '/docs/ccm/', desc: 'Managing cultural differences in global business'},
-  {name: 'Communication for Leaders', path: '/docs/cfl/', desc: 'Leadership communication, persuasion, and executive presence'},
-  {name: 'Corporate Strategy & Structure', path: '/docs/css/', desc: 'Corporate-level strategy, diversification, and organizational design'},
+const quarters = [
+  {
+    label: 'Quarter 5',
+    subjects: [
+      {name: 'Advanced Corporate Finance', path: '/docs/q5/acf/', desc: 'EVA, capital structure, payout policy, derivatives, and risk management'},
+      {name: 'Cross Cultural Management', path: '/docs/q5/ccm/', desc: 'Managing cultural differences in global business'},
+      {name: 'Communication for Leaders', path: '/docs/q5/cfl/', desc: 'Leadership communication, persuasion, and executive presence'},
+      {name: 'Corporate Strategy & Structure', path: '/docs/q5/css/', desc: 'Corporate-level strategy, diversification, and organizational design'},
+    ],
+  },
+  {
+    label: 'Quarter 6',
+    subjects: [
+      {name: 'Marketing in Digital World', path: '/docs/q6/mdw/', desc: 'Digital-era marketing strategy, segmentation, personas, and the unscaled economy'},
+    ],
+  },
 ];
 
 function SubjectCard({name, path, desc}) {
@@ -39,11 +50,16 @@ export default function Home() {
       </header>
       <main>
         <div className="container" style={{paddingBottom: '3rem'}}>
-          <div className="row">
-            {subjects.map((s) => (
-              <SubjectCard key={s.name} {...s} />
-            ))}
-          </div>
+          {quarters.map((q) => (
+            <div key={q.label} style={{marginBottom: '2rem'}}>
+              <Heading as="h2">{q.label}</Heading>
+              <div className="row">
+                {q.subjects.map((s) => (
+                  <SubjectCard key={s.name} {...s} />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </main>
     </Layout>

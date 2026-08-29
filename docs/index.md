@@ -17,11 +17,17 @@ Each **subject** has its own section in the sidebar. Within each subject, conten
 
 Browse subjects from the sidebar or use the search bar to find specific topics.
 
-## Subjects
+## Quarter 5
 
 | Subject | Description |
 |---------|-------------|
-| [Advanced Corporate Finance](acf/) | EVA, capital structure, payout policy, derivatives, and risk management |
-| [Cross Cultural Management](ccm/) | Managing cultural differences in global business |
-| [Communication for Leaders](cfl/) | Leadership communication, persuasion, and executive presence |
-| [Corporate Strategy & Structure](css/) | Corporate-level strategy, diversification, and organizational design |
+| [Advanced Corporate Finance](q5/acf/) | EVA, capital structure, payout policy, derivatives, and risk management |
+| [Cross Cultural Management](q5/ccm/) | Managing cultural differences in global business |
+| [Communication for Leaders](q5/cfl/) | Leadership communication, persuasion, and executive presence |
+| [Corporate Strategy & Structure](q5/css/) | Corporate-level strategy, diversification, and organizational design |
+
+## Quarter 6
+
+| Subject | Description |
+|---------|-------------|
+| [Marketing in Digital World](q6/mdw/) | Digital-era marketing strategy, segmentation, personas, and the unscaled economy |
