@@ -18,6 +18,7 @@ const quarters = [
     subjects: [
       {name: 'Marketing in Digital World', path: '/docs/q6/mdw/', desc: 'Digital-era marketing strategy, segmentation, personas, and the unscaled economy'},
       {name: 'Product Management', path: '/docs/q6/pdm/', desc: 'Product lifecycle, customer value, positioning, and go-to-market strategy'},
+      {name: 'Fundamentals of AI', path: '/docs/q6/fai/', desc: 'How AI works, neural networks, CNNs, transformers, LLMs, and responsible deployment'},
     ],
   },
 ];
