@@ -9,6 +9,14 @@ title: "Session 3: Opening the Black Box — Neurons, Weights, and the Anatomy o
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** The single-node equation ŷ = w·x + b (weight = multiply, bias = add); feature vs label vs predicted output (ŷ); the three layers (input = #features, hidden = flexible, output = problem-dependent); parameter counting (a 3-2-1 network = 11 parameters).
+
+**Important (supporting):** Why finding the right weights is hard (the Excel experiment); deep learning = many hidden layers; overfitting; backpropagation (name only, detailed in Session 4).
+
+**Context (background/color):** The whirlwind recap of student use cases; the driver / mechanic / passenger analogy; the Kabir "fifty-parameter model" story.
+:::
+
 ## The Roller Coaster Warning
 
 Professor Mojumder opened this session with a warning wrapped in an analogy. Sessions 1 and 2, he said, were the slow chain-lift at the start of a roller coaster -- being carried gently upward. From Session 3 onward, the ride drops. The concepts get more technical, more mathematical, more unfamiliar for the non-technical students in the room.
@@ -99,6 +107,10 @@ The network's output is not the label. It is a **predicted label**, called **y-h
 
 This is the entire game of AI training: shrinking the delta between y (label) and y-hat (prediction).
 
+:::tip[Important]
+Keep three terms straight: **feature (x)** enters the network, **label (y)** is the true answer it is compared against, and **y-hat (ŷ)** is the network's prediction. Features and labels enter through *different doors* — features into the input layer, labels into a separate comparison step.
+:::
+
 ---
 
 ## The Single-Node Equation (The Only Math in the Course)
@@ -120,6 +132,10 @@ For a single node with two inputs:
 **y-hat = w1 · x1 + w2 · x2 + b**
 
 The class was asked to type this into the chat. Almost everyone got it right, including the students who had flagged themselves as non-technical. This equation is the atom of AI. Everything else is just millions of these stitched together.
+
+:::danger[Must Know — Exam Critical]
+The single-node equation **ŷ = w·x + b** (and ŷ = w₁·x₁ + w₂·x₂ + b for two inputs) is the one piece of math the professor promised you must know. The weight (w) multiplies, the bias (b) adds — every neural network is millions of these stitched together.
+:::
 
 ---
 
@@ -148,6 +164,10 @@ For a 3-2-1 network (3 input nodes, 2 hidden nodes, 1 output node):
 | **Total** | **8** | **3** | **11** |
 
 The class walked through this with the Excel sheet the professor had uploaded to Moodle.
+
+:::tip[Important]
+Be able to count parameters. Input nodes = number of features; a 3-2-1 network has (3×2 + 2) + (2×1 + 1) = **11 parameters**. Contrast that with GPT-3's 175 billion — the gap between a homework exercise and a foundation model.
+:::
 
 ### The Scale Comparison That Stopped the Room
 
@@ -201,6 +221,10 @@ The professor's answer had two parts:
 - Yes, generally deeper models (more hidden layers) capture more patterns -- that is why the field is called "**deep learning**." The word "deep" refers to the depth of hidden layers, nothing more mystical.
 - But billions of layers is overkill. Too much depth causes **overfitting** -- the model memorises the training data and fails on new data.
 
+:::tip[Important]
+"**Deep learning**" simply means a network with many hidden layers — "deep" refers to layer count, nothing more mystical. More depth generally captures more patterns, but too much causes **overfitting**. There is no formula for the right number of layers; it is trial and error.
+:::
+
 There is no formula for the right number of layers or nodes. It is trial-and-error, informed by decades of collective practice in the AI community.
 
 > **Professor Mojumder:** "One of the best things about AI is everything is flexible. Everything is trial and error based. So you decide on number of layers, you decide on number of nodes in each layer... it's like when you drive a car -- you suddenly take certain roads where the traffic is less. You keep driving different roads and you have that intuition. Same with AI."
@@ -246,6 +270,10 @@ The professor closed with an analogy that framed the whole course:
 > **Professor Mojumder:** "Think about three people: someone who knows how to drive a car, someone who always uses a driver, and someone who is an automobile engineer who builds engines. We have to be somewhere in between -- someone who knows how to drive and maybe how to open the hood and change the windshield wiper fluid, rather than someone who doesn't know how to drive and just rides with a driver."
 
 MBA students are being trained to be **drivers**, not engineers, and certainly not passive passengers. Know enough to open the hood. Know enough to say "this problem needs a small model, not a 175-billion-parameter one." Know enough not to be sold a sword when a needle would do.
+
+:::note[Good to Know]
+The driver / mechanic / passenger analogy frames the whole course: an MBA should be the *driver* who can open the hood — not the engineer who builds the engine, nor the passenger who just rides along. Memorable, but the mechanics above are what get tested.
+:::
 
 ---
 

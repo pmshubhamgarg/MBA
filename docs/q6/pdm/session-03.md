@@ -9,6 +9,14 @@ title: "Session 3: Positioning and Value Proposition — From Differentiation to
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** Positioning (meaningful, distinctive, competitive); Geoffrey Moore's six-line value proposition statement; the Buyer Utility Map (6×6); the five dimensions of differentiation; the Value Proposition Canvas (jobs/pains/gains ↔ pain relievers/gain creators) and its Zenatix/WattMan application.
+
+**Important (supporting):** The seven tests for a differentiator (IDSCPAP); the nine product differentiators; the seven positioning strategies; why cost is not a product-level differentiator; promote one benefit (two at most).
+
+**Context (background/color):** Technical jargon (PUF, Golden Eye) "killing multiple birds"; the buffet/sambar product-vs-company analogy; the 72% new-product failure stat.
+:::
+
 ## The Central Question of This Session
 
 You have built (or are building) a product. You believe it solves a real problem. But here is the uncomfortable truth: your customer does not care about your product. They care about *their* problem. Your job as a product manager is to carve out a space in the customer's mind — a clear, distinct, defensible mental slot — that says: *this product is the best answer to my specific problem.*
@@ -25,6 +33,10 @@ Notice three words doing heavy lifting there: **meaningful** (it matters to the 
 
 Positioning is not just advertising. It has to be backed up by the actual product characteristics, the pricing, the distribution channel, and the promotion. Say you position your soap as "premium." If it is sold in a bin next to the cheapest detergent in a discount store, your positioning is dead on arrival.
 
+:::tip[Important]
+**Positioning** = designing your offering and image to occupy a *meaningful, distinctive, competitive* slot in the target customer's mind. Two steps: first **differentiate** (find a meaningful difference), then **communicate** it across every touchpoint — product, price, channel, promotion. Those three adjectives and the two steps are exam-ready.
+:::
+
 ### Two Steps to Get There
 
 | Step | What You Do |
@@ -37,6 +49,10 @@ Simple in theory. The rest of this session is about making it work in practice.
 ---
 
 ## The Five Dimensions of Differentiation
+
+:::tip[Important]
+The **five dimensions of differentiation** — Product, Services, Personnel, Channel, Image — are a likely exam list. Pair it with the professor's distinction: **identity** is how a company aims to project itself; **image** is how customers actually perceive it. You control identity and only influence image.
+:::
 
 Before you can position, you need to know *where* your product can be different. Differentiation can happen along five dimensions:
 
@@ -105,6 +121,10 @@ If your differentiator fails on any of these, reconsider whether it belongs in y
 ---
 
 ## Why Technical Jargon in Positioning Sometimes Works
+
+:::note[Good to Know]
+The "PUF" and LG "Golden Eye" trick — a technical name customers do not understand yet that signals distinctiveness, educates, and sparks curiosity ("killing multiple birds with one stone") — is a memorable nuance. Worth recognizing, but lower priority than the core positioning frameworks.
+:::
 
 A student asked: when Godrej says "refrigerator with PUF" (polyurethane foam), most customers have no idea what PUF is. So why use a technical term?
 
@@ -204,6 +224,10 @@ The professor introduced a tool from Chan Kim and Renee Mauborgne (the Blue Ocea
 
 It is a 6x6 matrix that maps **six stages of the buyer experience** against **six utility levers**:
 
+:::tip[Important]
+The **Buyer Utility Map** (Blue Ocean Strategy) is a 6×6 grid: six buyer-experience stages (Purchase, Delivery, Use, Supplements, Maintenance, Disposal) against six utility levers (Customer Productivity, Simplicity, Convenience, Risk, Fun & Image, Environmental Friendliness). Plot your concept across its 36 cells; genuine differentiation lives in cells competitors have not occupied.
+:::
+
 | | Purchase | Delivery | Use | Supplements | Maintenance | Disposal |
 |---|---------|----------|-----|-------------|-------------|----------|
 | **Customer Productivity** | | | | | | |
@@ -271,9 +295,13 @@ This connects the Value Proposition Canvas directly to the product management pr
 
 ## Geoffrey Moore's Six-Line Value Proposition Statement
 
-This is the culmination of the entire session. Once you have identified your differentiators, mapped your buyer utility, and built your value proposition canvas, you need to distill everything into a crisp, shareable statement. The template comes from **Jeffrey Moore**, author of *Crossing the Chasm*.
+This is the culmination of the entire session. Once you have identified your differentiators, mapped your buyer utility, and built your value proposition canvas, you need to distill everything into a crisp, shareable statement. The template comes from **Geoffrey Moore**, author of *Crossing the Chasm*.
 
 The professor played a video clip of Moore himself explaining the framework. Here it is:
+
+:::danger[Must Know — Exam Critical]
+Geoffrey Moore's **six-line value proposition statement** is the session's culmination and the most likely thing you will be asked to *write*. Memorize the six openers in order: **FOR** (target customer), **WHO** (their problem), **OUR PRODUCT IS** (generic category), **THAT PROVIDES** (primary benefit), **UNLIKE** (a real competitor), **OUR PRODUCT** (your key differentiation). It is created *during* development to align the team — expect to draft one for WattMan II and III.
+:::
 
 | Line | Starts With | What You Write |
 |------|------------|----------------|
@@ -301,9 +329,9 @@ This six-line document is shared internally with the product team *during* devel
 
 ---
 
-## The Zentatix Case — A Preview
+## The Zenatix Case — A Preview
 
-The professor introduced the Zentatix case that will be discussed fully in Session 4. Here is the essential background:
+The professor introduced the Zenatix case that will be discussed fully in Session 4. Here is the essential background:
 
 **The Company:** Zenatix, an energy data analytics startup founded in 2013 by three IIT Delhi batchmates — Amarjit Singh, Vishal Bansal, and Rahul Bhalla.
 
@@ -355,9 +383,9 @@ The value proposition statement is not something you write after the product is 
 ## Recipe Chain
 
 **Session 3 builds the positioning toolkit:**
-Product differentiation (5 dimensions, 9 product differentiators) leads to selecting differentiators (7 tests) leads to choosing a positioning strategy (7 types) leads to the Buyer Utility Map (36-cell differentiation check) leads to the Value Proposition Canvas (jobs-pains-gains mapped to pain relievers and gain creators) leads to Geoffrey Moore's six-line value proposition statement. The Zentatix case previewed here gives you a real startup where each pivot demanded a completely new positioning.
+Product differentiation (5 dimensions, 9 product differentiators) leads to selecting differentiators (7 tests) leads to choosing a positioning strategy (7 types) leads to the Buyer Utility Map (36-cell differentiation check) leads to the Value Proposition Canvas (jobs-pains-gains mapped to pain relievers and gain creators) leads to Geoffrey Moore's six-line value proposition statement. The Zenatix case previewed here gives you a real startup where each pivot demanded a completely new positioning.
 
-**Next session:** We apply all of this to the Zentatix case in depth — building positioning statements for WattMan II and WattMan III, analyzing why each pivot happened, and understanding what product-market fit looks like when a startup is searching for it in real time.
+**Next session:** We apply all of this to the Zenatix case in depth — building positioning statements for WattMan II and WattMan III, analyzing why each pivot happened, and understanding what product-market fit looks like when a startup is searching for it in real time.
 
 ---
 

@@ -9,6 +9,14 @@ title: "Session 6: When Machines Read — From Words to Vectors to Memory"
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** Word embeddings (dense vectors where similar words sit close together); why a flattened ANN loses word order; the RNN as the fix (feed words one at a time, carry the previous hidden state forward as memory).
+
+**Important (supporting):** One-hot encoding vs embeddings and the dimensionality problem; GloVe pre-trained embeddings (~1.2M vocab, 50-300 dimensions); the polysemy / "bank" problem that motivates contextual embeddings; padding and truncation.
+
+**Context (background/color):** The naive early attempts (lat/long, ASCII, 1-26 indexing); the `king - man + woman ≈ queen` trick; Garbage In, Garbage Out.
+:::
+
 ## Housekeeping First
 
 The professor opened by confirming the **mid-course quiz**: 15 MCQs, 2 marks each, 30 marks total, 30 minutes, held right after the class session on the 12th. The syllabus covers Sessions 1 through 5 -- ANN fundamentals, gradient descent, activation functions, CNN operations. The mode of preparation he recommended: the uploaded slides plus the recordings, with special attention to the case discussed earlier (the Facebook workshop case) and the conceptual definitions -- weight, bias, neural network, convolution, pooling.
@@ -93,6 +101,10 @@ Now every city is a 3-dimensional vector. And look what happened:
 
 > **Professor Mojumder:** "If I draw it on an XY plane, my vector for New York, my vector for Mumbai, and my vector for New Delhi are all more or less in the same region. Whereas my vector for Nagpur is somewhere different. That is how the numbers work -- similar words get similar vectors."
 
+:::danger[Must Know — Exam Critical]
+A **word embedding** is a dense vector (typically 50-300 dimensions) whose geometry encodes meaning: similar words land close together, dissimilar words land far apart. This is the definition to be able to state in one line, and the single idea the rest of NLP builds on. Contrast it with one-hot encoding, which is huge and carries no meaning.
+:::
+
 ### Extending to All Words, and to Many More Dimensions
 
 Gaurav asked: what about countries, animals, trees, verbs? Just keep adding dimensions. If three dimensions are not enough to distinguish everything, add x4, x5, x100, x300.
@@ -146,6 +158,10 @@ Nobody in industry trains their own embeddings from scratch anymore. Stanford's 
 
 Note that even as the corpus grew from 27 billion to 220 billion tokens, the **vocabulary stayed at ~1.2 million**. The industry has effectively agreed that 1.2 million words is roughly the size of usable English. Anything beyond that is noise or rare enough to be safely handled by pre-processing.
 
+:::tip[Important]
+Nobody trains embeddings from scratch anymore. Stanford's **GloVe** publishes free, downloadable pre-trained vectors (~1.2M vocabulary, dimensions from 25 to 300). Remember the name, that it is pre-trained on a huge corpus, and that you just download and use it.
+:::
+
 ---
 
 ## Pre-Processing: The Unglamorous Foundation
@@ -172,6 +188,10 @@ The professor conceded honestly that the basic embedding method **cannot** disti
 > **Professor Mojumder:** "GPT and others solved this problem. If you have the word 'bank' in a river bank and in a corporation bank, these two banks have different vectors because they are used differently in different sentences. They did that with a different kind of neural network model -- we will talk about that later."
 
 For now, the working assumption is one vector per word.
+
+:::note[Good to Know]
+The "bank" problem (river bank vs money bank) is the reason a single fixed vector per word is not enough. Modern LLMs solve it with **contextual embeddings** -- a vector that shifts with the surrounding sentence. This is the loose thread Session 7 pulls on.
+:::
 
 ---
 
@@ -227,6 +247,10 @@ Same words, different order, radically different meaning. A vanilla ANN with a f
 
 > **Professor Mojumder:** "You are simultaneously entering all the information of all the words into the AI. The first word is no more the first word. The second word is no more the second word. This sequential nature is not captured. But that is an important property of sentences."
 
+:::tip[Important]
+Flattening word embeddings into one vector destroys **word order** -- "dog bites man" and "man bites dog" become indistinguishable. This limitation is exactly the motivation for the RNN, and a favourite exam angle: why do we need a model with memory for text?
+:::
+
 Kaushik asked another good question: what if sentences have different lengths? The professor introduced two standard tricks:
 
 - **Truncation** -- if the sentence is too long, cut off the tail beyond a fixed length (say, 100 words).
@@ -262,6 +286,10 @@ With that visual freedom, the RNN looks like this:
 - The final hidden layer's output is the **y_hat** for the entire sentence.
 
 Every hidden layer carries forward the accumulated understanding of everything before it, then combines that with the next new word. **Memory is preserved. Order is preserved.**
+
+:::tip[Important]
+An **RNN** processes words one at a time; each hidden layer receives both the current word's embedding and the previous hidden layer's output. That carried-forward state is the "memory" that preserves sequence. The underlying math (weights, biases, gradient descent) is unchanged -- only the wiring is new.
+:::
 
 ### Why It's Called "Recurrent"
 

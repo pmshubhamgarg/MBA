@@ -9,6 +9,14 @@ title: "Session 4: Climbing Down the Error Mountain — Activation Functions, Co
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** Which activation function goes where (Linear → regression output, Sigmoid → binary output, ReLU → hidden layers, Softmax → multiclass output); gradient descent (step down the error curve using the slope/gradient); loss function vs cost function; learning rate (step size).
+
+**Important (supporting):** The three output problem types (regression / binary / multiclass); epoch; SGD and adaptive optimisers (Adam, AdaGrad); overfitting and the training vs test split; local vs global minima.
+
+**Context (background/color):** The U-shaped error-curve Excel experiment; Senthil's "cure unknown diseases" boundary question; the Meher overfitting story.
+:::
+
 ## The Warning: This Is the Hardest Session
 
 Professor Mojumder opened by lowering expectations honestly.
@@ -58,6 +66,10 @@ Recall the Session 3 formula for a single neuron: multiply input by weight, add 
 The intermediate value (before activation) is now called **z**. The activation function transforms z into y-hat (or into the input for the next layer).
 
 Why bother? Because pure multiplication and addition are **linear**. Stack a hundred linear operations, and you still have a linear operation -- no matter how deep the network. Adding a nonlinear activation function is what lets the network learn curves, boundaries, and patterns.
+
+:::danger[Must Know — Exam Critical]
+Memorise which activation goes where: **Linear** in a regression output layer, **Sigmoid** for a binary-classification output (real number → probability), **ReLU** in hidden layers (negatives become 0), **Softmax** for a multiclass output (a probability vector that sums to 1). This mapping is the most testable single fact in the session.
+:::
 
 ### The Four Activation Functions the Class Met
 
@@ -126,6 +138,10 @@ If you started at W11 = 4800, you would be to the right of the minimum. The slop
 
 The mathematical name for slope is **gradient**. The algorithm that says "look at the gradient, then step in the direction that reduces error" is called **gradient descent**.
 
+:::danger[Must Know — Exam Critical]
+**Gradient descent**: at any weight value, compute the slope (gradient) of the cost curve and step in the direction that lowers error — negative slope, increase the weight; positive slope, decrease it. Repeat until you reach the bottom of the U. This is *the* learning mechanism of neural networks.
+:::
+
 Prasun asked: "Don't we need two points to compute a slope?" The professor's answer: not mathematically. Since the error function is a known equation of the weights, you can compute the slope at a single point using **partial differentiation**. The AI does this analytically -- no need to sample two neighbouring values.
 
 ### Step by Step
@@ -192,6 +208,10 @@ Too small a step, on the other hand, means it takes 200 epochs to reach the mini
 
 This step size has a name: the **learning rate**. It is chosen by the designer -- not computed by the model.
 
+:::tip[Important]
+The **learning rate** is the step size, and it is a *designer choice*, not something the model computes. Too large → you overshoot and ping-pong across the valley forever; too small → training crawls and wastes compute. A classic exam trade-off question.
+:::
+
 > **Professor Mojumder:** "Large step size doesn't always mean a good solution because you may overshoot the minimum. Very small step size means you're learning very slightly. So the optimal step size is also a problem in these problems when they're optimising these errors -- choice of weights."
 
 ---
@@ -231,6 +251,10 @@ The professor made a distinction the class would come back to repeatedly. The da
 
 If the model performs well on training data but terribly on test data, you have overfit -- memorised rather than learned.
 
+:::tip[Important]
+**Overfitting** = high training accuracy but poor test accuracy: the model memorised instead of learned. The training/test split exists precisely to catch it, and *early stopping* halts training when validation error starts rising. Expect a question on why a big train-vs-test gap is a warning sign.
+:::
+
 Arunava asked how a deployed model handles a brand-new input. The professor's answer: if the new input resembles what the model was trained on, it will perform well. If it is way outside the training distribution -- say, a Tesla trained on US highways suddenly driving through Bangalore -- the model breaks. The prediction error becomes very high.
 
 ---
@@ -262,6 +286,10 @@ But show it a giraffe, and the AI is lost. The giraffe lies outside the trained 
 > **Professor Mojumder:** "So it depends upon how do you define what is a black cat, white cat, gray cat, big cat, fat cat -- what is your definition of the cat? All the images have created a boundary around possibility. All those possible images in the inside will be discoverable. Those in the outside will not be discoverable."
 
 This is why AI can help find a new drug that is chemically similar to known drugs, but usually cannot invent a wholly novel molecular class. Learning happens inside the boundary of trained experience.
+
+:::note[Good to Know]
+Senthil's "cure unknown diseases" question yields a memorable image: a new input *inside* the boundary of trained examples is discoverable; a giraffe *outside* the cat boundary is not. Good intuition for why models fail on out-of-distribution inputs.
+:::
 
 ---
 

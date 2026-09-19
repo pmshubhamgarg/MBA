@@ -9,6 +9,14 @@ title: "Session 8: The Price of Intelligence — Economics of LLMs, RAG, Mixture
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** RAG (retrieve from a vector DB, append chunks to the prompt, ground the answer, reduce hallucination); MoE (many specialised experts + a router firing only a few per query); SLM (below 10B parameters); Agentic AI (LLM "brain" + software "body" that takes actions).
+
+**Important (supporting):** The LLM cost stack (data, compute, cooling, water, labour, licensing, guardrails); cheaper-per-token ≠ cheaper-per-task; Chain-of-Thought prompting; multimodal LLMs (each modality encoded into a shared embedding space); human-in-the-loop and KYA.
+
+**Context (background/color):** Circular financing; the bicycle-vs-luxury-car analogy; Sarang's Opus-to-Sonnet cost experiment.
+:::
+
 ## A Reverse Classroom
 
 Session 8 was different by design. Two quizzes back-to-back, three sessions left in the course, and one big idea the professor wanted the class to feel in their bones: **AI is not something you learn about only from teachers anymore -- you learn about it with the AI sitting next to you.**
@@ -76,6 +84,10 @@ Sarang shared a real experiment from his company. To reduce token costs, his tea
 
 The point landed hard. **Cheaper per-token does not mean cheaper per-task.** A less capable model may consume more tokens overall, take more back-and-forth iterations, and produce lower-quality output that requires human rework.
 
+:::note[Good to Know]
+Sarang's 30-day experiment (forcing Sonnet over Opus) is a memorable exam anecdote: token consumption went *up*, not down, because the weaker model needed more iterations. The lesson to cite: optimise cost per completed task, not cost per token.
+:::
+
 Raghav pointed out something clever built into Claude itself:
 
 > **Raghav:** "When I use Claude, it sometimes gives me a hint -- 'use Sonnet for everyday tasks.' The system is telling me not to burn Opus tokens on things Sonnet can handle. That's a form of automatic cost routing at the prompt level."
@@ -124,6 +136,10 @@ Purba tied the whole loop together:
 
 The architecture in words: **User prompt → semantic search over external documents → top-N relevant chunks retrieved → chunks appended to the prompt → LLM generates a response grounded in the retrieved content.** The LLM itself is not modified. The prompt is enriched.
 
+:::danger[Must Know — Exam Critical]
+**RAG (Retrieval-Augmented Generation):** the prompt is converted to embeddings, a semantic search over a vector database pulls the most relevant chunks, and those chunks are appended to the prompt so the LLM answers from real, up-to-date, or private data. The model is never retrained -- only the prompt is enriched. This grounds answers and cuts hallucination, and it is one of the highest-yield concepts in the whole course.
+:::
+
 ---
 
 ## Topic 3: Chain-of-Thought (CoT) Prompting
@@ -162,6 +178,10 @@ The professor drew the math on the board. Suppose you have 10 experts, each an 8
 
 That is the trick. **MoE lets you get 80B worth of coverage with less than 80B worth of interconnections, because inside each expert the network is fully connected, but the experts are not connected to each other.**
 
+:::tip[Important]
+**Mixture of Experts:** many specialised sub-models plus a router (gating network) that activates only a few experts per query (typically 2-6). Examples: Mixtral (8 experts), DeepSeek (~150). The router picks whole experts, not fractions -- this is why MoE reaches frontier coverage at a fraction of the inference cost.
+:::
+
 Ashoke framed it in OS terms:
 
 > **Ashoke:** "It's like process scheduling in an operating system. There's a supervisory model that does routing and load balancing across the experts based on the context of the input."
@@ -179,6 +199,10 @@ Manish asked a sharp question: can the router activate only a portion of one exp
 ## Topic 5: Small Language Models (SLMs)
 
 The line the professor drew: **anything below 10 billion parameters is a small language model**. Mistral 7B, LLaMA 3.1 8B, Phi-3 -- these are SLMs. Anything above (LLaMA 3 70B, GPT-4, Claude Opus) is a large one.
+
+:::tip[Important]
+Remember the threshold: an **SLM is below ~10 billion parameters**. The exam-worthy reason they matter is privacy -- a small model runs on your own infrastructure, so private data never leaves the building -- plus lower cost and latency for narrow domains.
+:::
 
 Prasoon flagged the most compelling business use case:
 
@@ -233,6 +257,10 @@ Senthil added the enterprise dimension:
 The professor's mental model, delivered slowly and deliberately:
 
 > **Professor Mojumder:** "AI is the brain. Agentic AI is the body. The brain -- the LLM -- decides what to do. The body -- the software wrapper around the LLM -- executes: API calls, database queries, browser clicks, sending emails, calendar bookings. The brain reasons. The body acts. When we say 'agentic AI' we mean the whole human -- brain plus limbs plus perception plus memory."
+
+:::danger[Must Know — Exam Critical]
+**Agentic AI = AI brain + software body.** The LLM reasons and decides; the software wrapper acts -- calling APIs, querying databases, clicking, booking, emailing. It is not a new kind of AI, it is orchestration around an LLM. The exam pairing to remember: agentic AI needs a **human-in-the-loop** (or a guardrail LLM) because a free-range agent has no stop.
+:::
 
 He walked through a worked example: *"Book me the cheapest flight to Delhi next Friday."* Break it into pieces:
 

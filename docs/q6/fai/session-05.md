@@ -9,6 +9,14 @@ title: "Session 5: Teaching a Machine to See — Pixels, Filters, and the Convol
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** An image is a matrix of numbers (grayscale pixel = 1 number 0-255, color = 3 RGB numbers); the curse of dimensionality (why a plain ANN fails on real images); convolution (a learnable filter/kernel slides and does element-wise multiply → feature map); the full CNN pipeline (convolution → pooling → flatten → ANN → softmax).
+
+**Important (supporting):** Max pooling (keep the max, no learnable parameters); filters are *learned* by gradient descent, not hand-designed; spatial hierarchy (edges → shapes → objects); softmax at the output for multiclass.
+
+**Context (background/color):** The Windows XP wallpaper spatial-structure demo; the Ghibli-style-transfer trend; the Arjun bottling-plant story.
+:::
+
 ## Where We Are in the Course
 
 Session 4 closed the loop on training: gradient descent, weight and bias updation, and the salary-prediction toy problem. That entire journey used **numerical tabular data** -- age, CAT score, years of experience, salary. Neat rows and columns.
@@ -41,6 +49,10 @@ The professor asked the class to brainstorm business use cases for computer visi
 
 The Ghibli-style transformation was the professor's way of hinting that once AI understands the **underlying pattern** of an image, it can not only classify it -- it can regenerate it in a completely different visual style. That is the creative surface. Underneath is the same machinery we are about to unpack.
 
+:::note[Good to Know]
+The Ghibli-style-transfer trend and the Windows XP wallpaper demo are memorable hooks — style transfer shows that understanding an image's pattern lets AI regenerate it, and the wallpaper illustrates that images have spatial structure. Fun context; the convolution machinery below is what gets tested.
+:::
+
 ---
 
 ## What Is an Image, Really?
@@ -63,6 +75,10 @@ Zoom in far enough on any digital picture and you hit the wall -- the pixel. It 
 - A **color pixel** is made of three numbers -- **R (Red), G (Green), B (Blue)**, each ranging 0 to 255. Combine those three channels and you can produce any color humans can see on a screen.
 
 So an image is nothing but a **matrix of numbers**. That is the essential mental shift. A photograph of your dog is, from the machine's point of view, a grid of integers.
+
+:::tip[Important]
+An image is just a **matrix of numbers**: a grayscale pixel is one value (0 = black, 255 = white); a color pixel is three values (R, G, B). So a 28×28 grayscale image = 784 features, and a 100×100 color image = 100×100×3 = 30,000 features. This is the setup for the curse of dimensionality.
+:::
 
 ---
 
@@ -120,6 +136,10 @@ And that is just one slab. For a full-HD photo of a horse, just to classify "hor
 
 The class quickly zeroed in on the practical implication: nobody wants to train a billion-parameter model on their phone just to identify a diseased mango leaf. So we need a way to **reduce the dimension without throwing away the information.**
 
+:::danger[Must Know — Exam Critical]
+The **curse of dimensionality**: feed raw pixels of a real image (an HD color photo ≈ 6.2 million features) into a plain ANN and the weight count explodes into the billions — untrainable. This is *why* a fully connected ANN is unsuitable for images and why the CNN exists.
+:::
+
 ---
 
 ## Dimensionality Reduction: The Crop, and Then the Clever Part
@@ -135,6 +155,10 @@ If we can **extract these features** from the image, we do not need every last p
 > **Professor Mojumder:** "An image is nothing more than a collection of features. If we can extract those features, we do not need the entire image to analyze it."
 
 The technique that does this extraction is called the **convolution operation**, and the network that uses it is called a **Convolutional Neural Network (CNN)**.
+
+:::danger[Must Know — Exam Critical]
+**Convolution** slides a small filter (kernel) across the image, doing element-wise multiplication and summing at each stop to build a smaller **feature map**. Unlike cropping (which throws pixels away blindly), convolution is *feature-aware compression*: it shrinks dimension while preserving which features are present and where. This is the heart of the CNN.
+:::
 
 ---
 
@@ -255,6 +279,10 @@ This is why CNNs are so powerful. The network learns:
 - **Later layers** compose those into whole objects -- faces, cars, tumors.
 
 Each layer builds on the previous one. This is called a **spatial hierarchy**, and it is why a CNN can look at a photo of a horse and eventually output "horse."
+
+:::tip[Important]
+The punchline: filter values are **not hand-designed** — they are weights learned by gradient descent, exactly like ANN weights. This produces a **spatial hierarchy**: early layers learn edges, middle layers shapes, later layers whole objects. Also remember max pooling has *no* learnable parameters (it just keeps the max).
+:::
 
 ### The Explainability Trade-Off
 

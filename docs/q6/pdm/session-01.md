@@ -9,6 +9,14 @@ title: "Session 1: The Conductor Without a Baton — What Product Managers Actua
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** Problem Space vs. Solution Space; the PM's three core responsibilities (define, manage, represent the customer); the PM as conductor — influence without authority.
+
+**Important (supporting):** MRD → PRD translation; the seven core responsibilities; PM vs. Program Manager vs. Product Owner; the product life cycle stages; the CCCA teaching method.
+
+**Context (background/color):** The Paint Shop eight-colors story; Parle-G shrinkflation; the Zomato vs. Swiggy first-mover lesson.
+:::
+
 ## Setting the Stage: What Is This Course About?
 
 Product management is one of those roles that everyone talks about but few people can define crisply. This 10-session course, taught by Professor Pranto Banerjee, takes a practitioner's approach: conceptual clarity first, then contextual application through cases. The professor calls this the **CCCA method** -- Conceptual Clarity followed by Contextual Applicability.
@@ -41,6 +49,10 @@ At its core, a product manager (PM) is responsible for three things:
 
 That third one is the one that makes or breaks careers.
 
+:::tip[Important]
+A PM's three core responsibilities — **define** the product, **manage** its development, launch, and improvement, and **represent the customer** inside the company — are the exam-ready summary of the role. Customer advocacy (the third) is the hardest to do well and the most likely to be tested.
+:::
+
 ### The Customer Advocacy Problem
 
 The PM is the voice of the customer within the firm. But the PM is also a human being with opinions. And that creates a dangerous trap: sometimes a PM gets so attached to their own vision of the product that they miss what customers actually need.
@@ -56,6 +68,10 @@ The lesson: **first-mover advantage means nothing if a later entrant understands
 ## Responsibility Without Authority: The PM's Core Paradox
 
 Here is the single most important thing to understand about being a product manager: **you have enormous responsibility but almost no formal authority.** The engineers do not report to you. The designers do not report to you. The marketing team does not report to you. Yet you are expected to coordinate all of them toward a single product vision.
+
+:::tip[Important]
+**Influence without authority** is the PM's defining paradox: enormous responsibility, no direct reports. The exam framing is the orchestra conductor — you align engineering, design, and marketing toward one vision through persuasion, not command, and you happily let others take the credit.
+:::
 
 ### The Paint Shop Story
 
@@ -155,6 +171,10 @@ This was the concept the professor was most eager to convey in Session 1, becaus
 
 > **Professor Banerjee:** "As a product manager, I try to think: am I working in the problem space right now, or am I in the solution space? I try to keep these two thought processes distinct. Otherwise, I make a mess of everything."
 
+:::danger[Must Know — Exam Critical]
+**Problem Space vs. Solution Space** is Session 1's signature mental model. The problem space is where you research and document customer needs, pain points, and market gaps; the solution space is where you define, build, launch, and evaluate. Finish the problem space *before* jumping to solutions — mixing them yields incremental fixes that never fit. This distinction directly sets up the redBus case and is prime exam material.
+:::
+
 ### Problem Space (Understanding What to Solve)
 
 | Step | What You Do |
@@ -221,6 +241,10 @@ The professor briefly mentioned several concepts that will be explored in depth 
 ---
 
 ## The Parle-G Biscuit Detour: A Product Management Mini-Case
+
+:::note[Good to Know]
+The Parle-G "shrinkflation" story — cutting the pack from 17 biscuits to 16 rather than raising price, because changing the pack count is a cheap packaging tweak while changing the biscuit mould means costly plant changes — is memorable exam color. It illustrates product trade-offs cleanly but is unlikely to be a graded concept on its own.
+:::
 
 A student mentioned Parle-G reducing the size of its biscuits to adjust for inflation. The professor, who had worked with the company, filled in the story:
 

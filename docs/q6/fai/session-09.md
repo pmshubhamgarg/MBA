@@ -9,6 +9,14 @@ title: "Session 9: The Triage Case — What Prompt Engineering Really Costs and 
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** The three prompt patterns (zero-shot, few-shot, chain-of-thought) and the grading rule -- MSE against the doctor's ground truth should fall, giving a **negative slope**; the six sources of bias in the pipeline.
+
+**Important (supporting):** Bidirectional RNN and the predictive-word problem; the doctor's QALY / Case-14 triage logic as a bias source; RAG as a grounding fix; agentic AI (brain + body) and human-in-the-loop.
+
+**Context (background/color):** The cost-stack recap (~6,000 GPUs for 12 days for Llama 2 70B); circular financing; "you can build your own homemade AI now."
+:::
+
 ## Where We Are in the Course
 
 Sessions 3 through 8 built the AI machinery brick by brick: ANNs, gradient descent, CNNs for images, RNNs for sequences, and word embeddings. By this point we could sketch a many-to-many bidirectional RNN and explain what a self-attention layer does. But knowing how the engine works is not the same as knowing what it costs to run, when it fails, or how to talk to it.
@@ -70,6 +78,10 @@ A regular RNN reads a sentence left to right. A **bidirectional RNN** reads it b
 > *"Had I said the movie was good, I would have been a lone numskull."*
 
 Read left to right, the RNN reaches "good" and starts leaning positive. The predictive word -- "numskull" -- sits at the very end. A left-to-right pass has to hold on to six words of neutral-looking evidence before the twist arrives. A right-to-left pass, on the other hand, meets "numskull" almost immediately and flips the sentiment negative from the start. Combining both directions lets the model catch the sarcasm without burning hidden layers on no-man's-land. Predictive words often sit at the end of the sentence.
+
+:::tip[Important]
+A **bidirectional RNN** reads the sequence both left-to-right and right-to-left and fuses the hidden states, so it finds the **predictive word** fast wherever it sits. The "numskull" sentence is the go-to example -- know why reading in one direction wastes hidden layers.
+:::
 
 ### The Transformer
 
@@ -153,9 +165,17 @@ Because Case 14 had already been *marked* by the expert as a 1, the AI (which re
 
 The pedagogical lesson: **AI bias is not just about training data. It is also about which decision framework you forgot to encode in the prompt.**
 
+:::tip[Important]
+Case 14 is the memorable example: a doctor scored an 80-year-old with 80% lung damage a **1**, not a 5, applying an implicit **QALY** (survival-probability) triage rule. The AI, given no such rule, scored it 4-5. The takeaway: the "ground truth" itself carries bias, and whatever the prompt omits becomes a silent policy choice.
+:::
+
 ---
 
 ## Prompt Engineering: The Three Patterns
+
+:::danger[Must Know — Exam Critical]
+The three prompt patterns are the core of this session: **zero-shot** (ask directly), **few-shot** (include N worked examples), and **chain-of-thought** (reason step by step). As sophistication rises, MSE against the doctor's ground truth falls -- and the Triage Case is graded on that **negative slope**, not on absolute error. CoT buys accuracy at the cost of more tokens.
+:::
 
 The class formalised what they had just practised.
 
@@ -221,6 +241,10 @@ Even in a straightforward exercise -- 15 messages, 1-to-5 scoring -- the class i
 | **AI training bias** | The base model was trained on internet text -- overwhelmingly English, Western, and structured. Sentence framings unlike that distribution get worse embeddings |
 | **Prompt bias** | Whatever the prompt author forgot to specify (age upper bound, comorbidity weightage) becomes a silent policy choice |
 | **Student / User bias** | Whoever scores or reviews the AI's output brings their own priors |
+
+:::tip[Important]
+The **six sources of bias** in the pipeline -- message-writer, data, doctor, AI-training, prompt, and student/user bias -- are highly testable. The exam angle: bias is not just in the model's training data; it enters at every layer, and the fix is to make each layer explicit rather than to pretend bias can be removed.
+:::
 
 The solution is not to remove bias -- that is impossible. The solution is to **make each layer explicit**, calibrate against ground truth, keep a human in the loop, and be honest that any triage score is a policy choice, not a fact.
 

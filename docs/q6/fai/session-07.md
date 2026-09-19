@@ -9,6 +9,14 @@ title: "Session 7: The Tree Beside the River — How Machines Learn the Meaning 
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** Self-attention (each word attends to every other word, computed in parallel); why transformers replaced RNNs (parallel compute + long-range dependencies); encoder-only (BERT) vs decoder-only (GPT/Claude/Gemini) vs encoder-decoder.
+
+**Important (supporting):** Contextual embeddings (same word, different vector by context); multi-headed attention; the RNN architecture families (many-to-one, one-to-many, many-to-many); bidirectional RNN and the predictive-word problem; zero-shot vs few-shot prompting; masked self-attention and the context window.
+
+**Context (background/color):** "Attention Is All You Need" (2017); the Navier-Stokes / GPT-6 news item; the "you are a senior architect" persona-priming trick.
+:::
+
 ## Where We Left Off: Text as Numbers
 
 The previous session ended with a puzzle. A neural network only understands numbers. But language is words. So how do we translate one into the other?
@@ -52,6 +60,10 @@ If a static embedding gives every "tree" the same vector, the model is blind to 
 The professor demonstrated what it would look like to nudge the vector for each context. The dictionary vector is `[7, 11, 27]`. For the riverside tree, the class agreed something like `[7.2, 11.8, 27.5]` -- slightly shifted, still recognizably a "tree", but tugged toward the neighbouring words "small" and "river". For the oak, `[6.9, 10.8, 27.3]` -- shifted in a different direction, toward "old" and "jungle".
 
 That small mental exercise is the seed of everything that follows in this session: **contextual word embeddings**.
+
+:::note[Good to Know]
+The two-trees example is the intuition pump for the whole session: a riverside sapling and an ancient forest oak should not share one static vector. Giving every occurrence of a word its own context-shifted vector is what forces models from millions of embeddings up to billions -- and is why LLMs are so large.
+:::
 
 > **Professor Mojumder:** "The word can have a meaning by itself, but the word has a much clearer meaning when you know the sentence in which the word lies."
 
@@ -132,6 +144,10 @@ Despite the improvements -- bidirectionality, gating, LSTMs, GRUs -- RNNs never 
 
 The industry needed something that could look at all the words at once, learn which words mattered to which other words, and train in parallel. That something is the **transformer**.
 
+:::tip[Important]
+Know the two reasons RNNs lost to transformers: (1) sequential computation cannot be parallelized (word 2 waits for word 1), and (2) vanishing gradients erase long-range memory across many layers. The transformer fixes both by processing all words simultaneously with self-attention. "Why did transformers replace RNNs?" is a near-certain exam question.
+:::
+
 ---
 
 ## The Recent News: Millennium Prize by AI
@@ -160,6 +176,10 @@ Self-attention is exactly the exercise the class had already done with the two t
 Take "tree" in "the old oak tree stands in the middle of the jungle". The word "tree" attends to "oak" (strongly -- it tells us the species), to "old" (medium -- age), to "jungle" (strongly -- location), to "the" (weakly -- filler). The vector for tree gets pulled in the direction of those signals, producing a new, contextual vector that is different from the vector for tree in "a small tree grew beside the river".
 
 Every word in the sentence does this simultaneously. The result is a set of context-aware embeddings, one per word, computed in parallel.
+
+:::danger[Must Know — Exam Critical]
+**Self-attention:** for each word, the model computes how much attention to pay to every other word in the sequence, then updates that word's vector accordingly -- so "tree" beside a river ends up with a different vector than "tree" in a jungle. Every word does this at once, in parallel. Be able to give this one-sentence definition; it is the mechanism behind every modern LLM.
+:::
 
 ### Multi-Headed Self-Attention
 
@@ -196,6 +216,10 @@ Depending on which halves are kept, you get very different models:
 
 When Gaurav asked whether a decoder-only model like GPT still has the encoder-decoder attention layer, the class worked out the answer together: no. Without an encoder, there is nothing for that layer to attend to. A decoder-only model has only **masked self-attention** and a feed-forward network per layer.
 
+:::tip[Important]
+Memorise the three transformer shapes and one example each: **encoder-only = BERT** (understanding: classification, search); **decoder-only = GPT/Claude/Gemini** (generation, next-word prediction); **encoder-decoder = T5 / original transformer** (translation, seq-to-seq). "BERT vs GPT" is a classic compare-and-contrast question.
+:::
+
 ---
 
 ## Prompting and the New Grammar of Talking to AI
@@ -207,6 +231,10 @@ This has two profound consequences.
 ### Zero-Shot vs Few-Shot Prompting
 
 Yash defined **zero-shot prompting** cleanly: just ask the question, no examples. **Few-shot prompting** means giving the model one or more solved examples before asking your question. The examples enter the context window and reshape the self-attention, making the model much better at matching the style, format, and reasoning of the examples.
+
+:::tip[Important]
+**Zero-shot** = ask directly, no examples. **Few-shot** = include a few solved examples first, which reshape self-attention toward the desired format and reasoning. Be ready to define both with a one-line example each.
+:::
 
 ### The Architect Trick
 

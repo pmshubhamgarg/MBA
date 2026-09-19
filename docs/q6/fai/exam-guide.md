@@ -9,6 +9,10 @@ title: "Exam Guide: Everything You Need Before the FAI Exam"
 
 ---
 
+:::tip[How to use this guide]
+Priority is colour-coded throughout the session notes. Red **Must Know — Exam Critical** boxes are your top priority: memorise these first. Green **Important** boxes are supporting concepts that round out a full-marks answer. Grey **Good to Know** boxes are background and colour. If you are short on time, revise **Part 1** (exam format and rules), **Part 3** (session-by-session rapid recall), and **Part 9** (the last-night checklist) first.
+:::
+
 ## Part 1 — The Exam at a Glance
 
 ### Evaluation Breakdown (from course outline + Session 1)
@@ -82,6 +86,17 @@ The Triage Case is graded on **the slope of your MSE curve across three prompts*
 ---
 
 ## Part 3 — Session-by-Session Rapid Recall
+
+:::danger[Must Know — Exam Critical]
+If you learn nothing else, learn these six highest-yield concepts across the whole course:
+
+- **3 Horizons of AI workflow** — H3 research → H2 applied ML → H1 product; ~50% H2 failure rate; "factory, not wizard"
+- **Activation function → problem type** — linear for regression, sigmoid for binary, softmax for multiclass
+- **CNN vs RNN vs Transformer** — images → CNN; sequences → RNN (legacy); long-range/parallel → Transformer with self-attention
+- **The six bias types** — data, sampling, algorithmic, representation, confirmation, automation
+- **RAG** — retrieve from a vector DB, append chunks to the prompt, ground the answer, cut hallucination
+- **Zero-shot / few-shot / chain-of-thought** prompting — and when to use each
+:::
 
 ### Session 1: Dark Data & the Black Box
 

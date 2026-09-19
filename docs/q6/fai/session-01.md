@@ -9,6 +9,14 @@ title: "Session 1: The River of Dark Data and the Black Box That Drinks From It"
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** Dark data (definition + the Three Vs vs low quality); the black box (observable in/out, non-interpretable internals); the neural network as a brain-mimic (nodes that amplify or dampen numbers).
+
+**Important (supporting):** AI as a general-purpose technology; supervised learning (labelled feature → label); the old-analytics vs new-analytics shift; ANI / AGI / ASI.
+
+**Context (background/color):** The Chihuahua-vs-cupcake grid; Sarang's "two Sarangs" assistant story.
+:::
+
 ## Setting the Stage: What This Course Is Actually About
 
 Fundamentals of AI is a 10-session, 2-credit course taught by **Professor Probal Mojumder**, faculty at IIM Udaipur for over five years and an active researcher in the AI space, especially AI ethics. He teaches AI across the 2-year MBA, the 1-year MBA, and the EMBA program, plus outside IIMU.
@@ -44,6 +52,10 @@ The course arc looks like this:
 Ten years ago, "data" mostly meant tabular, numeric, structured stuff sitting in Excel sheets and enterprise databases. You could query it, aggregate it, plot it, and be done. But that has changed.
 
 Today, an estimated **80% of all data is unstructured** and **93% is dark data** -- data that has been captured but never analyzed.
+
+:::danger[Must Know — Exam Critical]
+**Dark data** = data captured but never analyzed (~93% of all data, mostly unstructured). Know the definition and the Three Vs — Volume, Velocity, and Variety all high, while data quality is low. This is the fuel the entire course runs on.
+:::
 
 A student, **Prasoon**, defined it well early in the session:
 
@@ -122,6 +134,10 @@ The professor grounded the excitement in history. AI is not just a fancy tool --
 
 This framing comes directly from the assigned HBR reading, **"The Business of Artificial Intelligence"** by Brynjolfsson and McAfee, which argues that AI (specifically machine learning) is the most important GPT of our time -- and one whose main effects on productivity are still ahead of us, not behind us.
 
+:::tip[Important]
+AI as a **general-purpose technology** — on par with the wheel, electricity, and the internet — is a favourite framing question. Anchor it to the Brynjolfsson & McAfee HBR reading, *The Business of Artificial Intelligence*.
+:::
+
 ---
 
 ## Chihuahua or Cupcake? The Human Brain as the Model
@@ -132,6 +148,10 @@ To bring the abstraction back down, the professor showed the classic viral image
 *Chihuahua.*
 
 Effortless. Instant. No conscious calculation.
+
+:::note[Good to Know]
+The Chihuahua-vs-cupcake grid is a memorable hook for "the brain recognises patterns from experience." The image itself won't be tested — but the neuron mechanism it sets up will be.
+:::
 
 Then the pivot: **what mechanism inside you actually did that?**
 
@@ -173,6 +193,10 @@ Imagine the AI as a box. On the left, you feed in an input -- an image, a text p
 
 That is the black box.
 
+:::danger[Must Know — Exam Critical]
+The **black box** is an AI system whose inputs and outputs are observable but whose internal decision path is not human-interpretable. Remember this is a *technical property* of neural networks, not a criticism — a very likely exam framing.
+:::
+
 ```
 Input (Dark Data)  -->  [ AI Black Box ]  -->  Output (Prediction)
 Image of a dog                                  "Chihuahua"
@@ -198,6 +222,10 @@ The professor listed use cases along exactly these input-output lines: voice-to-
 This is exactly what makes AI different from every previous piece of business software. Traditional software follows explicit if-then rules -- fully explainable, fully auditable. AI trained on dark data reaches conclusions through opaque internal representations.
 
 That is the deepest reason "black box" is not a slur but a technical property.
+
+:::tip[Important]
+**Polanyi's Paradox** — "we know more than we can tell" — now runs both ways: modern AI also produces correct answers it cannot explain. This is the reading's big idea and a likely short-answer question.
+:::
 
 ---
 

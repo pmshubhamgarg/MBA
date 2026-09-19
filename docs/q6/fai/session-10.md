@@ -9,6 +9,14 @@ title: "Session 10: When the Black Box Meets the Real World — AI Ethics, Bias,
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** The six bias types (data, sampling, algorithmic, representation, confirmation, automation) with an example each; explainable AI (XAI) vs interpretable models; human-in-the-loop as a design principle; the key regulations (GDPR Article 22, EU AI Act, India DPDP Act).
+
+**Important (supporting):** The four components of informed consent; the flagship real cases (Amazon resume screener, Robert Williams / Detroit facial recognition, COMPAS); the business leader's deployment checklist.
+
+**Context (background/color):** Tim Hortons location tracking; the Equifax breach; Google Duplex; the automation / future-of-work numbers.
+:::
+
 ## Where We Are, and Why This Session Exists
 
 Nine sessions in, we can now sketch a neural network on a napkin, explain a self-attention layer to a non-technical colleague, and price out a training run. What we have not done is confront the fact that **every architecture choice we have discussed lands, eventually, on a real human being.**
@@ -38,6 +46,10 @@ The professor's answer had three parts.
 ## The Taxonomy of Bias
 
 The class built out the vocabulary. Bias has several colours, and they compound.
+
+:::danger[Must Know — Exam Critical]
+Memorise the **six bias types with one example each**: data, sampling, algorithmic, representation, confirmation, and automation bias. "Name and give an example of each bias type" is one of the most predictable questions on the end-term, and these six recur from the Triage Case in Session 9.
+:::
 
 | Type of Bias | What It Means | Textbook Example |
 |--------------|--------------|------------------|
@@ -113,6 +125,10 @@ The reading laid out four components of informed consent that most terms-of-serv
 
 Ask that standard against the last privacy policy you clicked through. Most fail on Understanding. Many fail on Volunteering. Almost none disclose what the model behind the scenes will actually do with the data.
 
+:::note[Good to Know]
+Keep the **four components of informed consent** handy -- Information, Understanding, Volunteering, Decision-making capacity -- in case the exam asks you to draft a consent protocol for an AI tool. Most terms-of-service clicks fail on Understanding and Volunteering.
+:::
+
 ---
 
 ## The Explainability Problem
@@ -120,6 +136,10 @@ Ask that standard against the last privacy policy you clicked through. Most fail
 Every neural network we have studied has a black-box property. You know the input. You know the output. You do not know, layer by layer, why *this* input produced *that* output.
 
 Cynthia Rudin, a computer science professor at Duke, argues that in high-stakes settings -- criminal justice, healthcare, credit -- we should not settle for **explainable AI (XAI)**, which offers post-hoc rationalisations of a black box. We should insist on **interpretable models** from the start, whose logic is human-readable by construction (decision trees, CART, sparse linear models).
+
+:::tip[Important]
+Know the distinction cold: **explainable AI (XAI)** gives a *post-hoc* rationalisation of a black box; an **interpretable model** is transparent *by construction* (decision trees, CART, sparse regression). Cynthia Rudin's argument -- prefer interpretable models for high-stakes decisions -- is a likely short-answer question.
+:::
 
 Rudin's argument, applied to the Triage Case from Session 9: it is not enough that our LLM triaged a patient. If the score determines who gets an ICU bed, we need a model whose reasoning we can actually read -- or a hybrid design in which a transparent scoring rule wraps the black-box classifier.
 
@@ -163,6 +183,10 @@ Regulation of AI is now real, uneven, and moving. The most important pieces the 
 
 The regulatory pattern is that jurisdictions **converge on principles** (transparency, consent, non-discrimination, right to explanation) but **diverge on implementation and enforcement**. For an Indian executive selling into Europe, GDPR compliance is the binding constraint; for the same executive selling into California, CCPA is; and for both, sooner or later, the EU AI Act will be.
 
+:::tip[Important]
+Match the regulation to the use case: **GDPR Article 22** = right to human review of automated decisions (EU); **EU AI Act** = risk-tiered rules (bans social scoring, heavily regulates hiring/credit/biometrics); **India DPDP Act (2023)** = consent-based data protection. "Which regulation applies to which use case?" is a standard exam angle.
+:::
+
 ---
 
 ## Human-in-the-Loop: The Design Principle That Saves You
@@ -172,6 +196,10 @@ Session 9 ended with the question of whether an agentic AI could be built with *
 Human-in-the-loop is a control principle with a very concrete payoff. It is what stops an autonomous procurement agent from placing a Rs 50 lakh order because a supplier's website returned malformed JSON. It is what stops an autonomous hiring agent from rejecting every candidate with a career gap because it learned to correlate gaps with lower retention. It is what stops the triage AI from deprioritising an 83-year-old whose actual clinical outcome, on this Tuesday afternoon, is very much saveable.
 
 Human-in-the-loop is not a lack of ambition. It is a design pattern that treats the AI as **a decision aid, not a decision maker**, in any setting where the cost of being wrong exceeds the cost of a human review.
+
+:::tip[Important]
+**Human-in-the-loop** is the professor's fallback answer to almost every ethics question: treat the AI as a decision aid, not a decision maker, wherever the cost of being wrong exceeds the cost of a human review. When in doubt on the exam, invoke it.
+:::
 
 > **Professor Mojumder:** "It is possible to build AI agents which are totally free range. But that's not a suggested design -- because then you don't have any control over those agents."
 

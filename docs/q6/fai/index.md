@@ -15,6 +15,10 @@ Fundamentals of AI (FAI) is a 2-credit core course in the Executive MBA program 
 
 The course does not require prior programming knowledge. Its aim is not to turn managers into ML engineers, but to equip them to make informed decisions about where, when, and how to apply AI in a business — and to think clearly about the ethical and organizational questions that follow.
 
+:::tip[How to read these notes]
+Each session opens with a **Priority Map**. Inline boxes flag importance: **Must Know — Exam Critical** (red) is highest priority, **Important** (green) is supporting, **Good to Know** (grey) is background color. Skim the red and green boxes first when short on time.
+:::
+
 ## Course Philosophy
 
 The professor's core thesis: AI is not just a new tool in the toolbox. It is a **decisive technology** that changes work dynamics inside organizations, reshapes stakeholder value, and rewrites customer experience. The gap between high-performing and low-performing companies over the next decade will be defined by how well they harness AI.

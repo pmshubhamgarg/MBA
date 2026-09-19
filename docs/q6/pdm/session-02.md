@@ -9,6 +9,14 @@ title: "Session 2: From Data to Delight — How Product Managers Find What Custo
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** Funnel analysis (spotting where drop-off is *drastic*); the RICE framework formula; Customer Perceived Value (CPV = TCB − TCC); the B2C and B2B value pyramids.
+
+**Important (supporting):** Hypothesis testing; the Agile Scrum cycle; alternative prioritization (Kano, Value vs. Complexity, Weighted Scoring); Internal Reference Price; linking problem-space activities to desired outcomes (the redBus critique).
+
+**Context (background/color):** The Saregama Carvaan nostalgia example; Tata vs. Maruti safety rating (B2B vs. B2C); Frore Systems and the Bajaj-Orbital hardware R&D story.
+:::
+
 ## Quick Recap: The Two Spaces
 
 Session 1 established two fundamental spaces every product manager lives in:
@@ -41,6 +49,10 @@ For an e-commerce site, the funnel might look like:
 > **Professor Banerjee:** "The funnel represents user flow and reduction in visitor traffic through various stages of their interaction with the product to complete a transaction. Write that down. This is one very good way of getting ideas while we are iterating our existing products, and it forms a big chunk of work in product management."
 
 The key insight is not that people drop off — of course they do. The key insight is **where the drop is drastic**. Wherever visitor traffic falls sharply between two stages, something is going wrong at that specific transition. That is your clue. That is your opportunity.
+
+:::tip[Important]
+**Funnel analysis** breaks the user journey into stages and measures drop-off between each. The exam point is not that users drop off (they always do) — it is spotting the transition where the drop is *drastically* larger, because that non-uniform fall pinpoints the problem worth solving.
+:::
 
 ### How to Actually Do Funnel Analysis
 
@@ -77,6 +89,10 @@ When your product backlog has fifty items and you can only build three this spri
 **RICE Score = (Reach x Impact x Confidence) / Effort**
 
 Features with the highest RICE score get built first.
+
+:::tip[Important]
+Memorize the **RICE** formula and each letter: Reach, Impact, and Confidence in the numerator, Effort in the denominator. The professor's caution is testable too — use RICE for **feature prioritization only**, not for strategy evaluation.
+:::
 
 > **Professor Banerjee:** "Many people use RICE for strategy evaluation, but there are better, maybe different ways of doing strategy evaluation. I would recommend that kindly use RICE only for feature prioritization."
 
@@ -142,6 +158,10 @@ Or alternatively: **CPV = TCB / TCC**
 
 The key word is "perceive." This is about what the customer *believes* they are getting, not necessarily what they are objectively getting.
 
+:::danger[Must Know — Exam Critical]
+**Customer Perceived Value (CPV) = Total Customer Benefits (TCB) − Total Customer Costs (TCC)** — and the load-bearing word is *perceived*. TCB spans product, service, personnel, and image value; TCC spans monetary, time, energy, and psychological cost (price is only one of four). Buyers buy from whoever they believe offers the highest CPV, so know both the equation and its four-plus-four components.
+:::
+
 ### What Makes Up Total Customer Benefits (TCB)?
 
 | Benefit Type | Components |
@@ -165,6 +185,10 @@ Notice that price is just one of four costs. A product could be cheap but if it 
 ---
 
 ## The B2C Value Elements Pyramid
+
+:::tip[Important]
+The **value pyramids** are highly testable. B2C has four levels — Functional, Emotional, Life-Changing, Social Impact (objective at the base, subjective at the top). B2B has five — Table Stakes, Functional, Ease of Doing Business, Individual, Inspirational. Higher elements differentiate and build loyalty; know the ordering and be ready to classify a given benefit.
+:::
 
 The professor introduced a more modern framework, currently used by consulting firms like Bain, that organizes value elements into a pyramid with four levels:
 
@@ -223,6 +247,10 @@ These are the practical, tangible things a product does:
 The pyramid works like Maslow's hierarchy: functional elements are table stakes, but the higher you go, the more emotionally resonant and differentiated your product becomes. A product that only delivers functional value competes on features. A product that delivers emotional or life-changing value creates loyalty.
 
 ### The Saregama Carvaan — Nostalgia as a Product
+
+:::note[Good to Know]
+The Saregama Carvaan — a vintage-radio-style box preloaded with classic songs, bought by adult children for elderly parents — is the session's memorable illustration of stacking Functional + Emotional (nostalgia) + Life-Changing (heirloom) value. Great for making the pyramid stick; more color than a standalone tested concept.
+:::
 
 The professor brought this to life with a brilliant example. Saregama (formerly the Gramophone Company of India) owned the rights to thousands of classic Bollywood songs from the 1960s-80s. The songs were always available, but nobody was paying for them.
 
@@ -415,7 +443,7 @@ The professor broke this into two parts:
 **Session 2 builds the product manager's diagnostic and analytical toolkit:**
 Session 1 gave us the problem/solution space distinction and the product management lifecycle. Session 2 adds the tools: funnel analysis to spot where users drop off, RICE to prioritize what to build, Agile Scrum to build it iteratively, and the value pyramids (B2C and B2B) to understand *what customers are actually paying for*. The RedBus case shows all of these in action.
 
-**Next session:** We move into frameworks for evaluating whether a new product idea will actually win in the market — the Buyer Utility Map (a 6x6 matrix of utility levers and buyer experience stages) and positioning statements. The Zenetics case will put these to practice.
+**Next session:** We move into frameworks for evaluating whether a new product idea will actually win in the market — the Buyer Utility Map (a 6x6 matrix of utility levers and buyer experience stages) and positioning statements. The Zenatix case will put these to practice.
 
 ---
 

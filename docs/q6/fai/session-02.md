@@ -9,6 +9,14 @@ title: "Session 2: Wizards Don't Scale — Factories Do"
 
 ---
 
+:::info[Priority Map — What to Focus On]
+**Must know (exam-critical):** AI as a factory, not a wizard ("wizards don't scale"); the Three Horizons framework (H1 product / H2 applied ML / H3 research, with ~50% H2 failure normal); Push-then-Pull adoption; traditional software (data + rules → answers) vs machine learning (data + answers → rules).
+
+**Important (supporting):** Supervised learning setup (feature / label / prediction); the Soyuz analogy and its three levers; the loading-dock metaphor; ANI / AGI / ASI.
+
+**Context (background/color):** The opening round of how each student's org builds AI; the Kavya "wizard vs factory" story.
+:::
+
 ## The Big Question for the Day
 
 Session 1 gave us the ingredients: dark data, neural networks, the black box. Session 2 asks a harder, more organizational question: **how does a company actually build and deploy AI at scale?**
@@ -48,6 +56,10 @@ The variety was itself the lesson. No two organizations are doing it the same wa
 
 The core rhetorical move in the Berinato case is a metaphor swap.
 
+:::danger[Must Know — Exam Critical]
+**AI is a factory, not a wizard.** Wizards (bespoke, hand-crafted models tied to one brilliant individual) don't scale; factories (standardized, reusable infrastructure any team can pull from) do. This is the case's headline argument — expect to explain or apply it.
+:::
+
 | **Wizard AI** | **Factory AI** |
 |---------------|---------------|
 | Individual data scientists producing bespoke, hand-crafted models | Standardized, reusable AI infrastructure that any team can pull from |
@@ -69,6 +81,10 @@ That single decision -- *use existing algorithms, get better data, iterate faste
 ## The Three Horizons Framework
 
 The case introduces a horizon model that maps roughly onto **how far a technology is from the market**. The professor treated this as one of the core takeaways of the session.
+
+:::danger[Must Know — Exam Critical]
+The **Three Horizons**: H3 = research (invents algorithms, ~3 years out), H1 = product/business (ships to users, owns the P&L), H2 = applied ML, the bridge that turns algorithms into products. Know that ~50% of H2 projects failing is *healthy*, and that the course's goal is to move you from H1 toward H2.
+:::
 
 | Horizon | Role | Typical Team | Distance from Market |
 |---------|------|--------------|----------------------|
@@ -100,6 +116,10 @@ The case draws an unexpected analogy to the **Soyuz spacecraft** -- the old, ugl
 
 Candela's point: don't fetishize the newest, shiniest algorithm. If a proven model gets 80% of the job done, use it. Spend the marginal effort on **more data and faster iteration**, not on rebuilding the engine.
 
+:::note[Good to Know]
+The Soyuz ("old but reliable") analogy is memorable color, but the testable substance is its three levers: improve the algorithm (slow), feed more data (cheaper), run more experiments (cheapest). Facebook's factory picks the last two.
+:::
+
 **Shubham** identified the three practical levers this implies:
 
 1. Improve the algorithm (expensive, slow)
@@ -129,6 +149,10 @@ Once a few visible wins existed, the dynamic flipped.
 > "Slowly the teams started pulling the changes from AML. If AML had already developed some capability, any team could search for it, find it useful, and implement it themselves. AML no longer had to do the handholding."
 
 That is the payoff: **push builds credibility, pull creates scale.**
+
+:::tip[Important]
+**Push then Pull** is a two-stage adoption model: H2 first embeds in product teams to prove value (push), then builds a self-serve "loading dock" so teams discover and adopt capabilities on their own (pull). Be ready to name both stages and the loading-dock metaphor.
+:::
 
 ### The Loading Dock Metaphor
 
@@ -190,6 +214,10 @@ The professor drew the cleanest possible distinction on the whiteboard:
 In a calculator, you supply the price, the quantity, and the rule (multiply). It gives you the bill.
 
 In machine learning, you supply the picture of a Chihuahua *and* the label "Chihuahua" -- across thousands of examples -- and the machine learns the rule for telling Chihuahuas apart from cupcakes.
+
+:::tip[Important]
+The crisp exam contrast: **traditional software** takes data + rules → answers; **machine learning** takes data + answers → rules. This one line captures why ML is fundamentally different from a calculator.
+:::
 
 ### Two Paradigms of AI
 
