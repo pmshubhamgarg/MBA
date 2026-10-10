@@ -18,6 +18,8 @@ const config = {
 
   onBrokenLinks: 'warn',
 
+  clientModules: ['./src/clientModules/visitCounter.js'],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -44,6 +46,12 @@ const config = {
     ({
       colorMode: {
         respectPrefersColorScheme: true,
+      },
+      announcementBar: {
+        id: 'visit_counter',
+        content:
+          '👁️ <span id="visit-count">…</span> total visits — thanks for stopping by!',
+        isCloseable: false,
       },
       navbar: {
         title: 'MBA Notes',

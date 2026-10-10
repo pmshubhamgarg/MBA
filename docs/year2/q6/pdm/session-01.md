@@ -26,8 +26,8 @@ The course arc looks like this:
 | Sessions | Topic | Case |
 |----------|-------|------|
 | 1-2 | Introduction, PM roles, key concepts | redBus |
-| 3 | Product strategy and positioning | Zenetics |
-| 4-5 | New product development and A/B testing | Lane Dane Club |
+| 3 | Product strategy and positioning | Zenatix |
+| 4-5 | New product development and A/B testing | LendenClub |
 | 6-7 | Go-to-market strategy | Dropbox |
 | 8-10 | Product adoption and diffusion | Nexent Systems |
 

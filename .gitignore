@@ -22,3 +22,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/ai-context/
+
+# Raw class transcripts accidentally placed under docs/ — keep local only
+/docs/**/*.txt

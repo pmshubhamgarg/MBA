@@ -20,3 +20,17 @@
   --ifm-color-primary-lightest: #a0c6ea;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Visit counter announcement bar */
+div[class^='announcementBar_'] {
+  --site-announcement-bar-stripe-bg: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-weight: 500;
+  --ifm-color-content: #fff;
+}
+
+div[class^='announcementBar_'] #visit-count {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
